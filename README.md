@@ -1,9 +1,10 @@
 # Go Implementation of Open Cybersecurity Schema Framework (OCSF)
 ## Overview
 
-This repository, `ocsf-schema-golang`, offers a Go implementation of the Open Cybersecurity Schema Framework (OCSF). The OCSF is an initiative aimed at standardizing the schema for cybersecurity data. This implementation in Go is tailored for developers who need an effective way to handle OCSF-compliant data within their Go-based applications.
+This repository, `ocsf-schema-golang`, offers a Go implementation of the [Open Cybersecurity Schema Framework (OCSF)](https://schema.ocsf.io/). The OCSF is an initiative aimed at standardizing the schema for cybersecurity data. This implementation in Go is tailored for developers who need an effective way to handle OCSF-compliant data within their Go-based applications.
 
 ## Features 
+- **OCSF Version** : OCSF V1.0.0 
 - **Compliance with OCSF Schema** : Fully aligned with the OCSF standards. 
 - **Performance-Optimized** : Engineered for high-speed and efficient processing of cybersecurity data. 
 - **Seamless Integration** : Crafted for easy incorporation into Go applications.
