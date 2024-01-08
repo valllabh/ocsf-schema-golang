@@ -30,3 +30,5 @@ schema
 
 # Ignore proto directory
 proto
+
+schema.json

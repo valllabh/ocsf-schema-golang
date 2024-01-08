@@ -45,11 +45,17 @@ create-proto-files:
 
 compile-proto: clean-output
 	@echo "Compiling proto files..."
-	buf generate
+	/home/linuxbrew/.linuxbrew/bin/buf generate
+	
+	@echo "Preparing Enum Value Map..."
+	bash ./enum-value/enum-value-map.sh
 
 clean-output:
 	@echo "Cleaning output directory..."
 	rm -rf ./ocsf
+
+generate-documentation:
+	gomarkdoc ./ >> docs.md
 
 build: create-proto-files compile-proto
 	@echo "Building Finished."
