@@ -6,7 +6,7 @@ while IFS= read -r -d '' enumValueMapJson; do
 
     # replace proto from $file
     newEnumValueMapJson=${enumValueMapJson/proto\//}
-    newEnumValueMapJson=${enumValueMapJson/enum-value-map.json/enum-value-map/enum-value-map.json/}
+    newEnumValueMapJson=${newEnumValueMapJson/enum-value-map.json/enum-value-map/enum-value-map.json}
 
     # create directory if not exist
     mkdir -p $(dirname $newEnumValueMapJson)
@@ -16,7 +16,7 @@ while IFS= read -r -d '' enumValueMapJson; do
     cp $enumValueMapJson $newEnumValueMapJson
 
     # replace enum-value-map.json to enum-value-map.go.template from $newFile
-    enumValueMapGoFile=${newEnumValueMapJson/enum-value-map.json/enum-value-map/map.go}
+    enumValueMapGoFile=${newEnumValueMapJson/enum-value-map.json/map.go}
     
      # create directory if not exist
     mkdir -p $(dirname $enumValueMapGoFile)
