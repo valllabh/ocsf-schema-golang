@@ -1,0 +1,920 @@
+syntax = "proto3";
+
+package ocsf.v1_2_0.events.discovery;
+
+option go_package = "/ocsf/v1_2_0/events/discovery";
+
+option java_package = "com.your.project.generated.ocsf.v1_2_0.events.discovery";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_2_0/events/discovery/enums/enums.proto";
+
+import "ocsf/v1_2_0/objects/objects.proto";
+
+// Event: discovery
+// Event UID: 18
+// URL: https://schema.ocsf.io/1.2.0/classes/user_query
+message UserQuery {
+	ocsf.v1_2_0.events.discovery.enums.USER_QUERY_TYPE_UID type_uid = 1; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Api api = 2; // Caption: API Details; Profile: cloud;
+	string status_code = 3; // Caption: Status Code;
+	ocsf.v1_2_0.events.discovery.enums.USER_QUERY_CLASS_UID class_uid = 4; // Caption: Class ID;
+	int32 count = 5; // Caption: Count;
+	int64 end_time = 6; // Caption: End Time;
+	int32 duration = 7; // Caption: Duration;
+	ocsf.v1_2_0.objects.Metadata metadata = 8; // Caption: Metadata;
+	int64 time = 9; // Caption: Event Time;
+	ocsf.v1_2_0.objects.Actor actor = 10; // Caption: Actor; Profile: host;
+	string raw_data = 11; // Caption: Raw Data;
+	int64 start_time = 12; // Caption: Start Time;
+	ocsf.v1_2_0.objects.Device device = 13; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.USER_QUERY_STATUS_ID status_id = 14; // Caption: Status ID;
+	string type_name = 15; // Caption: Type Name;
+	string severity = 16; // Caption: Severity;
+	string category_name = 17; // Caption: Category;
+	repeated ocsf.v1_2_0.objects.Observable observables = 18; // Caption: Observables;
+	ocsf.v1_2_0.objects.Object unmapped = 19; // Caption: Unmapped Data;
+	ocsf.v1_2_0.events.discovery.enums.USER_QUERY_CATEGORY_UID category_uid = 20; // Caption: Category ID;
+	string message = 21; // Caption: Message;
+	string status_detail = 22; // Caption: Status Details;
+	string class_name = 23; // Caption: Class;
+	ocsf.v1_2_0.events.discovery.enums.USER_QUERY_QUERY_RESULT_ID query_result_id = 24; // Caption: Query Result ID;
+	int32 timezone_offset = 25; // Caption: Timezone Offset;
+	ocsf.v1_2_0.events.discovery.enums.USER_QUERY_ACTIVITY_ID activity_id = 26; // Caption: Activity ID;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 27; // Caption: Enrichments;
+	string query_result = 28; // Caption: Query Result;
+	string status = 29; // Caption: Status;
+	string activity_name = 30; // Caption: Activity;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 31; // Caption: Query Info;
+	ocsf.v1_2_0.events.discovery.enums.USER_QUERY_SEVERITY_ID severity_id = 32; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.User user = 33; // Caption: User;
+	ocsf.v1_2_0.objects.Cloud cloud = 34; // Caption: Cloud; Profile: cloud;
+}
+
+// URL: https://schema.ocsf.io/1.2.0/classes/device_config_state_change
+// Event: discovery
+// Event UID: 19
+message DeviceConfigStateChange {
+	ocsf.v1_2_0.objects.Device device = 1; // Caption: Device;
+	ocsf.v1_2_0.objects.Api api = 2; // Caption: API Details; Profile: cloud;
+	string severity = 3; // Caption: Severity;
+	string class_name = 4; // Caption: Class;
+	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_SEVERITY_ID severity_id = 5; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.Cloud cloud = 6; // Caption: Cloud; Profile: cloud;
+	string type_name = 7; // Caption: Type Name;
+	string prev_security_level = 8; // Caption: Previous Security Level;
+	ocsf.v1_2_0.objects.Actor actor = 9; // Caption: Actor;
+	string status = 10; // Caption: Status;
+	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_STATUS_ID status_id = 11; // Caption: Status ID;
+	string raw_data = 12; // Caption: Raw Data;
+	string message = 13; // Caption: Message;
+	repeated ocsf.v1_2_0.objects.SecurityState security_states = 14; // Caption: Security States;
+	ocsf.v1_2_0.objects.Object unmapped = 15; // Caption: Unmapped Data;
+	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_CLASS_UID class_uid = 16; // Caption: Class ID;
+	int64 start_time = 17; // Caption: Start Time;
+	int64 time = 18; // Caption: Event Time;
+	string security_level = 19; // Caption: Security Level;
+	int32 count = 20; // Caption: Count;
+	string status_code = 21; // Caption: Status Code;
+	int32 duration = 22; // Caption: Duration;
+	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_PREV_SECURITY_LEVEL_ID prev_security_level_id = 23; // Caption: Previous Security Level ID;
+	repeated ocsf.v1_2_0.objects.SecurityState prev_security_states = 24; // Caption: Previous Security States;
+	int64 end_time = 25; // Caption: End Time;
+	string category_name = 26; // Caption: Category;
+	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_TYPE_UID type_uid = 27; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Metadata metadata = 28; // Caption: Metadata;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 29; // Caption: Enrichments;
+	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_CATEGORY_UID category_uid = 30; // Caption: Category ID;
+	string status_detail = 31; // Caption: Status Details;
+	int32 timezone_offset = 32; // Caption: Timezone Offset;
+	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_SECURITY_LEVEL_ID security_level_id = 33; // Caption: Security Level ID;
+	repeated ocsf.v1_2_0.objects.Observable observables = 34; // Caption: Observables;
+	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_ACTIVITY_ID activity_id = 35; // Caption: Activity ID;
+	string activity_name = 36; // Caption: Activity;
+}
+
+// Event: discovery
+// Event UID: 17
+// URL: https://schema.ocsf.io/1.2.0/classes/session_query
+message SessionQuery {
+	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_QUERY_RESULT_ID query_result_id = 1; // Caption: Query Result ID;
+	string raw_data = 2; // Caption: Raw Data;
+	string type_name = 3; // Caption: Type Name;
+	int32 count = 4; // Caption: Count;
+	int32 duration = 5; // Caption: Duration;
+	string activity_name = 6; // Caption: Activity;
+	ocsf.v1_2_0.objects.Actor actor = 7; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_ACTIVITY_ID activity_id = 8; // Caption: Activity ID;
+	int64 start_time = 9; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_TYPE_UID type_uid = 10; // Caption: Type ID;
+	string severity = 11; // Caption: Severity;
+	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_SEVERITY_ID severity_id = 12; // Caption: Severity ID;
+	string status_code = 13; // Caption: Status Code;
+	int64 time = 14; // Caption: Event Time;
+	string query_result = 15; // Caption: Query Result;
+	int64 end_time = 16; // Caption: End Time;
+	string message = 17; // Caption: Message;
+	repeated ocsf.v1_2_0.objects.Observable observables = 18; // Caption: Observables;
+	string category_name = 19; // Caption: Category;
+	ocsf.v1_2_0.objects.Session session = 20; // Caption: Session;
+	string status_detail = 21; // Caption: Status Details;
+	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_CLASS_UID class_uid = 22; // Caption: Class ID;
+	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_STATUS_ID status_id = 23; // Caption: Status ID;
+	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_CATEGORY_UID category_uid = 24; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Object unmapped = 25; // Caption: Unmapped Data;
+	string status = 26; // Caption: Status;
+	int32 timezone_offset = 27; // Caption: Timezone Offset;
+	string class_name = 28; // Caption: Class;
+	ocsf.v1_2_0.objects.Device device = 29; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 30; // Caption: Query Info;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 31; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.Cloud cloud = 32; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.objects.Metadata metadata = 33; // Caption: Metadata;
+	ocsf.v1_2_0.objects.Api api = 34; // Caption: API Details; Profile: cloud;
+}
+
+// Event: discovery
+// Event UID: 9
+// URL: https://schema.ocsf.io/1.2.0/classes/admin_group_query
+message AdminGroupQuery {
+	string activity_name = 1; // Caption: Activity;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 2; // Caption: Enrichments;
+	string query_result = 3; // Caption: Query Result;
+	repeated ocsf.v1_2_0.objects.User users = 4; // Caption: Users;
+	ocsf.v1_2_0.objects.Metadata metadata = 5; // Caption: Metadata;
+	int32 timezone_offset = 6; // Caption: Timezone Offset;
+	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_ACTIVITY_ID activity_id = 7; // Caption: Activity ID;
+	string class_name = 8; // Caption: Class;
+	ocsf.v1_2_0.objects.Object unmapped = 9; // Caption: Unmapped Data;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 10; // Caption: Query Info;
+	string severity = 11; // Caption: Severity;
+	int32 count = 12; // Caption: Count;
+	ocsf.v1_2_0.objects.Device device = 13; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_STATUS_ID status_id = 14; // Caption: Status ID;
+	string status_detail = 15; // Caption: Status Details;
+	ocsf.v1_2_0.objects.Group group = 16; // Caption: Group;
+	int32 duration = 17; // Caption: Duration;
+	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_QUERY_RESULT_ID query_result_id = 18; // Caption: Query Result ID;
+	int64 end_time = 19; // Caption: End Time;
+	repeated ocsf.v1_2_0.objects.Observable observables = 20; // Caption: Observables;
+	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_TYPE_UID type_uid = 21; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Api api = 22; // Caption: API Details; Profile: cloud;
+	int64 start_time = 23; // Caption: Start Time;
+	string type_name = 24; // Caption: Type Name;
+	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_SEVERITY_ID severity_id = 25; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.Actor actor = 26; // Caption: Actor; Profile: host;
+	string status = 27; // Caption: Status;
+	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_CATEGORY_UID category_uid = 28; // Caption: Category ID;
+	string message = 29; // Caption: Message;
+	string category_name = 30; // Caption: Category;
+	ocsf.v1_2_0.objects.Cloud cloud = 31; // Caption: Cloud; Profile: cloud;
+	string raw_data = 32; // Caption: Raw Data;
+	int64 time = 33; // Caption: Event Time;
+	string status_code = 34; // Caption: Status Code;
+	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_CLASS_UID class_uid = 35; // Caption: Class ID;
+}
+
+// Event UID: 8
+// URL: https://schema.ocsf.io/1.2.0/classes/folder_query
+// Event: discovery
+message FolderQuery {
+	ocsf.v1_2_0.objects.Cloud cloud = 1; // Profile: cloud; Caption: Cloud;
+	int64 start_time = 2; // Caption: Start Time;
+	int64 end_time = 3; // Caption: End Time;
+	string category_name = 4; // Caption: Category;
+	string status_code = 5; // Caption: Status Code;
+	string type_name = 6; // Caption: Type Name;
+	int32 count = 7; // Caption: Count;
+	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_CLASS_UID class_uid = 8; // Caption: Class ID;
+	string status = 9; // Caption: Status;
+	string message = 10; // Caption: Message;
+	string class_name = 11; // Caption: Class;
+	int64 time = 12; // Caption: Event Time;
+	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_ACTIVITY_ID activity_id = 13; // Caption: Activity ID;
+	string status_detail = 14; // Caption: Status Details;
+	int32 duration = 15; // Caption: Duration;
+	int32 timezone_offset = 16; // Caption: Timezone Offset;
+	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_QUERY_RESULT_ID query_result_id = 17; // Caption: Query Result ID;
+	string activity_name = 18; // Caption: Activity;
+	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_SEVERITY_ID severity_id = 19; // Caption: Severity ID;
+	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_STATUS_ID status_id = 20; // Caption: Status ID;
+	string severity = 21; // Caption: Severity;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 22; // Caption: Query Info;
+	ocsf.v1_2_0.objects.Metadata metadata = 23; // Caption: Metadata;
+	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_TYPE_UID type_uid = 24; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Api api = 25; // Profile: cloud; Caption: API Details;
+	ocsf.v1_2_0.objects.Device device = 26; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_CATEGORY_UID category_uid = 27; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Actor actor = 28; // Caption: Actor; Profile: host;
+	string query_result = 29; // Caption: Query Result;
+	string raw_data = 30; // Caption: Raw Data;
+	ocsf.v1_2_0.objects.File folder = 31; // Caption: Folder;
+	ocsf.v1_2_0.objects.Object unmapped = 32; // Caption: Unmapped Data;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 33; // Caption: Enrichments;
+	repeated ocsf.v1_2_0.objects.Observable observables = 34; // Caption: Observables;
+}
+
+// Event UID: 4
+// URL: https://schema.ocsf.io/1.2.0/classes/registry_key_query
+// Event: discovery
+message RegistryKeyQuery {
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_CLASS_UID class_uid = 1; // Caption: Class ID;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_CATEGORY_UID category_uid = 2; // Caption: Category ID;
+	int64 end_time = 3; // Caption: End Time;
+	string activity_name = 4; // Caption: Activity;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 5; // Caption: Enrichments;
+	string raw_data = 6; // Caption: Raw Data;
+	ocsf.v1_2_0.objects.Cloud cloud = 7; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_TYPE_UID type_uid = 8; // Caption: Type ID;
+	int32 duration = 9; // Caption: Duration;
+	int32 timezone_offset = 10; // Caption: Timezone Offset;
+	string status_code = 11; // Caption: Status Code;
+	string status = 12; // Caption: Status;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_STATUS_ID status_id = 13; // Caption: Status ID;
+	ocsf.v1_2_0.objects.Api api = 14; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.Metadata metadata = 15; // Caption: Metadata;
+	string class_name = 16; // Caption: Class;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 17; // Caption: Query Info;
+	int32 count = 18; // Caption: Count;
+	ocsf.v1_2_0.objects.Object unmapped = 19; // Caption: Unmapped Data;
+	int64 time = 20; // Caption: Event Time;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_QUERY_RESULT_ID query_result_id = 21; // Caption: Query Result ID;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_ACTIVITY_ID activity_id = 22; // Caption: Activity ID;
+	ocsf.v1_2_0.objects.RegKey reg_key = 23; // Caption: Registry Key;
+	string category_name = 24; // Caption: Category;
+	repeated ocsf.v1_2_0.objects.Observable observables = 25; // Caption: Observables;
+	string type_name = 26; // Caption: Type Name;
+	string status_detail = 27; // Caption: Status Details;
+	string query_result = 28; // Caption: Query Result;
+	string message = 29; // Caption: Message;
+	string severity = 30; // Caption: Severity;
+	ocsf.v1_2_0.objects.Device device = 31; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_SEVERITY_ID severity_id = 32; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.Actor actor = 33; // Caption: Actor; Profile: host;
+	int64 start_time = 34; // Caption: Start Time;
+}
+
+// Event: discovery
+// Event UID: 12
+// URL: https://schema.ocsf.io/1.2.0/classes/network_connection_query
+message NetworkConnectionQuery {
+	string query_result = 1; // Caption: Query Result;
+	int64 end_time = 2; // Caption: End Time;
+	string message = 3; // Caption: Message;
+	ocsf.v1_2_0.objects.Metadata metadata = 4; // Caption: Metadata;
+	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_STATE_ID state_id = 5; // Caption: State ID;
+	string status_code = 6; // Caption: Status Code;
+	string raw_data = 7; // Caption: Raw Data;
+	int64 start_time = 8; // Caption: Start Time;
+	string type_name = 9; // Caption: Type Name;
+	int32 count = 10; // Caption: Count;
+	repeated ocsf.v1_2_0.objects.Observable observables = 11; // Caption: Observables;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 12; // Caption: Enrichments;
+	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_CLASS_UID class_uid = 13; // Caption: Class ID;
+	int32 timezone_offset = 14; // Caption: Timezone Offset;
+	string severity = 15; // Caption: Severity;
+	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_STATUS_ID status_id = 16; // Caption: Status ID;
+	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_CATEGORY_UID category_uid = 17; // Caption: Category ID;
+	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_TYPE_UID type_uid = 18; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Api api = 19; // Profile: cloud; Caption: API Details;
+	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_ACTIVITY_ID activity_id = 20; // Caption: Activity ID;
+	string state = 21; // Caption: State;
+	string status = 22; // Caption: Status;
+	string category_name = 23; // Caption: Category;
+	string activity_name = 24; // Caption: Activity;
+	int64 time = 25; // Caption: Event Time;
+	ocsf.v1_2_0.objects.Actor actor = 26; // Caption: Actor; Profile: host;
+	int32 duration = 27; // Caption: Duration;
+	ocsf.v1_2_0.objects.Cloud cloud = 28; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_QUERY_RESULT_ID query_result_id = 29; // Caption: Query Result ID;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 30; // Caption: Query Info;
+	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_SEVERITY_ID severity_id = 31; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.NetworkConnectionInfo connection_info = 32; // Caption: Connection Info;
+	ocsf.v1_2_0.objects.Process process = 33; // Caption: Process;
+	string status_detail = 34; // Caption: Status Details;
+	string class_name = 35; // Caption: Class;
+	ocsf.v1_2_0.objects.Object unmapped = 36; // Caption: Unmapped Data;
+	ocsf.v1_2_0.objects.Device device = 37; // Caption: Device; Profile: host;
+}
+
+// Event UID: 19
+// URL: https://schema.ocsf.io/1.2.0/classes/prefetch_query
+// Event: discovery
+message PrefetchQuery {
+	string severity = 1; // Caption: Severity;
+	string name = 2; // Caption: Name;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 3; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.Actor actor = 4; // Caption: Actor; Profile: host;
+	string status_detail = 5; // Caption: Status Details;
+	int64 end_time = 6; // Caption: End Time;
+	int32 count = 7; // Caption: Count;
+	ocsf.v1_2_0.events.discovery.enums.PREFETCH_QUERY_ACTIVITY_ID activity_id = 8; // Caption: Activity ID;
+	ocsf.v1_2_0.events.discovery.enums.PREFETCH_QUERY_SEVERITY_ID severity_id = 9; // Caption: Severity ID;
+	int64 start_time = 10; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.PREFETCH_QUERY_CLASS_UID class_uid = 11; // Caption: Class ID;
+	ocsf.v1_2_0.events.discovery.enums.PREFETCH_QUERY_CATEGORY_UID category_uid = 12; // Caption: Category ID;
+	string category_name = 13; // Caption: Category;
+	string class_name = 14; // Caption: Class;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 15; // Caption: Query Info;
+	string activity_name = 16; // Caption: Activity;
+	string status = 17; // Caption: Status;
+	string message = 18; // Caption: Message;
+	int64 last_run_time = 19; // Caption: Last Run;
+	int32 run_count = 20; // Caption: Run Count;
+	ocsf.v1_2_0.objects.Device device = 21; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.PREFETCH_QUERY_QUERY_RESULT_ID query_result_id = 22; // Caption: Query Result ID;
+	ocsf.v1_2_0.events.discovery.enums.PREFETCH_QUERY_STATUS_ID status_id = 23; // Caption: Status ID;
+	ocsf.v1_2_0.objects.Metadata metadata = 24; // Caption: Metadata;
+	repeated ocsf.v1_2_0.objects.Observable observables = 25; // Caption: Observables;
+	ocsf.v1_2_0.objects.Object unmapped = 26; // Caption: Unmapped Data;
+	ocsf.v1_2_0.objects.Api api = 27; // Caption: API Details; Profile: cloud;
+	int64 time = 28; // Caption: Event Time;
+	string query_result = 29; // Caption: Query Result;
+	string raw_data = 30; // Caption: Raw Data;
+	string type_name = 31; // Caption: Type Name;
+	ocsf.v1_2_0.events.discovery.enums.PREFETCH_QUERY_TYPE_UID type_uid = 32; // Caption: Type ID;
+	int32 timezone_offset = 33; // Caption: Timezone Offset;
+	string status_code = 34; // Caption: Status Code;
+	ocsf.v1_2_0.objects.Cloud cloud = 35; // Profile: cloud; Caption: Cloud;
+	int32 duration = 36; // Caption: Duration;
+}
+
+// Event: discovery
+// Event UID: 3
+// URL: https://schema.ocsf.io/1.2.0/classes/user_inventory
+message UserInventory {
+	repeated ocsf.v1_2_0.objects.Observable observables = 1; // Caption: Observables;
+	string severity = 2; // Caption: Severity;
+	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor;
+	ocsf.v1_2_0.events.discovery.enums.USER_INVENTORY_CLASS_UID class_uid = 4; // Caption: Class ID;
+	int32 duration = 5; // Caption: Duration;
+	ocsf.v1_2_0.events.discovery.enums.USER_INVENTORY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
+	string class_name = 7; // Caption: Class;
+	int64 time = 8; // Caption: Event Time;
+	string status = 9; // Caption: Status;
+	int64 end_time = 10; // Caption: End Time;
+	ocsf.v1_2_0.events.discovery.enums.USER_INVENTORY_TYPE_UID type_uid = 11; // Caption: Type ID;
+	int32 count = 12; // Caption: Count;
+	ocsf.v1_2_0.events.discovery.enums.USER_INVENTORY_SEVERITY_ID severity_id = 13; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.Metadata metadata = 14; // Caption: Metadata;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 15; // Caption: Enrichments;
+	string status_detail = 16; // Caption: Status Details;
+	ocsf.v1_2_0.events.discovery.enums.USER_INVENTORY_STATUS_ID status_id = 17; // Caption: Status ID;
+	string raw_data = 18; // Caption: Raw Data;
+	ocsf.v1_2_0.objects.User user = 19; // Caption: User;
+	ocsf.v1_2_0.objects.Cloud cloud = 20; // Profile: cloud; Caption: Cloud;
+	int64 start_time = 21; // Caption: Start Time;
+	string category_name = 22; // Caption: Category;
+	ocsf.v1_2_0.objects.Api api = 23; // Caption: API Details; Profile: cloud;
+	string message = 24; // Caption: Message;
+	string status_code = 25; // Caption: Status Code;
+	string type_name = 26; // Caption: Type Name;
+	int32 timezone_offset = 27; // Caption: Timezone Offset;
+	ocsf.v1_2_0.events.discovery.enums.USER_INVENTORY_ACTIVITY_ID activity_id = 28; // Caption: Activity ID;
+	string activity_name = 29; // Caption: Activity;
+	ocsf.v1_2_0.objects.Object unmapped = 30; // Caption: Unmapped Data;
+}
+
+// Event: discovery
+// Event UID: 2
+// URL: https://schema.ocsf.io/1.2.0/classes/config_state
+message ConfigState {
+	int64 start_time = 1; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.CONFIG_STATE_STATUS_ID status_id = 2; // Caption: Status ID;
+	string severity = 3; // Caption: Severity;
+	ocsf.v1_2_0.objects.Object unmapped = 4; // Caption: Unmapped Data;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 5; // Caption: Enrichments;
+	ocsf.v1_2_0.events.discovery.enums.CONFIG_STATE_CATEGORY_UID category_uid = 6; // Caption: Category ID;
+	int32 timezone_offset = 7; // Caption: Timezone Offset;
+	string class_name = 8; // Caption: Class;
+	string status = 9; // Caption: Status;
+	repeated ocsf.v1_2_0.objects.Observable observables = 10; // Caption: Observables;
+	string raw_data = 11; // Caption: Raw Data;
+	string type_name = 12; // Caption: Type Name;
+	int64 time = 13; // Caption: Event Time;
+	int32 count = 14; // Caption: Count;
+	ocsf.v1_2_0.objects.Metadata metadata = 15; // Caption: Metadata;
+	string status_detail = 16; // Caption: Status Details;
+	string category_name = 17; // Caption: Category;
+	ocsf.v1_2_0.events.discovery.enums.CONFIG_STATE_ACTIVITY_ID activity_id = 18; // Caption: Activity ID;
+	ocsf.v1_2_0.events.discovery.enums.CONFIG_STATE_SEVERITY_ID severity_id = 19; // Caption: Severity ID;
+	string status_code = 20; // Caption: Status Code;
+	int32 duration = 21; // Caption: Duration;
+	ocsf.v1_2_0.objects.Actor actor = 22; // Caption: Actor;
+	ocsf.v1_2_0.objects.Cloud cloud = 23; // Caption: Cloud; Profile: cloud;
+	string activity_name = 24; // Caption: Activity;
+	string message = 25; // Caption: Message;
+	ocsf.v1_2_0.events.discovery.enums.CONFIG_STATE_TYPE_UID type_uid = 26; // Caption: Type ID;
+	ocsf.v1_2_0.objects.CisBenchmarkResult cis_benchmark_result = 27; // Caption: CIS Benchmark Result;
+	ocsf.v1_2_0.objects.Api api = 28; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.events.discovery.enums.CONFIG_STATE_CLASS_UID class_uid = 29; // Caption: Class ID;
+	ocsf.v1_2_0.objects.Device device = 30; // Caption: Device;
+	int64 end_time = 31; // Caption: End Time;
+}
+
+// URL: https://schema.ocsf.io/1.2.0/classes/kernel_object_query
+// Event: discovery
+// Event UID: 6
+message KernelObjectQuery {
+	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_SEVERITY_ID severity_id = 1; // Caption: Severity ID;
+	string status_code = 2; // Caption: Status Code;
+	ocsf.v1_2_0.objects.Object unmapped = 3; // Caption: Unmapped Data;
+	string severity = 4; // Caption: Severity;
+	ocsf.v1_2_0.objects.Device device = 5; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_ACTIVITY_ID activity_id = 6; // Caption: Activity ID;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 7; // Caption: Enrichments;
+	int64 start_time = 8; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_CLASS_UID class_uid = 9; // Caption: Class ID;
+	string status = 10; // Caption: Status;
+	string message = 11; // Caption: Message;
+	string raw_data = 12; // Caption: Raw Data;
+	int64 end_time = 13; // Caption: End Time;
+	int32 count = 14; // Caption: Count;
+	string category_name = 15; // Caption: Category;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 16; // Caption: Query Info;
+	ocsf.v1_2_0.objects.Actor actor = 17; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_STATUS_ID status_id = 18; // Caption: Status ID;
+	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_CATEGORY_UID category_uid = 19; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Metadata metadata = 20; // Caption: Metadata;
+	string activity_name = 21; // Caption: Activity;
+	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_QUERY_RESULT_ID query_result_id = 22; // Caption: Query Result ID;
+	int32 duration = 23; // Caption: Duration;
+	string status_detail = 24; // Caption: Status Details;
+	string query_result = 25; // Caption: Query Result;
+	repeated ocsf.v1_2_0.objects.Observable observables = 26; // Caption: Observables;
+	string class_name = 27; // Caption: Class;
+	ocsf.v1_2_0.objects.Kernel kernel = 28; // Caption: Kernel;
+	ocsf.v1_2_0.objects.Cloud cloud = 29; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_TYPE_UID type_uid = 30; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Api api = 31; // Caption: API Details; Profile: cloud;
+	int64 time = 32; // Caption: Event Time;
+	string type_name = 33; // Caption: Type Name;
+	int32 timezone_offset = 34; // Caption: Timezone Offset;
+}
+
+// Event: discovery
+// Event UID: 7
+// URL: https://schema.ocsf.io/1.2.0/classes/file_query
+message FileQuery {
+	int64 time = 1; // Caption: Event Time;
+	string raw_data = 2; // Caption: Raw Data;
+	repeated ocsf.v1_2_0.objects.Observable observables = 3; // Caption: Observables;
+	ocsf.v1_2_0.objects.File file = 4; // Caption: File;
+	ocsf.v1_2_0.objects.Api api = 5; // Profile: cloud; Caption: API Details;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 6; // Caption: Query Info;
+	ocsf.v1_2_0.events.discovery.enums.FILE_QUERY_STATUS_ID status_id = 7; // Caption: Status ID;
+	ocsf.v1_2_0.objects.Metadata metadata = 8; // Caption: Metadata;
+	ocsf.v1_2_0.objects.Object unmapped = 9; // Caption: Unmapped Data;
+	string query_result = 10; // Caption: Query Result;
+	string status = 11; // Caption: Status;
+	string type_name = 12; // Caption: Type Name;
+	ocsf.v1_2_0.events.discovery.enums.FILE_QUERY_TYPE_UID type_uid = 13; // Caption: Type ID;
+	string class_name = 14; // Caption: Class;
+	ocsf.v1_2_0.objects.Device device = 15; // Caption: Device; Profile: host;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 16; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.Actor actor = 17; // Caption: Actor; Profile: host;
+	string status_detail = 18; // Caption: Status Details;
+	int32 timezone_offset = 19; // Caption: Timezone Offset;
+	ocsf.v1_2_0.events.discovery.enums.FILE_QUERY_QUERY_RESULT_ID query_result_id = 20; // Caption: Query Result ID;
+	string activity_name = 21; // Caption: Activity;
+	int64 end_time = 22; // Caption: End Time;
+	int32 count = 23; // Caption: Count;
+	string severity = 24; // Caption: Severity;
+	ocsf.v1_2_0.events.discovery.enums.FILE_QUERY_ACTIVITY_ID activity_id = 25; // Caption: Activity ID;
+	string status_code = 26; // Caption: Status Code;
+	ocsf.v1_2_0.objects.Cloud cloud = 27; // Caption: Cloud; Profile: cloud;
+	string category_name = 28; // Caption: Category;
+	ocsf.v1_2_0.events.discovery.enums.FILE_QUERY_CLASS_UID class_uid = 29; // Caption: Class ID;
+	ocsf.v1_2_0.events.discovery.enums.FILE_QUERY_CATEGORY_UID category_uid = 30; // Caption: Category ID;
+	string message = 31; // Caption: Message;
+	ocsf.v1_2_0.events.discovery.enums.FILE_QUERY_SEVERITY_ID severity_id = 32; // Caption: Severity ID;
+	int64 start_time = 33; // Caption: Start Time;
+	int32 duration = 34; // Caption: Duration;
+}
+
+// Event UID: 16
+// URL: https://schema.ocsf.io/1.2.0/classes/service_query
+// Event: discovery
+message ServiceQuery {
+	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_TYPE_UID type_uid = 1; // Caption: Type ID;
+	string status = 2; // Caption: Status;
+	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_CLASS_UID class_uid = 3; // Caption: Class ID;
+	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_STATUS_ID status_id = 4; // Caption: Status ID;
+	repeated ocsf.v1_2_0.objects.Observable observables = 5; // Caption: Observables;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 6; // Caption: Query Info;
+	string activity_name = 7; // Caption: Activity;
+	int32 count = 8; // Caption: Count;
+	int32 duration = 9; // Caption: Duration;
+	string severity = 10; // Caption: Severity;
+	int64 time = 11; // Caption: Event Time;
+	string query_result = 12; // Caption: Query Result;
+	ocsf.v1_2_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	int64 end_time = 14; // Caption: End Time;
+	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_CATEGORY_UID category_uid = 15; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Object unmapped = 16; // Caption: Unmapped Data;
+	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_QUERY_RESULT_ID query_result_id = 17; // Caption: Query Result ID;
+	ocsf.v1_2_0.objects.Device device = 18; // Caption: Device; Profile: host;
+	string status_detail = 19; // Caption: Status Details;
+	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_ACTIVITY_ID activity_id = 20; // Caption: Activity ID;
+	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_SEVERITY_ID severity_id = 21; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.Actor actor = 22; // Caption: Actor; Profile: host;
+	string status_code = 23; // Caption: Status Code;
+	ocsf.v1_2_0.objects.Metadata metadata = 24; // Caption: Metadata;
+	string category_name = 25; // Caption: Category;
+	int32 timezone_offset = 26; // Caption: Timezone Offset;
+	string class_name = 27; // Caption: Class;
+	string raw_data = 28; // Caption: Raw Data;
+	string message = 29; // Caption: Message;
+	string type_name = 30; // Caption: Type Name;
+	ocsf.v1_2_0.objects.Service service = 31; // Caption: Service;
+	ocsf.v1_2_0.objects.Api api = 32; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 33; // Caption: Enrichments;
+	int64 start_time = 34; // Caption: Start Time;
+}
+
+// Event: discovery
+// Event UID: 13
+// URL: https://schema.ocsf.io/1.2.0/classes/networks_query
+message NetworksQuery {
+	string class_name = 1; // Caption: Class;
+	ocsf.v1_2_0.objects.Object unmapped = 2; // Caption: Unmapped Data;
+	ocsf.v1_2_0.objects.Device device = 3; // Caption: Device; Profile: host;
+	string type_name = 4; // Caption: Type Name;
+	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_ACTIVITY_ID activity_id = 5; // Caption: Activity ID;
+	ocsf.v1_2_0.objects.Actor actor = 6; // Caption: Actor; Profile: host;
+	string raw_data = 7; // Caption: Raw Data;
+	repeated ocsf.v1_2_0.objects.NetworkInterface network_interfaces = 8; // Caption: Network Interfaces;
+	ocsf.v1_2_0.objects.Metadata metadata = 9; // Caption: Metadata;
+	string category_name = 10; // Caption: Category;
+	string severity = 11; // Caption: Severity;
+	string status = 12; // Caption: Status;
+	int64 end_time = 13; // Caption: End Time;
+	ocsf.v1_2_0.objects.Api api = 14; // Profile: cloud; Caption: API Details;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 15; // Caption: Query Info;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 16; // Caption: Enrichments;
+	string status_detail = 17; // Caption: Status Details;
+	int32 duration = 18; // Caption: Duration;
+	string activity_name = 19; // Caption: Activity;
+	string query_result = 20; // Caption: Query Result;
+	ocsf.v1_2_0.objects.Cloud cloud = 21; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_CATEGORY_UID category_uid = 22; // Caption: Category ID;
+	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_QUERY_RESULT_ID query_result_id = 23; // Caption: Query Result ID;
+	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_SEVERITY_ID severity_id = 24; // Caption: Severity ID;
+	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_STATUS_ID status_id = 25; // Caption: Status ID;
+	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_TYPE_UID type_uid = 26; // Caption: Type ID;
+	int32 timezone_offset = 27; // Caption: Timezone Offset;
+	int64 time = 28; // Caption: Event Time;
+	string status_code = 29; // Caption: Status Code;
+	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_CLASS_UID class_uid = 30; // Caption: Class ID;
+	int32 count = 31; // Caption: Count;
+	string message = 32; // Caption: Message;
+	repeated ocsf.v1_2_0.objects.Observable observables = 33; // Caption: Observables;
+	int64 start_time = 34; // Caption: Start Time;
+}
+
+// Event: discovery
+// Event UID: 0
+// URL: https://schema.ocsf.io/1.2.0/classes/discovery
+message Discovery {
+	string message = 1; // Caption: Message;
+	repeated ocsf.v1_2_0.objects.Observable observables = 2; // Caption: Observables;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_STATUS_ID status_id = 3; // Caption: Status ID;
+	string severity = 4; // Caption: Severity;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_TYPE_UID type_uid = 5; // Caption: Type ID;
+	string activity_name = 6; // Caption: Activity;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_ACTIVITY_ID activity_id = 7; // Caption: Activity ID;
+	string class_name = 8; // Caption: Class;
+	ocsf.v1_2_0.objects.Object unmapped = 9; // Caption: Unmapped Data;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_SEVERITY_ID severity_id = 10; // Caption: Severity ID;
+	string status_code = 11; // Caption: Status Code;
+	string raw_data = 12; // Caption: Raw Data;
+	int32 duration = 13; // Caption: Duration;
+	ocsf.v1_2_0.objects.Metadata metadata = 14; // Caption: Metadata;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_CLASS_UID class_uid = 15; // Caption: Class ID;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 16; // Caption: Enrichments;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_CATEGORY_UID category_uid = 17; // Caption: Category ID;
+	string status_detail = 18; // Caption: Status Details;
+	int32 timezone_offset = 19; // Caption: Timezone Offset;
+	ocsf.v1_2_0.objects.Cloud cloud = 20; // Caption: Cloud; Profile: cloud;
+	string type_name = 21; // Caption: Type Name;
+	int64 time = 22; // Caption: Event Time;
+	int64 start_time = 23; // Caption: Start Time;
+	string status = 24; // Caption: Status;
+	ocsf.v1_2_0.objects.Api api = 25; // Caption: API Details; Profile: cloud;
+	int64 end_time = 26; // Caption: End Time;
+	string category_name = 27; // Caption: Category;
+	int32 count = 28; // Caption: Count;
+}
+
+// Event: discovery
+// Event UID: 14
+// URL: https://schema.ocsf.io/1.2.0/classes/peripheral_device_query
+message PeripheralDeviceQuery {
+	repeated ocsf.v1_2_0.objects.Observable observables = 1; // Caption: Observables;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 2; // Caption: Enrichments;
+	string query_result = 3; // Caption: Query Result;
+	ocsf.v1_2_0.objects.Metadata metadata = 4; // Caption: Metadata;
+	int32 timezone_offset = 5; // Caption: Timezone Offset;
+	ocsf.v1_2_0.objects.Device device = 6; // Caption: Device; Profile: host;
+	string status_code = 7; // Caption: Status Code;
+	ocsf.v1_2_0.objects.Cloud cloud = 8; // Caption: Cloud; Profile: cloud;
+	string severity = 9; // Caption: Severity;
+	string class_name = 10; // Caption: Class;
+	string activity_name = 11; // Caption: Activity;
+	ocsf.v1_2_0.objects.Actor actor = 12; // Profile: host; Caption: Actor;
+	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_STATUS_ID status_id = 13; // Caption: Status ID;
+	string status = 14; // Caption: Status;
+	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_CLASS_UID class_uid = 15; // Caption: Class ID;
+	int32 duration = 16; // Caption: Duration;
+	string category_name = 17; // Caption: Category;
+	ocsf.v1_2_0.objects.PeripheralDevice peripheral_device = 18; // Caption: Peripheral Device;
+	string type_name = 19; // Caption: Type Name;
+	int64 end_time = 20; // Caption: End Time;
+	int64 time = 21; // Caption: Event Time;
+	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_SEVERITY_ID severity_id = 22; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 23; // Caption: Query Info;
+	string status_detail = 24; // Caption: Status Details;
+	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_CATEGORY_UID category_uid = 25; // Caption: Category ID;
+	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_TYPE_UID type_uid = 26; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Api api = 27; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.Object unmapped = 28; // Caption: Unmapped Data;
+	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_QUERY_RESULT_ID query_result_id = 29; // Caption: Query Result ID;
+	string raw_data = 30; // Caption: Raw Data;
+	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_ACTIVITY_ID activity_id = 31; // Caption: Activity ID;
+	int64 start_time = 32; // Caption: Start Time;
+	int32 count = 33; // Caption: Count;
+	string message = 34; // Caption: Message;
+}
+
+// Event: discovery
+// Event UID: 4
+// URL: https://schema.ocsf.io/1.2.0/classes/patch_state
+message PatchState {
+	string message = 1; // Caption: Message;
+	string type_name = 2; // Caption: Type Name;
+	ocsf.v1_2_0.objects.Cloud cloud = 3; // Caption: Cloud; Profile: cloud;
+	int64 end_time = 4; // Caption: End Time;
+	int32 duration = 5; // Caption: Duration;
+	int32 timezone_offset = 6; // Caption: Timezone Offset;
+	string status_code = 7; // Caption: Status Code;
+	ocsf.v1_2_0.objects.Device device = 8; // Caption: Device;
+	repeated ocsf.v1_2_0.objects.KbArticle kb_article_list = 9; // Caption: Knowledgebase Articles;
+	string class_name = 10; // Caption: Class;
+	int32 count = 11; // Caption: Count;
+	ocsf.v1_2_0.events.discovery.enums.PATCH_STATE_TYPE_UID type_uid = 12; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Object unmapped = 13; // Caption: Unmapped Data;
+	ocsf.v1_2_0.events.discovery.enums.PATCH_STATE_SEVERITY_ID severity_id = 14; // Caption: Severity ID;
+	int64 start_time = 15; // Caption: Start Time;
+	int64 time = 16; // Caption: Event Time;
+	string status = 17; // Caption: Status;
+	string category_name = 18; // Caption: Category;
+	string severity = 19; // Caption: Severity;
+	string raw_data = 20; // Caption: Raw Data;
+	ocsf.v1_2_0.objects.Metadata metadata = 21; // Caption: Metadata;
+	ocsf.v1_2_0.objects.Api api = 22; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_2_0.objects.Observable observables = 23; // Caption: Observables;
+	ocsf.v1_2_0.events.discovery.enums.PATCH_STATE_STATUS_ID status_id = 24; // Caption: Status ID;
+	ocsf.v1_2_0.events.discovery.enums.PATCH_STATE_CLASS_UID class_uid = 25; // Caption: Class ID;
+	ocsf.v1_2_0.events.discovery.enums.PATCH_STATE_CATEGORY_UID category_uid = 26; // Caption: Category ID;
+	string status_detail = 27; // Caption: Status Details;
+	ocsf.v1_2_0.events.discovery.enums.PATCH_STATE_ACTIVITY_ID activity_id = 28; // Caption: Activity ID;
+	string activity_name = 29; // Caption: Activity;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 30; // Caption: Enrichments;
+}
+
+// Event: discovery
+// Event UID: 1
+// URL: https://schema.ocsf.io/1.2.0/classes/inventory_info
+message InventoryInfo {
+	ocsf.v1_2_0.objects.Api api = 1; // Profile: cloud; Caption: API Details;
+	string activity_name = 2; // Caption: Activity;
+	ocsf.v1_2_0.objects.Object unmapped = 3; // Caption: Unmapped Data;
+	string status_code = 4; // Caption: Status Code;
+	int32 count = 5; // Caption: Count;
+	ocsf.v1_2_0.events.discovery.enums.INVENTORY_INFO_CLASS_UID class_uid = 6; // Caption: Class ID;
+	ocsf.v1_2_0.events.discovery.enums.INVENTORY_INFO_CATEGORY_UID category_uid = 7; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Device device = 8; // Caption: Device;
+	ocsf.v1_2_0.events.discovery.enums.INVENTORY_INFO_STATUS_ID status_id = 9; // Caption: Status ID;
+	string severity = 10; // Caption: Severity;
+	string status_detail = 11; // Caption: Status Details;
+	int64 start_time = 12; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.INVENTORY_INFO_TYPE_UID type_uid = 13; // Caption: Type ID;
+	string class_name = 14; // Caption: Class;
+	ocsf.v1_2_0.objects.Metadata metadata = 15; // Caption: Metadata;
+	ocsf.v1_2_0.events.discovery.enums.INVENTORY_INFO_ACTIVITY_ID activity_id = 16; // Caption: Activity ID;
+	string raw_data = 17; // Caption: Raw Data;
+	int64 time = 18; // Caption: Event Time;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 19; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.Cloud cloud = 20; // Profile: cloud; Caption: Cloud;
+	string status = 21; // Caption: Status;
+	int64 end_time = 22; // Caption: End Time;
+	string type_name = 23; // Caption: Type Name;
+	int32 timezone_offset = 24; // Caption: Timezone Offset;
+	string category_name = 25; // Caption: Category;
+	repeated ocsf.v1_2_0.objects.Observable observables = 26; // Caption: Observables;
+	ocsf.v1_2_0.events.discovery.enums.INVENTORY_INFO_SEVERITY_ID severity_id = 27; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.Actor actor = 28; // Caption: Actor;
+	string message = 29; // Caption: Message;
+	int32 duration = 30; // Caption: Duration;
+}
+
+// Event: discovery
+// Event UID: 10
+// URL: https://schema.ocsf.io/1.2.0/classes/job_query
+message JobQuery {
+	ocsf.v1_2_0.objects.Object unmapped = 1; // Caption: Unmapped Data;
+	int64 time = 2; // Caption: Event Time;
+	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_TYPE_UID type_uid = 3; // Caption: Type ID;
+	string activity_name = 4; // Caption: Activity;
+	int64 start_time = 5; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
+	string message = 7; // Caption: Message;
+	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_QUERY_RESULT_ID query_result_id = 8; // Caption: Query Result ID;
+	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_STATUS_ID status_id = 9; // Caption: Status ID;
+	string status = 10; // Caption: Status;
+	string severity = 11; // Caption: Severity;
+	repeated ocsf.v1_2_0.objects.Observable observables = 12; // Caption: Observables;
+	string class_name = 13; // Caption: Class;
+	ocsf.v1_2_0.objects.Cloud cloud = 14; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_CLASS_UID class_uid = 15; // Caption: Class ID;
+	ocsf.v1_2_0.objects.Metadata metadata = 16; // Caption: Metadata;
+	string category_name = 17; // Caption: Category;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 18; // Caption: Query Info;
+	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_ACTIVITY_ID activity_id = 19; // Caption: Activity ID;
+	int32 count = 20; // Caption: Count;
+	ocsf.v1_2_0.objects.Job job = 21; // Caption: Job;
+	int32 timezone_offset = 22; // Caption: Timezone Offset;
+	ocsf.v1_2_0.objects.Api api = 23; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 24; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.Actor actor = 25; // Caption: Actor; Profile: host;
+	string raw_data = 26; // Caption: Raw Data;
+	int32 duration = 27; // Caption: Duration;
+	string status_code = 28; // Caption: Status Code;
+	string type_name = 29; // Caption: Type Name;
+	int64 end_time = 30; // Caption: End Time;
+	ocsf.v1_2_0.objects.Device device = 31; // Caption: Device; Profile: host;
+	string status_detail = 32; // Caption: Status Details;
+	string query_result = 33; // Caption: Query Result;
+	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_SEVERITY_ID severity_id = 34; // Caption: Severity ID;
+}
+
+// Event: discovery
+// Event UID: 11
+// URL: https://schema.ocsf.io/1.2.0/classes/module_query
+message ModuleQuery {
+	string type_name = 1; // Caption: Type Name;
+	string status_code = 2; // Caption: Status Code;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 3; // Caption: Query Info;
+	ocsf.v1_2_0.events.discovery.enums.MODULE_QUERY_SEVERITY_ID severity_id = 4; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.Module module = 5; // Caption: Module;
+	int32 duration = 6; // Caption: Duration;
+	ocsf.v1_2_0.objects.Metadata metadata = 7; // Caption: Metadata;
+	ocsf.v1_2_0.objects.Object unmapped = 8; // Caption: Unmapped Data;
+	string query_result = 9; // Caption: Query Result;
+	ocsf.v1_2_0.events.discovery.enums.MODULE_QUERY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
+	int32 count = 11; // Caption: Count;
+	repeated ocsf.v1_2_0.objects.Observable observables = 12; // Caption: Observables;
+	int32 timezone_offset = 13; // Caption: Timezone Offset;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 14; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.Actor actor = 15; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.objects.Process process = 16; // Caption: Process;
+	ocsf.v1_2_0.events.discovery.enums.MODULE_QUERY_TYPE_UID type_uid = 17; // Caption: Type ID;
+	ocsf.v1_2_0.events.discovery.enums.MODULE_QUERY_STATUS_ID status_id = 18; // Caption: Status ID;
+	ocsf.v1_2_0.events.discovery.enums.MODULE_QUERY_QUERY_RESULT_ID query_result_id = 19; // Caption: Query Result ID;
+	ocsf.v1_2_0.objects.Device device = 20; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.MODULE_QUERY_ACTIVITY_ID activity_id = 21; // Caption: Activity ID;
+	string status = 22; // Caption: Status;
+	string raw_data = 23; // Caption: Raw Data;
+	int64 start_time = 24; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.MODULE_QUERY_CLASS_UID class_uid = 25; // Caption: Class ID;
+	string message = 26; // Caption: Message;
+	ocsf.v1_2_0.objects.Api api = 27; // Profile: cloud; Caption: API Details;
+	string severity = 28; // Caption: Severity;
+	string class_name = 29; // Caption: Class;
+	string status_detail = 30; // Caption: Status Details;
+	ocsf.v1_2_0.objects.Cloud cloud = 31; // Caption: Cloud; Profile: cloud;
+	int64 end_time = 32; // Caption: End Time;
+	string category_name = 33; // Caption: Category;
+	string activity_name = 34; // Caption: Activity;
+	int64 time = 35; // Caption: Event Time;
+}
+
+// Event: discovery
+// Event UID: 0
+// URL: https://schema.ocsf.io/1.2.0/classes/discovery_result
+message DiscoveryResult {
+	string status = 1; // Caption: Status;
+	string raw_data = 2; // Caption: Raw Data;
+	int64 start_time = 3; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_CLASS_UID class_uid = 4; // Caption: Class ID;
+	string query_result = 5; // Caption: Query Result;
+	ocsf.v1_2_0.objects.Cloud cloud = 6; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_CATEGORY_UID category_uid = 7; // Caption: Category ID;
+	string type_name = 8; // Caption: Type Name;
+	int64 end_time = 9; // Caption: End Time;
+	int32 count = 10; // Caption: Count;
+	string message = 11; // Caption: Message;
+	repeated ocsf.v1_2_0.objects.Observable observables = 12; // Caption: Observables;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_TYPE_UID type_uid = 13; // Caption: Type ID;
+	string category_name = 14; // Caption: Category;
+	int32 duration = 15; // Caption: Duration;
+	ocsf.v1_2_0.objects.Metadata metadata = 16; // Caption: Metadata;
+	string severity = 17; // Caption: Severity;
+	string class_name = 18; // Caption: Class;
+	ocsf.v1_2_0.objects.Object unmapped = 19; // Caption: Unmapped Data;
+	int32 timezone_offset = 20; // Caption: Timezone Offset;
+	ocsf.v1_2_0.objects.Api api = 21; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 22; // Caption: Query Info;
+	string activity_name = 23; // Caption: Activity;
+	int64 time = 24; // Caption: Event Time;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_QUERY_RESULT_ID query_result_id = 25; // Caption: Query Result ID;
+	ocsf.v1_2_0.objects.Device device = 26; // Caption: Device; Profile: host;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 27; // Caption: Enrichments;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_ACTIVITY_ID activity_id = 28; // Caption: Activity ID;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_SEVERITY_ID severity_id = 29; // Caption: Severity ID;
+	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_STATUS_ID status_id = 30; // Caption: Status ID;
+	string status_detail = 31; // Caption: Status Details;
+	ocsf.v1_2_0.objects.Actor actor = 32; // Caption: Actor; Profile: host;
+	string status_code = 33; // Caption: Status Code;
+}
+
+// Event: discovery
+// Event UID: 15
+// URL: https://schema.ocsf.io/1.2.0/classes/process_query
+message ProcessQuery {
+	int64 end_time = 1; // Caption: End Time;
+	string message = 2; // Caption: Message;
+	int32 timezone_offset = 3; // Caption: Timezone Offset;
+	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_STATUS_ID status_id = 4; // Caption: Status ID;
+	ocsf.v1_2_0.objects.Cloud cloud = 5; // Caption: Cloud; Profile: cloud;
+	repeated ocsf.v1_2_0.objects.Observable observables = 6; // Caption: Observables;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 7; // Caption: Query Info;
+	int64 time = 8; // Caption: Event Time;
+	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_ACTIVITY_ID activity_id = 9; // Caption: Activity ID;
+	string query_result = 10; // Caption: Query Result;
+	int64 start_time = 11; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_CLASS_UID class_uid = 12; // Caption: Class ID;
+	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_CATEGORY_UID category_uid = 13; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Object unmapped = 14; // Caption: Unmapped Data;
+	ocsf.v1_2_0.objects.Actor actor = 15; // Caption: Actor; Profile: host;
+	string status = 16; // Caption: Status;
+	int32 count = 17; // Caption: Count;
+	ocsf.v1_2_0.objects.Api api = 18; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.Device device = 19; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_SEVERITY_ID severity_id = 20; // Caption: Severity ID;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 21; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.Process process = 22; // Caption: Process;
+	ocsf.v1_2_0.objects.Metadata metadata = 23; // Caption: Metadata;
+	string category_name = 24; // Caption: Category;
+	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_QUERY_RESULT_ID query_result_id = 25; // Caption: Query Result ID;
+	string activity_name = 26; // Caption: Activity;
+	string status_code = 27; // Caption: Status Code;
+	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_TYPE_UID type_uid = 28; // Caption: Type ID;
+	string status_detail = 29; // Caption: Status Details;
+	string type_name = 30; // Caption: Type Name;
+	int32 duration = 31; // Caption: Duration;
+	string severity = 32; // Caption: Severity;
+	string class_name = 33; // Caption: Class;
+	string raw_data = 34; // Caption: Raw Data;
+}
+
+// Event: discovery
+// Event UID: 5
+// URL: https://schema.ocsf.io/1.2.0/classes/registry_value_query
+message RegistryValueQuery {
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_CATEGORY_UID category_uid = 1; // Caption: Category ID;
+	int32 count = 2; // Caption: Count;
+	string status_detail = 3; // Caption: Status Details;
+	ocsf.v1_2_0.objects.Cloud cloud = 4; // Caption: Cloud; Profile: cloud;
+	string message = 5; // Caption: Message;
+	int32 duration = 6; // Caption: Duration;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_QUERY_RESULT_ID query_result_id = 7; // Caption: Query Result ID;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_STATUS_ID status_id = 8; // Caption: Status ID;
+	repeated ocsf.v1_2_0.objects.Observable observables = 9; // Caption: Observables;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_TYPE_UID type_uid = 10; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Object unmapped = 11; // Caption: Unmapped Data;
+	ocsf.v1_2_0.objects.Api api = 12; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.RegValue reg_value = 13; // Caption: Registry Value;
+	ocsf.v1_2_0.objects.Actor actor = 14; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.objects.Metadata metadata = 15; // Caption: Metadata;
+	string severity = 16; // Caption: Severity;
+	int32 timezone_offset = 17; // Caption: Timezone Offset;
+	int64 end_time = 18; // Caption: End Time;
+	string activity_name = 19; // Caption: Activity;
+	ocsf.v1_2_0.objects.Device device = 20; // Caption: Device; Profile: host;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 21; // Caption: Enrichments;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_ACTIVITY_ID activity_id = 22; // Caption: Activity ID;
+	string query_result = 23; // Caption: Query Result;
+	string class_name = 24; // Caption: Class;
+	ocsf.v1_2_0.objects.QueryInfo query_info = 25; // Caption: Query Info;
+	string category_name = 26; // Caption: Category;
+	int64 time = 27; // Caption: Event Time;
+	string status_code = 28; // Caption: Status Code;
+	string status = 29; // Caption: Status;
+	int64 start_time = 30; // Caption: Start Time;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_CLASS_UID class_uid = 31; // Caption: Class ID;
+	string type_name = 32; // Caption: Type Name;
+	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_SEVERITY_ID severity_id = 33; // Caption: Severity ID;
+	string raw_data = 34; // Caption: Raw Data;
+}

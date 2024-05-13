@@ -1,0 +1,73 @@
+{
+  "application": [
+    "web_resource_access_activity",
+    "application_lifecycle",
+    "datastore_activity",
+    "application",
+    "file_hosting",
+    "web_resources_activity",
+    "api_activity",
+    "scan_activity"
+  ],
+  "discovery": [
+    "discovery_result",
+    "inventory_info",
+    "prefetch_info",
+    "discovery",
+    "registry_value_info",
+    "device_config_state_change",
+    "registry_key_info",
+    "patch_state",
+    "user_inventory",
+    "config_state"
+  ],
+  "findings": [
+    "compliance_finding",
+    "finding",
+    "vulnerability_finding",
+    "incident_finding",
+    "security_finding",
+    "detection_finding"
+  ],
+  "iam": [
+    "account_change",
+    "iam",
+    "user_access",
+    "authorize_session",
+    "group_management",
+    "authentication",
+    "entity_management"
+  ],
+  "network": [
+    "email_url_activity",
+    "dhcp_activity",
+    "ftp_activity",
+    "dns_activity",
+    "email_file_activity",
+    "network",
+    "network_file_activity",
+    "network_activity",
+    "email_activity",
+    "smb_activity",
+    "http_activity",
+    "ntp_activity",
+    "rdp_activity",
+    "ssh_activity"
+  ],
+  "other": [
+    "base_event"
+  ],
+  "system": [
+    "process_activity",
+    "kernel_extension",
+    "registry_value_activity",
+    "memory_activity",
+    "scheduled_job_activity",
+    "file_activity",
+    "module_activity",
+    "kernel_activity",
+    "system",
+    "registry_key_activity",
+    "resource_activity"
+  ]
+}

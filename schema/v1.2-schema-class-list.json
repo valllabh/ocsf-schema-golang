@@ -1,0 +1,88 @@
+{
+  "application": [
+    "scan_activity",
+    "application",
+    "api_activity",
+    "application_lifecycle",
+    "datastore_activity",
+    "web_resource_access_activity",
+    "web_resources_activity",
+    "file_hosting"
+  ],
+  "discovery": [
+    "user_inventory",
+    "registry_value_query",
+    "kernel_object_query",
+    "user_query",
+    "discovery_result",
+    "patch_state",
+    "device_config_state_change",
+    "session_query",
+    "inventory_info",
+    "network_connection_query",
+    "config_state",
+    "prefetch_query",
+    "file_query",
+    "admin_group_query",
+    "job_query",
+    "module_query",
+    "networks_query",
+    "peripheral_device_query",
+    "process_query",
+    "discovery",
+    "registry_key_query",
+    "folder_query",
+    "service_query"
+  ],
+  "findings": [
+    "data_security_finding",
+    "vulnerability_finding",
+    "incident_finding",
+    "compliance_finding",
+    "finding",
+    "security_finding",
+    "detection_finding"
+  ],
+  "iam": [
+    "authorize_session",
+    "authentication",
+    "user_access",
+    "entity_management",
+    "group_management",
+    "account_change",
+    "iam"
+  ],
+  "network": [
+    "smb_activity",
+    "ntp_activity",
+    "tunnel_activity",
+    "dhcp_activity",
+    "ftp_activity",
+    "email_url_activity",
+    "email_activity",
+    "email_file_activity",
+    "network_activity",
+    "rdp_activity",
+    "ssh_activity",
+    "dns_activity",
+    "network",
+    "network_file_activity",
+    "http_activity"
+  ],
+  "other": [
+    "base_event"
+  ],
+  "system": [
+    "registry_key_activity",
+    "system",
+    "module_activity",
+    "memory_activity",
+    "kernel_extension",
+    "registry_value_activity",
+    "scheduled_job_activity",
+    "resource_activity",
+    "kernel_activity",
+    "process_activity",
+    "file_activity"
+  ]
+}
