@@ -1,0 +1,312 @@
+syntax = "proto3";
+
+package ocsf.v1_2_0.events.iam;
+
+option go_package = "/ocsf/v1_2_0/events/iam";
+
+option java_package = "com.your.project.generated.ocsf.v1_2_0.events.iam";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_2_0/events/iam/enums/enums.proto";
+
+import "ocsf/v1_2_0/objects/objects.proto";
+
+// Event: iam
+// Event UID: 4
+// URL: https://schema.ocsf.io/1.2.0/classes/entity_management
+message EntityManagement {
+	int32 count = 1; // Caption: Count;
+	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_CLASS_UID class_uid = 2; // Caption: Class ID;
+	string category_name = 3; // Caption: Category;
+	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_STATUS_ID status_id = 4; // Caption: Status ID;
+	ocsf.v1_2_0.objects.ManagedEntity entity_result = 5; // Caption: Entity Result;
+	int64 start_time = 6; // Caption: Start Time;
+	string activity_name = 7; // Caption: Activity;
+	string raw_data = 8; // Caption: Raw Data;
+	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_SEVERITY_ID severity_id = 9; // Caption: Severity ID;
+	int32 duration = 10; // Caption: Duration;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 11; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.ManagedEntity entity = 12; // Caption: Entity;
+	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_ACTIVITY_ID activity_id = 13; // Caption: Activity ID;
+	string status_detail = 14; // Caption: Status Details;
+	ocsf.v1_2_0.objects.Device device = 15; // Caption: Device; Profile: host;
+	string type_name = 16; // Caption: Type Name;
+	string status = 17; // Caption: Status;
+	string comment = 18; // Caption: Comment;
+	repeated ocsf.v1_2_0.objects.Observable observables = 19; // Caption: Observables;
+	ocsf.v1_2_0.objects.Api api = 20; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 21; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_TYPE_UID type_uid = 22; // Caption: Type ID;
+	string severity = 23; // Caption: Severity;
+	ocsf.v1_2_0.objects.Actor actor = 24; // Caption: Actor;
+	ocsf.v1_2_0.objects.Metadata metadata = 25; // Caption: Metadata;
+	int32 timezone_offset = 26; // Caption: Timezone Offset;
+	ocsf.v1_2_0.objects.Object unmapped = 27; // Caption: Unmapped Data;
+	string message = 28; // Caption: Message;
+	int64 time = 29; // Caption: Event Time;
+	ocsf.v1_2_0.objects.NetworkEndpoint src_endpoint = 30; // Caption: Source Endpoint;
+	int64 end_time = 31; // Caption: End Time;
+	string class_name = 32; // Caption: Class;
+	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_CATEGORY_UID category_uid = 33; // Caption: Category ID;
+	ocsf.v1_2_0.objects.HttpRequest http_request = 34; // Caption: HTTP Request;
+	string status_code = 35; // Caption: Status Code;
+}
+
+// URL: https://schema.ocsf.io/1.2.0/classes/group_management
+// Event: iam
+// Event UID: 6
+message GroupManagement {
+	ocsf.v1_2_0.objects.User user = 1; // Caption: User;
+	ocsf.v1_2_0.objects.NetworkEndpoint src_endpoint = 2; // Caption: Source Endpoint;
+	int64 end_time = 3; // Caption: End Time;
+	ocsf.v1_2_0.objects.Group group = 4; // Caption: Group;
+	ocsf.v1_2_0.objects.Cloud cloud = 5; // Caption: Cloud; Profile: cloud;
+	string type_name = 6; // Caption: Type Name;
+	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_STATUS_ID status_id = 7; // Caption: Status ID;
+	string status_detail = 8; // Caption: Status Details;
+	string raw_data = 9; // Caption: Raw Data;
+	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_SEVERITY_ID severity_id = 10; // Caption: Severity ID;
+	string class_name = 11; // Caption: Class;
+	ocsf.v1_2_0.objects.Object unmapped = 12; // Caption: Unmapped Data;
+	int32 timezone_offset = 13; // Caption: Timezone Offset;
+	ocsf.v1_2_0.objects.Api api = 14; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.Device device = 15; // Profile: host; Caption: Device;
+	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_CATEGORY_UID category_uid = 16; // Caption: Category ID;
+	repeated string privileges = 17; // Caption: Privileges;
+	string message = 18; // Caption: Message;
+	ocsf.v1_2_0.objects.Metadata metadata = 19; // Caption: Metadata;
+	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_TYPE_UID type_uid = 20; // Caption: Type ID;
+	repeated ocsf.v1_2_0.objects.Observable observables = 21; // Caption: Observables;
+	ocsf.v1_2_0.objects.ResourceDetails resource = 22; // Caption: Resource;
+	ocsf.v1_2_0.objects.Actor actor = 23; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_CLASS_UID class_uid = 24; // Caption: Class ID;
+	string status_code = 25; // Caption: Status Code;
+	string severity = 26; // Caption: Severity;
+	ocsf.v1_2_0.objects.HttpRequest http_request = 27; // Caption: HTTP Request;
+	string status = 28; // Caption: Status;
+	int64 start_time = 29; // Caption: Start Time;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 30; // Caption: Enrichments;
+	int32 count = 31; // Caption: Count;
+	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_ACTIVITY_ID activity_id = 32; // Caption: Activity ID;
+	string activity_name = 33; // Caption: Activity;
+	int64 time = 34; // Caption: Event Time;
+	string category_name = 35; // Caption: Category;
+	int32 duration = 36; // Caption: Duration;
+}
+
+// Event: iam
+// Event UID: 2
+// URL: https://schema.ocsf.io/1.2.0/classes/authentication
+message Authentication {
+	int32 timezone_offset = 1; // Caption: Timezone Offset;
+	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_CLASS_UID class_uid = 2; // Caption: Class ID;
+	int64 time = 3; // Caption: Event Time;
+	ocsf.v1_2_0.objects.Actor actor = 4; // Caption: Actor;
+	string status_detail = 5; // Caption: Status Details;
+	bool is_new_logon = 6; // Caption: New Logon;
+	string status_code = 7; // Caption: Status Code;
+	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_CATEGORY_UID category_uid = 8; // Caption: Category ID;
+	repeated ocsf.v1_2_0.objects.Observable observables = 9; // Caption: Observables;
+	ocsf.v1_2_0.objects.Api api = 10; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.NetworkEndpoint src_endpoint = 11; // Caption: Source Endpoint;
+	bool is_remote = 12; // Caption: Remote;
+	bool is_cleartext = 13; // Caption: Cleartext Credentials;
+	ocsf.v1_2_0.objects.User user = 14; // Caption: User;
+	string auth_protocol = 15; // Caption: Auth Protocol;
+	int32 count = 16; // Caption: Count;
+	ocsf.v1_2_0.objects.Cloud cloud = 17; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.objects.Object unmapped = 18; // Caption: Unmapped Data;
+	string activity_name = 19; // Caption: Activity;
+	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_STATUS_ID status_id = 20; // Caption: Status ID;
+	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_LOGON_TYPE_ID logon_type_id = 21; // Caption: Logon Type ID;
+	bool is_mfa = 22; // Caption: Multi Factor Authentication;
+	repeated ocsf.v1_2_0.objects.AuthFactor auth_factors = 23; // Caption: Authentication Factors;
+	string class_name = 24; // Caption: Class;
+	string severity = 25; // Caption: Severity;
+	ocsf.v1_2_0.objects.HttpRequest http_request = 26; // Caption: HTTP Request;
+	string raw_data = 27; // Caption: Raw Data;
+	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_SEVERITY_ID severity_id = 28; // Caption: Severity ID;
+	ocsf.v1_2_0.objects.Certificate certificate = 29; // Caption: Certificate;
+	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_AUTH_PROTOCOL_ID auth_protocol_id = 30; // Caption: Auth Protocol ID;
+	ocsf.v1_2_0.objects.Metadata metadata = 31; // Caption: Metadata;
+	string category_name = 32; // Caption: Category;
+	ocsf.v1_2_0.objects.Process logon_process = 33; // Caption: Logon Process;
+	ocsf.v1_2_0.objects.Session session = 34; // Caption: Session;
+	int64 start_time = 35; // Caption: Start Time;
+	ocsf.v1_2_0.objects.Device device = 36; // Caption: Device; Profile: host;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 37; // Caption: Enrichments;
+	ocsf.v1_2_0.objects.NetworkEndpoint dst_endpoint = 38; // Caption: Destination Endpoint;
+	string logon_type = 39; // Caption: Logon Type;
+	ocsf.v1_2_0.objects.Service service = 40; // Caption: Service;
+	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_TYPE_UID type_uid = 41; // Caption: Type ID;
+	int64 end_time = 42; // Caption: End Time;
+	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_ACTIVITY_ID activity_id = 43; // Caption: Activity ID;
+	string status = 44; // Caption: Status;
+	string message = 45; // Caption: Message;
+	string type_name = 46; // Caption: Type Name;
+	int32 duration = 47; // Caption: Duration;
+}
+
+// Event: iam
+// Event UID: 5
+// URL: https://schema.ocsf.io/1.2.0/classes/user_access
+message UserAccess {
+	ocsf.v1_2_0.objects.NetworkEndpoint src_endpoint = 1; // Caption: Source Endpoint;
+	int64 end_time = 2; // Caption: End Time;
+	ocsf.v1_2_0.events.iam.enums.USER_ACCESS_SEVERITY_ID severity_id = 3; // Caption: Severity ID;
+	int32 count = 4; // Caption: Count;
+	ocsf.v1_2_0.objects.Metadata metadata = 5; // Caption: Metadata;
+	int32 timezone_offset = 6; // Caption: Timezone Offset;
+	int64 time = 7; // Caption: Event Time;
+	ocsf.v1_2_0.events.iam.enums.USER_ACCESS_CATEGORY_UID category_uid = 8; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Object unmapped = 9; // Caption: Unmapped Data;
+	string status_detail = 10; // Caption: Status Details;
+	ocsf.v1_2_0.objects.User user = 11; // Caption: User;
+	string type_name = 12; // Caption: Type Name;
+	string message = 13; // Caption: Message;
+	string raw_data = 14; // Caption: Raw Data;
+	ocsf.v1_2_0.objects.Api api = 15; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.events.iam.enums.USER_ACCESS_STATUS_ID status_id = 16; // Caption: Status ID;
+	string class_name = 17; // Caption: Class;
+	ocsf.v1_2_0.events.iam.enums.USER_ACCESS_CLASS_UID class_uid = 18; // Caption: Class ID;
+	ocsf.v1_2_0.events.iam.enums.USER_ACCESS_TYPE_UID type_uid = 19; // Caption: Type ID;
+	string status = 20; // Caption: Status;
+	ocsf.v1_2_0.objects.Actor actor = 21; // Caption: Actor; Profile: host;
+	repeated string privileges = 22; // Caption: Privileges;
+	ocsf.v1_2_0.objects.ResourceDetails resource = 23; // Caption: Resource;
+	ocsf.v1_2_0.objects.Device device = 24; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.objects.Cloud cloud = 25; // Caption: Cloud; Profile: cloud;
+	repeated ocsf.v1_2_0.objects.Observable observables = 26; // Caption: Observables;
+	int64 start_time = 27; // Caption: Start Time;
+	ocsf.v1_2_0.objects.HttpRequest http_request = 28; // Caption: HTTP Request;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 29; // Caption: Enrichments;
+	string status_code = 30; // Caption: Status Code;
+	string severity = 31; // Caption: Severity;
+	ocsf.v1_2_0.events.iam.enums.USER_ACCESS_ACTIVITY_ID activity_id = 32; // Caption: Activity ID;
+	string category_name = 33; // Caption: Category;
+	int32 duration = 34; // Caption: Duration;
+	string activity_name = 35; // Caption: Activity;
+}
+
+// Event: iam
+// Event UID: 1
+// URL: https://schema.ocsf.io/1.2.0/classes/account_change
+message AccountChange {
+	ocsf.v1_2_0.objects.HttpRequest http_request = 1; // Caption: HTTP Request;
+	string raw_data = 2; // Caption: Raw Data;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 3; // Caption: Enrichments;
+	string class_name = 4; // Caption: Class;
+	string activity_name = 5; // Caption: Activity;
+	ocsf.v1_2_0.objects.User user_result = 6; // Caption: User Result;
+	ocsf.v1_2_0.objects.Api api = 7; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 8; // Caption: Cloud; Profile: cloud;
+	string category_name = 9; // Caption: Category;
+	ocsf.v1_2_0.events.iam.enums.ACCOUNT_CHANGE_SEVERITY_ID severity_id = 10; // Caption: Severity ID;
+	string severity = 11; // Caption: Severity;
+	ocsf.v1_2_0.events.iam.enums.ACCOUNT_CHANGE_CATEGORY_UID category_uid = 12; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Object unmapped = 13; // Caption: Unmapped Data;
+	string message = 14; // Caption: Message;
+	int64 time = 15; // Caption: Event Time;
+	int64 end_time = 16; // Caption: End Time;
+	ocsf.v1_2_0.events.iam.enums.ACCOUNT_CHANGE_STATUS_ID status_id = 17; // Caption: Status ID;
+	ocsf.v1_2_0.events.iam.enums.ACCOUNT_CHANGE_TYPE_UID type_uid = 18; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Policy policy = 19; // Caption: Policy;
+	ocsf.v1_2_0.objects.Actor actor = 20; // Caption: Actor;
+	ocsf.v1_2_0.events.iam.enums.ACCOUNT_CHANGE_CLASS_UID class_uid = 21; // Caption: Class ID;
+	int32 duration = 22; // Caption: Duration;
+	ocsf.v1_2_0.events.iam.enums.ACCOUNT_CHANGE_ACTIVITY_ID activity_id = 23; // Caption: Activity ID;
+	string status_detail = 24; // Caption: Status Details;
+	string type_name = 25; // Caption: Type Name;
+	string status = 26; // Caption: Status;
+	int32 count = 27; // Caption: Count;
+	repeated ocsf.v1_2_0.objects.Observable observables = 28; // Caption: Observables;
+	ocsf.v1_2_0.objects.User user = 29; // Caption: User;
+	string status_code = 30; // Caption: Status Code;
+	ocsf.v1_2_0.objects.NetworkEndpoint src_endpoint = 31; // Caption: Source Endpoint;
+	ocsf.v1_2_0.objects.Device device = 32; // Caption: Device; Profile: host;
+	int64 start_time = 33; // Caption: Start Time;
+	ocsf.v1_2_0.objects.Metadata metadata = 34; // Caption: Metadata;
+	int32 timezone_offset = 35; // Caption: Timezone Offset;
+}
+
+// Event: iam
+// Event UID: 0
+// URL: https://schema.ocsf.io/1.2.0/classes/iam
+message Iam {
+	string status_detail = 1; // Caption: Status Details;
+	ocsf.v1_2_0.events.iam.enums.IAM_ACTIVITY_ID activity_id = 2; // Caption: Activity ID;
+	string message = 3; // Caption: Message;
+	ocsf.v1_2_0.objects.HttpRequest http_request = 4; // Caption: HTTP Request;
+	ocsf.v1_2_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.events.iam.enums.IAM_CLASS_UID class_uid = 6; // Caption: Class ID;
+	int64 time = 7; // Caption: Event Time;
+	string raw_data = 8; // Caption: Raw Data;
+	ocsf.v1_2_0.objects.Api api = 9; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.NetworkEndpoint src_endpoint = 10; // Caption: Source Endpoint;
+	ocsf.v1_2_0.objects.Device device = 11; // Profile: host; Caption: Device;
+	int64 end_time = 12; // Caption: End Time;
+	ocsf.v1_2_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	string type_name = 14; // Caption: Type Name;
+	string category_name = 15; // Caption: Category;
+	ocsf.v1_2_0.events.iam.enums.IAM_SEVERITY_ID severity_id = 16; // Caption: Severity ID;
+	int32 duration = 17; // Caption: Duration;
+	ocsf.v1_2_0.events.iam.enums.IAM_STATUS_ID status_id = 18; // Caption: Status ID;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 19; // Caption: Enrichments;
+	string class_name = 20; // Caption: Class;
+	string status_code = 21; // Caption: Status Code;
+	string status = 22; // Caption: Status;
+	string severity = 23; // Caption: Severity;
+	ocsf.v1_2_0.events.iam.enums.IAM_TYPE_UID type_uid = 24; // Caption: Type ID;
+	int64 start_time = 25; // Caption: Start Time;
+	ocsf.v1_2_0.events.iam.enums.IAM_CATEGORY_UID category_uid = 26; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Object unmapped = 27; // Caption: Unmapped Data;
+	ocsf.v1_2_0.objects.Metadata metadata = 28; // Caption: Metadata;
+	int32 count = 29; // Caption: Count;
+	repeated ocsf.v1_2_0.objects.Observable observables = 30; // Caption: Observables;
+	string activity_name = 31; // Caption: Activity;
+	int32 timezone_offset = 32; // Caption: Timezone Offset;
+}
+
+// Event UID: 3
+// URL: https://schema.ocsf.io/1.2.0/classes/authorize_session
+// Event: iam
+message AuthorizeSession {
+	int64 end_time = 1; // Caption: End Time;
+	string type_name = 2; // Caption: Type Name;
+	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 3; // Caption: Enrichments;
+	string status_detail = 4; // Caption: Status Details;
+	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_CLASS_UID class_uid = 5; // Caption: Class ID;
+	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_STATUS_ID status_id = 6; // Caption: Status ID;
+	int64 start_time = 7; // Caption: Start Time;
+	ocsf.v1_2_0.objects.HttpRequest http_request = 8; // Caption: HTTP Request;
+	ocsf.v1_2_0.objects.Device device = 9; // Caption: Device; Profile: host;
+	string severity = 10; // Caption: Severity;
+	ocsf.v1_2_0.objects.Session session = 11; // Caption: Session;
+	repeated string privileges = 12; // Caption: Privileges;
+	ocsf.v1_2_0.objects.Object unmapped = 13; // Caption: Unmapped Data;
+	ocsf.v1_2_0.objects.Metadata metadata = 14; // Caption: Metadata;
+	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_TYPE_UID type_uid = 15; // Caption: Type ID;
+	ocsf.v1_2_0.objects.Group group = 16; // Caption: Group;
+	string activity_name = 17; // Caption: Activity;
+	string message = 18; // Caption: Message;
+	ocsf.v1_2_0.objects.Api api = 19; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.NetworkEndpoint src_endpoint = 20; // Caption: Source Endpoint;
+	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_CATEGORY_UID category_uid = 21; // Caption: Category ID;
+	ocsf.v1_2_0.objects.Actor actor = 22; // Caption: Actor; Profile: host;
+	string raw_data = 23; // Caption: Raw Data;
+	string status = 24; // Caption: Status;
+	ocsf.v1_2_0.objects.User user = 25; // Caption: User;
+	ocsf.v1_2_0.objects.Cloud cloud = 26; // Caption: Cloud; Profile: cloud;
+	string category_name = 27; // Caption: Category;
+	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_SEVERITY_ID severity_id = 28; // Caption: Severity ID;
+	string class_name = 29; // Caption: Class;
+	repeated ocsf.v1_2_0.objects.Observable observables = 30; // Caption: Observables;
+	ocsf.v1_2_0.objects.NetworkEndpoint dst_endpoint = 31; // Caption: Destination Endpoint;
+	int32 count = 32; // Caption: Count;
+	int32 timezone_offset = 33; // Caption: Timezone Offset;
+	int64 time = 34; // Caption: Event Time;
+	int32 duration = 35; // Caption: Duration;
+	string status_code = 36; // Caption: Status Code;
+	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_ACTIVITY_ID activity_id = 37; // Caption: Activity ID;
+}

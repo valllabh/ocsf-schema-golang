@@ -1,0 +1,310 @@
+syntax = "proto3";
+
+package ocsf.v1_1_0.events.findings;
+
+option go_package = "/ocsf/v1_1_0/events/findings";
+
+option java_package = "com.your.project.generated.ocsf.v1_1_0.events.findings";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_1_0/objects/objects.proto";
+
+import "ocsf/v1_1_0/events/findings/enums/enums.proto";
+
+// Event UID: 2
+// URL: https://schema.ocsf.io/1.1.0/classes/vulnerability_finding
+// Event: findings
+message VulnerabilityFinding {
+	string status = 1; // Caption: Status;
+	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_CONFIDENCE_ID confidence_id = 2; // Caption: Confidence Id;
+	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_STATUS_ID status_id = 3; // Caption: Status ID;
+	ocsf.v1_1_0.objects.Actor actor = 4; // Caption: Actor; Profile: host;
+	ocsf.v1_1_0.objects.Device device = 5; // Caption: Device; Profile: host;
+	ocsf.v1_1_0.objects.FindingInfo finding_info = 6; // Caption: Finding Information;
+	repeated ocsf.v1_1_0.objects.Observable observables = 7; // Caption: Observables;
+	int64 start_time = 8; // Caption: Start Time;
+	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_CATEGORY_UID category_uid = 9; // Caption: Category ID;
+	ocsf.v1_1_0.objects.ResourceDetails resource = 10; // Caption: Resource;
+	repeated ocsf.v1_1_0.objects.Vulnerability vulnerabilities = 11; // Caption: Vulnerabilities;
+	string severity = 12; // Caption: Severity;
+	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_ACTIVITY_ID activity_id = 13; // Caption: Activity ID;
+	int32 count = 14; // Caption: Count;
+	ocsf.v1_1_0.objects.Object unmapped = 15; // Caption: Unmapped Data;
+	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_TYPE_UID type_uid = 16; // Caption: Type ID;
+	string raw_data = 17; // Caption: Raw Data;
+	int32 duration = 18; // Caption: Duration;
+	string message = 19; // Caption: Message;
+	int32 confidence_score = 20; // Caption: Confidence Score;
+	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_CLASS_UID class_uid = 21; // Caption: Class ID;
+	int32 timezone_offset = 22; // Caption: Timezone Offset;
+	string status_detail = 23; // Caption: Status Details;
+	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 24; // Caption: Enrichments;
+	string class_name = 25; // Caption: Class;
+	string comment = 26; // Caption: Comment;
+	int64 time = 27; // Caption: Event Time;
+	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_SEVERITY_ID severity_id = 28; // Caption: Severity ID;
+	ocsf.v1_1_0.objects.Metadata metadata = 29; // Caption: Metadata;
+	string category_name = 30; // Caption: Category;
+	ocsf.v1_1_0.objects.Cloud cloud = 31; // Caption: Cloud; Profile: cloud;
+	string type_name = 32; // Caption: Type Name;
+	string confidence = 33; // Caption: Confidence;
+	string status_code = 34; // Caption: Status Code;
+	ocsf.v1_1_0.objects.Api api = 35; // Profile: cloud; Caption: API Details;
+	int64 end_time = 36; // Caption: End Time;
+	string activity_name = 37; // Caption: Activity;
+}
+
+// Event UID: 3
+// URL: https://schema.ocsf.io/1.1.0/classes/compliance_finding
+// Event: findings
+message ComplianceFinding {
+	string message = 1; // Caption: Message;
+	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_CLASS_UID class_uid = 2; // Caption: Class ID;
+	int32 confidence_score = 3; // Caption: Confidence Score;
+	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_CONFIDENCE_ID confidence_id = 4; // Caption: Confidence Id;
+	string status = 5; // Caption: Status;
+	string class_name = 6; // Caption: Class;
+	ocsf.v1_1_0.objects.Remediation remediation = 7; // Caption: Remediation Guidance;
+	int64 time = 8; // Caption: Event Time;
+	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_TYPE_UID type_uid = 9; // Caption: Type ID;
+	string type_name = 10; // Caption: Type Name;
+	string status_code = 11; // Caption: Status Code;
+	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_ACTIVITY_ID activity_id = 12; // Caption: Activity ID;
+	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_STATUS_ID status_id = 13; // Caption: Status ID;
+	int32 duration = 14; // Caption: Duration;
+	string severity = 15; // Caption: Severity;
+	string comment = 16; // Caption: Comment;
+	ocsf.v1_1_0.objects.Object unmapped = 17; // Caption: Unmapped Data;
+	string raw_data = 18; // Caption: Raw Data;
+	ocsf.v1_1_0.objects.Metadata metadata = 19; // Caption: Metadata;
+	string category_name = 20; // Caption: Category;
+	ocsf.v1_1_0.objects.ResourceDetails resource = 21; // Caption: Resource;
+	ocsf.v1_1_0.objects.Device device = 22; // Caption: Device; Profile: host;
+	string activity_name = 23; // Caption: Activity;
+	ocsf.v1_1_0.objects.Actor actor = 24; // Caption: Actor; Profile: host;
+	string confidence = 25; // Caption: Confidence;
+	string status_detail = 26; // Caption: Status Details;
+	ocsf.v1_1_0.objects.FindingInfo finding_info = 27; // Caption: Finding Information;
+	repeated ocsf.v1_1_0.objects.Observable observables = 28; // Caption: Observables;
+	ocsf.v1_1_0.objects.Api api = 29; // Caption: API Details; Profile: cloud;
+	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_SEVERITY_ID severity_id = 30; // Caption: Severity ID;
+	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 31; // Caption: Enrichments;
+	ocsf.v1_1_0.objects.Compliance compliance = 32; // Caption: Compliance;
+	int64 end_time = 33; // Caption: End Time;
+	int64 start_time = 34; // Caption: Start Time;
+	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_CATEGORY_UID category_uid = 35; // Caption: Category ID;
+	int32 timezone_offset = 36; // Caption: Timezone Offset;
+	int32 count = 37; // Caption: Count;
+	ocsf.v1_1_0.objects.Cloud cloud = 38; // Caption: Cloud; Profile: cloud;
+}
+
+// Event: findings
+// Event UID: 1
+// URL: https://schema.ocsf.io/1.1.0/classes/security_finding
+message SecurityFinding {
+	repeated ocsf.v1_1_0.objects.CisCsc cis_csc = 1; // Caption: CIS CSC;
+	repeated ocsf.v1_1_0.objects.ResourceDetails resources = 2; // Caption: Resources Array;
+	repeated ocsf.v1_1_0.objects.KillChainPhase kill_chain = 3; // Caption: Kill Chain;
+	string status = 4; // Caption: Status;
+	int64 time = 5; // Caption: Event Time;
+	ocsf.v1_1_0.objects.Analytic analytic = 6; // Caption: Analytic;
+	int32 confidence_score = 7; // Caption: Confidence Score;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_STATE_ID state_id = 8; // Caption: State ID;
+	ocsf.v1_1_0.objects.Object unmapped = 9; // Caption: Unmapped Data;
+	string class_name = 10; // Caption: Class;
+	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 11; // Caption: Enrichments;
+	repeated string nist = 12; // Caption: NIST List;
+	repeated string data_sources = 13; // Caption: Data Sources;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_RISK_LEVEL_ID risk_level_id = 14; // Caption: Risk Level ID;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_ACTIVITY_ID activity_id = 15; // Caption: Activity ID;
+	ocsf.v1_1_0.events.findings.Finding finding = 16; // Caption: Finding;
+	int32 impact_score = 17; // Caption: Impact;
+	string impact = 18; // Caption: Impact;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_IMPACT_ID impact_id = 19; // Caption: Impact ID;
+	string message = 20; // Caption: Message;
+	repeated ocsf.v1_1_0.objects.Observable observables = 21; // Caption: Observables;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_STATUS_ID status_id = 22; // Caption: Status ID;
+	string status_code = 23; // Caption: Status Code;
+	int32 risk_score = 24; // Caption: Risk Score;
+	string risk_level = 25; // Caption: Risk Level;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 26; // Caption: MITRE ATT&CK® Details;
+	ocsf.v1_1_0.objects.Process process = 27; // Caption: Process;
+	ocsf.v1_1_0.objects.Api api = 28; // Caption: API Details; Profile: cloud;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_CLASS_UID class_uid = 29; // Caption: Class ID;
+	string activity_name = 30; // Caption: Activity;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_SEVERITY_ID severity_id = 31; // Caption: Severity ID;
+	ocsf.v1_1_0.objects.Compliance compliance = 32; // Caption: Compliance;
+	string category_name = 33; // Caption: Category;
+	ocsf.v1_1_0.objects.Cloud cloud = 34; // Caption: Cloud; Profile: cloud;
+	string type_name = 35; // Caption: Type Name;
+	string severity = 36; // Caption: Severity;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_CATEGORY_UID category_uid = 37; // Caption: Category ID;
+	int64 start_time = 38; // Caption: Start Time;
+	repeated ocsf.v1_1_0.objects.Vulnerability vulnerabilities = 39; // Caption: Vulnerabilities;
+	string confidence = 40; // Caption: Confidence;
+	repeated ocsf.v1_1_0.objects.Malware malware = 41; // Caption: Malware;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_CONFIDENCE_ID confidence_id = 42; // Caption: Confidence Id;
+	string evidence = 43; // Caption: Evidence;
+	string state = 44; // Caption: State;
+	string status_detail = 45; // Caption: Status Details;
+	int64 end_time = 46; // Caption: End Time;
+	ocsf.v1_1_0.events.findings.enums.SECURITY_FINDING_TYPE_UID type_uid = 47; // Caption: Type ID;
+	string raw_data = 48; // Caption: Raw Data;
+	int32 duration = 49; // Caption: Duration;
+	ocsf.v1_1_0.objects.Metadata metadata = 50; // Caption: Metadata;
+	int32 timezone_offset = 51; // Caption: Timezone Offset;
+	int32 count = 52; // Caption: Count;
+}
+
+// Event: findings
+// Event UID: 5
+// URL: https://schema.ocsf.io/1.1.0/classes/incident_finding
+message IncidentFinding {
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_SEVERITY_ID severity_id = 1; // Caption: Severity ID;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_CATEGORY_UID category_uid = 2; // Caption: Category ID;
+	int64 time = 3; // Caption: Event Time;
+	string type_name = 4; // Caption: Type Name;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 5; // Caption: MITRE ATT&CK® Details;
+	string comment = 6; // Caption: Comment;
+	string status_detail = 7; // Caption: Status Details;
+	int64 start_time = 8; // Caption: Start Time;
+	string severity = 9; // Caption: Severity;
+	int32 duration = 10; // Caption: Duration;
+	bool is_suspected_breach = 11; // Caption: Suspected Breach;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_PRIORITY_ID priority_id = 12; // Caption: Priority ID;
+	string status = 13; // Caption: Status;
+	int64 end_time = 14; // Caption: End Time;
+	repeated ocsf.v1_1_0.objects.FindingInfo finding_info_list = 15; // Caption: Finding Information List;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_CONFIDENCE_ID confidence_id = 16; // Caption: Confidence Id;
+	repeated ocsf.v1_1_0.objects.Observable observables = 17; // Caption: Observables;
+	int32 confidence_score = 18; // Caption: Confidence Score;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_ACTIVITY_ID activity_id = 19; // Caption: Activity ID;
+	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 20; // Caption: Enrichments;
+	string category_name = 21; // Caption: Category;
+	string class_name = 22; // Caption: Class;
+	string confidence = 23; // Caption: Confidence;
+	int32 priority = 24; // Caption: Priority;
+	string src_url = 25; // Caption: Source URL;
+	ocsf.v1_1_0.objects.User assignee = 26; // Caption: Assignee;
+	ocsf.v1_1_0.objects.Group assignee_group = 27; // Caption: Assignee Group;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_VERDICT_ID verdict_id = 28; // Caption: Verdict ID;
+	string status_code = 29; // Caption: Status Code;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_STATUS_ID status_id = 30; // Caption: Status ID;
+	string activity_name = 31; // Caption: Activity;
+	int32 impact_score = 32; // Caption: Impact;
+	string raw_data = 33; // Caption: Raw Data;
+	string message = 34; // Caption: Message;
+	ocsf.v1_1_0.objects.Object unmapped = 35; // Caption: Unmapped Data;
+	ocsf.v1_1_0.objects.Api api = 36; // Caption: API Details; Profile: cloud;
+	int32 timezone_offset = 37; // Caption: Timezone Offset;
+	string verdict = 38; // Caption: Verdict;
+	string impact = 39; // Caption: Impact;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_TYPE_UID type_uid = 40; // Caption: Type ID;
+	int32 count = 41; // Caption: Count;
+	ocsf.v1_1_0.objects.Metadata metadata = 42; // Caption: Metadata;
+	ocsf.v1_1_0.objects.Cloud cloud = 43; // Profile: cloud; Caption: Cloud;
+	string desc = 44; // Caption: Description;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_IMPACT_ID impact_id = 45; // Caption: Impact ID;
+	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_CLASS_UID class_uid = 46; // Caption: Class ID;
+}
+
+// URL: https://schema.ocsf.io/1.1.0/classes/detection_finding
+// Event: findings
+// Event UID: 4
+message DetectionFinding {
+	ocsf.v1_1_0.objects.Metadata metadata = 1; // Caption: Metadata;
+	string class_name = 2; // Caption: Class;
+	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	int32 impact_score = 4; // Caption: Impact;
+	int32 duration = 5; // Caption: Duration;
+	int32 count = 6; // Caption: Count;
+	int64 start_time = 7; // Caption: Start Time;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_TYPE_UID type_uid = 8; // Caption: Type ID;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_IMPACT_ID impact_id = 9; // Caption: Impact ID;
+	repeated ocsf.v1_1_0.objects.Malware malware = 10; // Caption: Malware; Profile: security_control;
+	string type_name = 11; // Caption: Type Name;
+	string risk_level = 12; // Caption: Risk Level;
+	string message = 13; // Caption: Message;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_CONFIDENCE_ID confidence_id = 14; // Caption: Confidence Id;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_ACTIVITY_ID activity_id = 15; // Caption: Activity ID;
+	int64 time = 16; // Caption: Event Time;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_RISK_LEVEL_ID risk_level_id = 17; // Caption: Risk Level ID;
+	int32 risk_score = 18; // Caption: Risk Score;
+	string disposition = 19; // Caption: Disposition; Profile: security_control;
+	string action = 20; // Profile: security_control; Caption: Action;
+	string impact = 21; // Caption: Impact;
+	ocsf.v1_1_0.objects.Cloud cloud = 22; // Profile: cloud; Caption: Cloud;
+	repeated ocsf.v1_1_0.objects.ResourceDetails resources = 23; // Caption: Resources Array;
+	ocsf.v1_1_0.objects.FindingInfo finding_info = 24; // Caption: Finding Information;
+	string confidence = 25; // Caption: Confidence;
+	string comment = 26; // Caption: Comment;
+	int32 confidence_score = 27; // Caption: Confidence Score;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_DISPOSITION_ID disposition_id = 28; // Caption: Disposition ID; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Vulnerability vulnerabilities = 29; // Caption: Vulnerabilities;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 30; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Authorization authorizations = 31; // Caption: Authorization Information; Profile: security_control;
+	string category_name = 32; // Caption: Category;
+	string status_detail = 33; // Caption: Status Details;
+	ocsf.v1_1_0.objects.Api api = 34; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_1_0.objects.Evidences evidences = 35; // Caption: Evidence Artifacts;
+	string raw_data = 36; // Caption: Raw Data;
+	ocsf.v1_1_0.objects.Object unmapped = 37; // Caption: Unmapped Data;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 38; // Caption: Firewall Rule; Profile: security_control;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_CATEGORY_UID category_uid = 39; // Caption: Category ID;
+	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 40; // Caption: Enrichments;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_STATUS_ID status_id = 41; // Caption: Status ID;
+	string severity = 42; // Caption: Severity;
+	string status_code = 43; // Caption: Status Code;
+	repeated ocsf.v1_1_0.objects.Observable observables = 44; // Caption: Observables;
+	ocsf.v1_1_0.objects.Remediation remediation = 45; // Caption: Remediation Guidance;
+	ocsf.v1_1_0.objects.Device device = 46; // Caption: Device; Profile: host;
+	int32 timezone_offset = 47; // Caption: Timezone Offset;
+	string status = 48; // Caption: Status;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_ACTION_ID action_id = 49; // Caption: Action ID; Profile: security_control;
+	string activity_name = 50; // Caption: Activity;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_CLASS_UID class_uid = 51; // Caption: Class ID;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_SEVERITY_ID severity_id = 52; // Caption: Severity ID;
+	int64 end_time = 53; // Caption: End Time;
+}
+
+// Event: findings
+// Event UID: 0
+// URL: https://schema.ocsf.io/1.1.0/classes/finding
+message Finding {
+	ocsf.v1_1_0.objects.Api api = 1; // Caption: API Details; Profile: cloud;
+	int64 time = 2; // Caption: Event Time;
+	ocsf.v1_1_0.events.findings.enums.FINDING_SEVERITY_ID severity_id = 3; // Caption: Severity ID;
+	ocsf.v1_1_0.events.findings.enums.FINDING_TYPE_UID type_uid = 4; // Caption: Type ID;
+	string status = 5; // Caption: Status;
+	string raw_data = 6; // Caption: Raw Data;
+	string message = 7; // Caption: Message;
+	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 8; // Caption: Enrichments;
+	ocsf.v1_1_0.objects.Metadata metadata = 9; // Caption: Metadata;
+	string class_name = 10; // Caption: Class;
+	int32 confidence_score = 11; // Caption: Confidence Score;
+	int64 end_time = 12; // Caption: End Time;
+	ocsf.v1_1_0.events.findings.enums.FINDING_CONFIDENCE_ID confidence_id = 13; // Caption: Confidence Id;
+	ocsf.v1_1_0.events.findings.enums.FINDING_CATEGORY_UID category_uid = 14; // Caption: Category ID;
+	string activity_name = 15; // Caption: Activity;
+	ocsf.v1_1_0.events.findings.enums.FINDING_STATUS_ID status_id = 16; // Caption: Status ID;
+	ocsf.v1_1_0.events.findings.enums.FINDING_CLASS_UID class_uid = 17; // Caption: Class ID;
+	int32 timezone_offset = 18; // Caption: Timezone Offset;
+	ocsf.v1_1_0.objects.Actor actor = 19; // Caption: Actor; Profile: host;
+	ocsf.v1_1_0.objects.Device device = 20; // Caption: Device; Profile: host;
+	string category_name = 21; // Caption: Category;
+	ocsf.v1_1_0.objects.Cloud cloud = 22; // Caption: Cloud; Profile: cloud;
+	string severity = 23; // Caption: Severity;
+	ocsf.v1_1_0.events.findings.enums.FINDING_ACTIVITY_ID activity_id = 24; // Caption: Activity ID;
+	ocsf.v1_1_0.objects.FindingInfo finding_info = 25; // Caption: Finding Information;
+	int32 duration = 26; // Caption: Duration;
+	int32 count = 27; // Caption: Count;
+	string type_name = 28; // Caption: Type Name;
+	string status_code = 29; // Caption: Status Code;
+	repeated ocsf.v1_1_0.objects.Observable observables = 30; // Caption: Observables;
+	string status_detail = 31; // Caption: Status Details;
+	int64 start_time = 32; // Caption: Start Time;
+	string confidence = 33; // Caption: Confidence;
+	string comment = 34; // Caption: Comment;
+	ocsf.v1_1_0.objects.Object unmapped = 35; // Caption: Unmapped Data;
+}

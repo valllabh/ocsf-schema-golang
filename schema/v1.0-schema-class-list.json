@@ -1,0 +1,57 @@
+{
+  "application": [
+    "api_activity",
+    "web_resources_activity",
+    "web_resource_access_activity",
+    "application_lifecycle",
+    "application"
+  ],
+  "discovery": [
+    "config_state",
+    "discovery",
+    "inventory_info"
+  ],
+  "findings": [
+    "findings",
+    "security_finding"
+  ],
+  "iam": [
+    "account_change",
+    "authorize_session",
+    "group_management",
+    "iam",
+    "entity_management",
+    "authentication",
+    "user_access"
+  ],
+  "network": [
+    "ssh_activity",
+    "email_file_activity",
+    "network_file_activity",
+    "network_activity",
+    "smb_activity",
+    "dns_activity",
+    "email_url_activity",
+    "rdp_activity",
+    "email_activity",
+    "dhcp_activity",
+    "ftp_activity",
+    "http_activity"
+  ],
+  "other": [
+    "base_event"
+  ],
+  "system": [
+    "memory_activity",
+    "resource_activity",
+    "scheduled_job_activity",
+    "registry_key_activity",
+    "file_activity",
+    "registry_value_activity",
+    "module_activity",
+    "kernel_activity",
+    "process_activity",
+    "kernel_extension",
+    "system"
+  ]
+}
