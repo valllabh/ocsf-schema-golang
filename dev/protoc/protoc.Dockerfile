@@ -18,7 +18,7 @@ RUN mkdir /xsrc && cd /xsrc && \
 FROM build as build-ocsf-tool
 
 ARG OCSF_TOOL_REPO=https://github.com/pquerna/ocsf-tool.git
-ARG OCSF_TOOL_COMMIT=ac25244eef1d5843933a670dc0c3ce181b3faafe
+ARG OCSF_TOOL_COMMIT=84dcdbe0f963aa4ef4c192a521f26f731c280d98
 
 RUN mkdir /xsrc && cd /xsrc && \
     git clone ${OCSF_TOOL_REPO} && \

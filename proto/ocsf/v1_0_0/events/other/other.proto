@@ -8,40 +8,42 @@ option java_package = "com.your.project.generated.ocsf.v1_0_0.events.other";
 
 option java_multiple_files = true;
 
-import "ocsf/v1_0_0/objects/objects.proto";
-
 import "ocsf/v1_0_0/events/other/enums/enums.proto";
 
+import "ocsf/v1_0_0/objects/objects.proto";
+
+import "google/protobuf/struct.proto";
+
+// Event: other
 // Event UID: 0
 // URL: https://schema.ocsf.io/1.0.0/classes/base_event
-// Event: other
 message BaseEvent {
-	int64 end_time = 1; // Caption: End Time;
-	string category_name = 2; // Caption: Category;
-	string status_code = 3; // Caption: Status Code;
-	ocsf.v1_0_0.events.other.enums.BASE_EVENT_CATEGORY_UID category_uid = 4; // Caption: Category ID;
-	repeated ocsf.v1_0_0.objects.Enrichment enrichments = 5; // Caption: Enrichments;
-	string raw_data = 6; // Caption: Raw Data;
-	int32 duration = 7; // Caption: Duration;
-	ocsf.v1_0_0.objects.Api api = 8; // Profile: cloud; Caption: API Details;
-	ocsf.v1_0_0.events.other.enums.BASE_EVENT_CLASS_UID class_uid = 9; // Caption: Class ID;
-	repeated ocsf.v1_0_0.objects.Observable observables = 10; // Caption: Observables;
-	ocsf.v1_0_0.events.other.enums.BASE_EVENT_SEVERITY_ID severity_id = 11; // Caption: Severity ID;
-	int32 count = 12; // Caption: Count;
-	ocsf.v1_0_0.objects.Metadata metadata = 13; // Caption: Metadata;
-	ocsf.v1_0_0.events.other.enums.BASE_EVENT_STATUS_ID status_id = 14; // Caption: Status ID;
-	int32 type_uid = 15; // Caption: Type ID;
-	int64 start_time = 16; // Caption: Start Time;
-	string message = 17; // Caption: Message;
-	string activity_name = 18; // Caption: Activity;
-	string type_name = 19; // Caption: Type Name;
-	string status_detail = 20; // Caption: Status Details;
-	string status = 21; // Caption: Status;
-	ocsf.v1_0_0.objects.Cloud cloud = 22; // Caption: Cloud; Profile: cloud;
-	string severity = 23; // Caption: Severity;
-	int32 timezone_offset = 24; // Caption: Timezone Offset;
-	ocsf.v1_0_0.objects.Object unmapped = 25; // Caption: Unmapped Data;
-	string class_name = 26; // Caption: Class;
-	int64 time = 27; // Caption: Event Time;
-	ocsf.v1_0_0.events.other.enums.BASE_EVENT_ACTIVITY_ID activity_id = 28; // Caption: Activity ID;
+	ocsf.v1_0_0.events.other.enums.BASE_EVENT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
+	string activity_name = 2; // Caption: Activity;
+	ocsf.v1_0_0.objects.Api api = 3; // Caption: API Details; Profile: cloud;
+	string category_name = 4; // Caption: Category;
+	ocsf.v1_0_0.events.other.enums.BASE_EVENT_CATEGORY_UID category_uid = 5; // Caption: Category ID;
+	string class_name = 6; // Caption: Class;
+	ocsf.v1_0_0.events.other.enums.BASE_EVENT_CLASS_UID class_uid = 7; // Caption: Class ID;
+	ocsf.v1_0_0.objects.Cloud cloud = 8; // Caption: Cloud; Profile: cloud;
+	int32 count = 9; // Caption: Count;
+	int32 duration = 10; // Caption: Duration;
+	int64 end_time = 11; // Caption: End Time;
+	repeated ocsf.v1_0_0.objects.Enrichment enrichments = 12; // Caption: Enrichments;
+	string message = 13; // Caption: Message;
+	ocsf.v1_0_0.objects.Metadata metadata = 14; // Caption: Metadata;
+	repeated ocsf.v1_0_0.objects.Observable observables = 15; // Caption: Observables;
+	string raw_data = 16; // Caption: Raw Data;
+	string severity = 17; // Caption: Severity;
+	ocsf.v1_0_0.events.other.enums.BASE_EVENT_SEVERITY_ID severity_id = 18; // Caption: Severity ID;
+	int64 start_time = 19; // Caption: Start Time;
+	string status = 20; // Caption: Status;
+	string status_code = 21; // Caption: Status Code;
+	string status_detail = 22; // Caption: Status Details;
+	ocsf.v1_0_0.events.other.enums.BASE_EVENT_STATUS_ID status_id = 23; // Caption: Status ID;
+	int64 time = 24; // Caption: Event Time;
+	int32 timezone_offset = 25; // Caption: Timezone Offset;
+	string type_name = 26; // Caption: Type Name;
+	int32 type_uid = 27; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 28; // Caption: Unmapped Data;
 }
