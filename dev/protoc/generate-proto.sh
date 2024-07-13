@@ -7,6 +7,7 @@ for i in "${verions[@]}"
 do
     config_file="/configs/config-${i}.yaml"
     echo "${i}: Getting event list..."
+    rm -f ./schema/tmp.json
     ocsf-tool schema-class-list --config "${config_file}" --output "./schema/tmp.json"
 
     jq . "./schema/tmp.json" > "./schema/${i}-schema-class-list.json"
