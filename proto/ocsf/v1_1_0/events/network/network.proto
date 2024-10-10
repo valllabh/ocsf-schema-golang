@@ -14,18 +14,18 @@ import "ocsf/v1_1_0/objects/objects.proto";
 
 import "google/protobuf/struct.proto";
 
-// URL: https://schema.ocsf.io/1.1.0/classes/dhcp_activity
 // Event: network
 // Event UID: 4
+// URL: https://schema.ocsf.io/1.1.0/classes/dhcp_activity
 message DhcpActivity {
-	string action = 1; // Caption: Action; Profile: security_control;
+	string action = 1; // Profile: security_control; Caption: Action;
 	ocsf.v1_1_0.events.network.enums.DHCP_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.DHCP_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
 	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
 	string app_name = 7; // Caption: Application Name;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Profile: security_control; Caption: MITRE ATT&CK® Details;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 10; // Caption: Category;
 	ocsf.v1_1_0.events.network.enums.DHCP_ACTIVITY_CATEGORY_UID category_uid = 11; // Caption: Category ID;
@@ -50,12 +50,12 @@ message DhcpActivity {
 	ocsf.v1_1_0.objects.Metadata metadata = 30; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 31; // Caption: Observables;
 	ocsf.v1_1_0.objects.NetworkProxy proxy = 32; // Caption: Proxy;
-	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 33; // Caption: Proxy Connection Info; Profile: network_proxy;
-	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 34; // Profile: network_proxy; Caption: Proxy Endpoint;
+	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 33; // Profile: network_proxy; Caption: Proxy Connection Info;
+	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 34; // Caption: Proxy Endpoint; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 35; // Caption: Proxy HTTP Request; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 36; // Caption: Proxy HTTP Response; Profile: network_proxy;
 	ocsf.v1_1_0.objects.Tls proxy_tls = 37; // Caption: Proxy TLS; Profile: network_proxy;
-	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 38; // Caption: Proxy Traffic; Profile: network_proxy;
+	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 38; // Profile: network_proxy; Caption: Proxy Traffic;
 	string raw_data = 39; // Caption: Raw Data;
 	ocsf.v1_1_0.objects.NetworkInterface relay = 40; // Caption: Relay;
 	string severity = 41; // Caption: Severity;
@@ -76,9 +76,9 @@ message DhcpActivity {
 	google.protobuf.Struct unmapped = 56; // Caption: Unmapped Data;
 }
 
+// URL: https://schema.ocsf.io/1.1.0/classes/dns_activity
 // Event: network
 // Event UID: 3
-// URL: https://schema.ocsf.io/1.1.0/classes/dns_activity
 message DnsActivity {
 	string action = 1; // Caption: Action; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.DNS_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
@@ -88,7 +88,7 @@ message DnsActivity {
 	repeated ocsf.v1_1_0.objects.DnsAnswer answers = 6; // Caption: DNS Answer;
 	ocsf.v1_1_0.objects.Api api = 7; // Caption: API Details; Profile: cloud;
 	string app_name = 8; // Caption: Application Name;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 9; // Profile: security_control; Caption: MITRE ATT&CK® Details;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 9; // Caption: MITRE ATT&CK® Details; Profile: security_control;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 10; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 11; // Caption: Category;
 	ocsf.v1_1_0.events.network.enums.DNS_ACTIVITY_CATEGORY_UID category_uid = 12; // Caption: Category ID;
@@ -97,7 +97,7 @@ message DnsActivity {
 	ocsf.v1_1_0.objects.Cloud cloud = 15; // Caption: Cloud; Profile: cloud;
 	ocsf.v1_1_0.objects.NetworkConnectionInfo connection_info = 16; // Caption: Connection Info;
 	int32 count = 17; // Caption: Count;
-	ocsf.v1_1_0.objects.Device device = 18; // Caption: Device; Profile: host;
+	ocsf.v1_1_0.objects.Device device = 18; // Profile: host; Caption: Device;
 	string disposition = 19; // Caption: Disposition; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.DNS_ACTIVITY_DISPOSITION_ID disposition_id = 20; // Caption: Disposition ID; Profile: security_control;
 	ocsf.v1_1_0.objects.NetworkEndpoint dst_endpoint = 21; // Caption: Destination Endpoint;
@@ -114,7 +114,7 @@ message DnsActivity {
 	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 32; // Caption: Proxy Connection Info; Profile: network_proxy;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 33; // Caption: Proxy Endpoint; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 34; // Caption: Proxy HTTP Request; Profile: network_proxy;
-	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 35; // Profile: network_proxy; Caption: Proxy HTTP Response;
+	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 35; // Caption: Proxy HTTP Response; Profile: network_proxy;
 	ocsf.v1_1_0.objects.Tls proxy_tls = 36; // Caption: Proxy TLS; Profile: network_proxy;
 	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 37; // Caption: Proxy Traffic; Profile: network_proxy;
 	ocsf.v1_1_0.objects.DnsQuery query = 38; // Caption: DNS Query;
@@ -150,7 +150,7 @@ message EmailActivity {
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
 	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Profile: security_control; Caption: MITRE ATT&CK® Details;
 	int32 attempt = 8; // Caption: Attempt;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
 	string banner = 10; // Caption: SMTP Banner;
@@ -202,7 +202,7 @@ message EmailFileActivity {
 	ocsf.v1_1_0.events.network.enums.EMAIL_FILE_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
-	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	ocsf.v1_1_0.objects.Api api = 6; // Profile: cloud; Caption: API Details;
 	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 9; // Caption: Category;
@@ -213,14 +213,14 @@ message EmailFileActivity {
 	int32 count = 14; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 15; // Caption: Device; Profile: host;
 	string disposition = 16; // Caption: Disposition; Profile: security_control;
-	ocsf.v1_1_0.events.network.enums.EMAIL_FILE_ACTIVITY_DISPOSITION_ID disposition_id = 17; // Profile: security_control; Caption: Disposition ID;
+	ocsf.v1_1_0.events.network.enums.EMAIL_FILE_ACTIVITY_DISPOSITION_ID disposition_id = 17; // Caption: Disposition ID; Profile: security_control;
 	int32 duration = 18; // Caption: Duration;
 	string email_uid = 19; // Caption: Email UID;
 	int64 end_time = 20; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 21; // Caption: Enrichments;
 	ocsf.v1_1_0.objects.File file = 22; // Caption: File;
-	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 23; // Profile: security_control; Caption: Firewall Rule;
-	repeated ocsf.v1_1_0.objects.Malware malware = 24; // Profile: security_control; Caption: Malware;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 23; // Caption: Firewall Rule; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Malware malware = 24; // Caption: Malware; Profile: security_control;
 	string message = 25; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 26; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 27; // Caption: Observables;
@@ -239,17 +239,17 @@ message EmailFileActivity {
 	google.protobuf.Struct unmapped = 40; // Caption: Unmapped Data;
 }
 
+// Event: network
 // Event UID: 12
 // URL: https://schema.ocsf.io/1.1.0/classes/email_url_activity
-// Event: network
 message EmailUrlActivity {
 	string action = 1; // Caption: Action; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.EMAIL_URL_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.EMAIL_URL_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
-	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	ocsf.v1_1_0.objects.Api api = 6; // Profile: cloud; Caption: API Details;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Profile: security_control; Caption: MITRE ATT&CK® Details;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 9; // Caption: Category;
 	ocsf.v1_1_0.events.network.enums.EMAIL_URL_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
@@ -296,7 +296,7 @@ message FtpActivity {
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
 	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
 	string app_name = 7; // Caption: Application Name;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Profile: security_control; Caption: MITRE ATT&CK® Details;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 10; // Caption: Category;
 	ocsf.v1_1_0.events.network.enums.FTP_ACTIVITY_CATEGORY_UID category_uid = 11; // Caption: Category ID;
@@ -317,14 +317,14 @@ message FtpActivity {
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 26; // Caption: Enrichments;
 	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 27; // Caption: Firewall Rule; Profile: security_control;
 	ocsf.v1_1_0.objects.LoadBalancer load_balancer = 28; // Caption: Load Balancer; Profile: load_balancer;
-	repeated ocsf.v1_1_0.objects.Malware malware = 29; // Profile: security_control; Caption: Malware;
+	repeated ocsf.v1_1_0.objects.Malware malware = 29; // Caption: Malware; Profile: security_control;
 	string message = 30; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 31; // Caption: Metadata;
 	string name = 32; // Caption: Name;
 	repeated ocsf.v1_1_0.objects.Observable observables = 33; // Caption: Observables;
 	int32 port = 34; // Caption: Port;
 	ocsf.v1_1_0.objects.NetworkProxy proxy = 35; // Caption: Proxy;
-	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 36; // Caption: Proxy Connection Info; Profile: network_proxy;
+	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 36; // Profile: network_proxy; Caption: Proxy Connection Info;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 37; // Caption: Proxy Endpoint; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 38; // Caption: Proxy HTTP Request; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 39; // Caption: Proxy HTTP Response; Profile: network_proxy;
@@ -349,16 +349,16 @@ message FtpActivity {
 	google.protobuf.Struct unmapped = 58; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.1.0/classes/http_activity
 // Event: network
 // Event UID: 2
+// URL: https://schema.ocsf.io/1.1.0/classes/http_activity
 message HttpActivity {
 	string action = 1; // Caption: Action; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.HTTP_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.HTTP_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
-	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	ocsf.v1_1_0.objects.Api api = 6; // Profile: cloud; Caption: API Details;
 	string app_name = 7; // Caption: Application Name;
 	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
@@ -366,7 +366,7 @@ message HttpActivity {
 	ocsf.v1_1_0.events.network.enums.HTTP_ACTIVITY_CATEGORY_UID category_uid = 11; // Caption: Category ID;
 	string class_name = 12; // Caption: Class;
 	ocsf.v1_1_0.events.network.enums.HTTP_ACTIVITY_CLASS_UID class_uid = 13; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 14; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 14; // Profile: cloud; Caption: Cloud;
 	ocsf.v1_1_0.objects.NetworkConnectionInfo connection_info = 15; // Caption: Connection Info;
 	int32 count = 16; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 17; // Caption: Device; Profile: host;
@@ -387,12 +387,12 @@ message HttpActivity {
 	ocsf.v1_1_0.objects.Metadata metadata = 32; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 33; // Caption: Observables;
 	ocsf.v1_1_0.objects.NetworkProxy proxy = 34; // Caption: Proxy;
-	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 35; // Caption: Proxy Connection Info; Profile: network_proxy;
+	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 35; // Profile: network_proxy; Caption: Proxy Connection Info;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 36; // Caption: Proxy Endpoint; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 37; // Caption: Proxy HTTP Request; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 38; // Caption: Proxy HTTP Response; Profile: network_proxy;
-	ocsf.v1_1_0.objects.Tls proxy_tls = 39; // Profile: network_proxy; Caption: Proxy TLS;
-	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 40; // Profile: network_proxy; Caption: Proxy Traffic;
+	ocsf.v1_1_0.objects.Tls proxy_tls = 39; // Caption: Proxy TLS; Profile: network_proxy;
+	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 40; // Caption: Proxy Traffic; Profile: network_proxy;
 	string raw_data = 41; // Caption: Raw Data;
 	string severity = 42; // Caption: Severity;
 	ocsf.v1_1_0.events.network.enums.HTTP_ACTIVITY_SEVERITY_ID severity_id = 43; // Caption: Severity ID;
@@ -411,19 +411,19 @@ message HttpActivity {
 	google.protobuf.Struct unmapped = 56; // Caption: Unmapped Data;
 }
 
+// Event UID: 0
 // URL: https://schema.ocsf.io/1.1.0/classes/network
 // Event: network
-// Event UID: 0
 message Network {
 	string action = 1; // Caption: Action; Profile: security_control;
-	ocsf.v1_1_0.events.network.enums.NETWORK_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_1_0.events.network.enums.NETWORK_ACTION_ID action_id = 2; // Profile: security_control; Caption: Action ID;
 	ocsf.v1_1_0.events.network.enums.NETWORK_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
-	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_1_0.objects.Actor actor = 5; // Profile: host; Caption: Actor;
 	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
 	string app_name = 7; // Caption: Application Name;
 	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
-	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Profile: security_control; Caption: Authorization Information;
+	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 10; // Caption: Category;
 	ocsf.v1_1_0.events.network.enums.NETWORK_CATEGORY_UID category_uid = 11; // Caption: Category ID;
 	string class_name = 12; // Caption: Class;
@@ -438,7 +438,7 @@ message Network {
 	int32 duration = 21; // Caption: Duration;
 	int64 end_time = 22; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 23; // Caption: Enrichments;
-	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 24; // Profile: security_control; Caption: Firewall Rule;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 24; // Caption: Firewall Rule; Profile: security_control;
 	ocsf.v1_1_0.objects.LoadBalancer load_balancer = 25; // Caption: Load Balancer; Profile: load_balancer;
 	repeated ocsf.v1_1_0.objects.Malware malware = 26; // Caption: Malware; Profile: security_control;
 	string message = 27; // Caption: Message;
@@ -446,11 +446,11 @@ message Network {
 	repeated ocsf.v1_1_0.objects.Observable observables = 29; // Caption: Observables;
 	ocsf.v1_1_0.objects.NetworkProxy proxy = 30; // Caption: Proxy;
 	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 31; // Caption: Proxy Connection Info; Profile: network_proxy;
-	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 32; // Caption: Proxy Endpoint; Profile: network_proxy;
-	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 33; // Profile: network_proxy; Caption: Proxy HTTP Request;
-	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 34; // Profile: network_proxy; Caption: Proxy HTTP Response;
+	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 32; // Profile: network_proxy; Caption: Proxy Endpoint;
+	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 33; // Caption: Proxy HTTP Request; Profile: network_proxy;
+	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 34; // Caption: Proxy HTTP Response; Profile: network_proxy;
 	ocsf.v1_1_0.objects.Tls proxy_tls = 35; // Caption: Proxy TLS; Profile: network_proxy;
-	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 36; // Caption: Proxy Traffic; Profile: network_proxy;
+	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 36; // Profile: network_proxy; Caption: Proxy Traffic;
 	string raw_data = 37; // Caption: Raw Data;
 	string severity = 38; // Caption: Severity;
 	ocsf.v1_1_0.events.network.enums.NETWORK_SEVERITY_ID severity_id = 39; // Caption: Severity ID;
@@ -473,14 +473,14 @@ message Network {
 // Event UID: 1
 // URL: https://schema.ocsf.io/1.1.0/classes/network_activity
 message NetworkActivity {
-	string action = 1; // Caption: Action; Profile: security_control;
+	string action = 1; // Profile: security_control; Caption: Action;
 	ocsf.v1_1_0.events.network.enums.NETWORK_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.NETWORK_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
-	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_1_0.objects.Actor actor = 5; // Profile: host; Caption: Actor;
 	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
 	string app_name = 7; // Caption: Application Name;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Profile: security_control; Caption: MITRE ATT&CK® Details;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 10; // Caption: Category;
 	ocsf.v1_1_0.events.network.enums.NETWORK_ACTIVITY_CATEGORY_UID category_uid = 11; // Caption: Category ID;
@@ -491,19 +491,19 @@ message NetworkActivity {
 	int32 count = 16; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 17; // Caption: Device; Profile: host;
 	string disposition = 18; // Caption: Disposition; Profile: security_control;
-	ocsf.v1_1_0.events.network.enums.NETWORK_ACTIVITY_DISPOSITION_ID disposition_id = 19; // Caption: Disposition ID; Profile: security_control;
+	ocsf.v1_1_0.events.network.enums.NETWORK_ACTIVITY_DISPOSITION_ID disposition_id = 19; // Profile: security_control; Caption: Disposition ID;
 	ocsf.v1_1_0.objects.NetworkEndpoint dst_endpoint = 20; // Caption: Destination Endpoint;
 	int32 duration = 21; // Caption: Duration;
 	int64 end_time = 22; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 23; // Caption: Enrichments;
 	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 24; // Caption: Firewall Rule; Profile: security_control;
-	ocsf.v1_1_0.objects.LoadBalancer load_balancer = 25; // Caption: Load Balancer; Profile: load_balancer;
+	ocsf.v1_1_0.objects.LoadBalancer load_balancer = 25; // Profile: load_balancer; Caption: Load Balancer;
 	repeated ocsf.v1_1_0.objects.Malware malware = 26; // Caption: Malware; Profile: security_control;
 	string message = 27; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 28; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 29; // Caption: Observables;
 	ocsf.v1_1_0.objects.NetworkProxy proxy = 30; // Caption: Proxy;
-	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 31; // Profile: network_proxy; Caption: Proxy Connection Info;
+	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 31; // Caption: Proxy Connection Info; Profile: network_proxy;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 32; // Caption: Proxy Endpoint; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 33; // Caption: Proxy HTTP Request; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 34; // Caption: Proxy HTTP Response; Profile: network_proxy;
@@ -532,7 +532,7 @@ message NetworkActivity {
 // Event UID: 10
 // URL: https://schema.ocsf.io/1.1.0/classes/network_file_activity
 message NetworkFileActivity {
-	string action = 1; // Profile: security_control; Caption: Action;
+	string action = 1; // Caption: Action; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.NETWORK_FILE_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.NETWORK_FILE_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
@@ -549,8 +549,8 @@ message NetworkFileActivity {
 	ocsf.v1_1_0.objects.NetworkConnectionInfo connection_info = 15; // Caption: Connection Info;
 	int32 count = 16; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 17; // Caption: Device; Profile: host;
-	string disposition = 18; // Caption: Disposition; Profile: security_control;
-	ocsf.v1_1_0.events.network.enums.NETWORK_FILE_ACTIVITY_DISPOSITION_ID disposition_id = 19; // Caption: Disposition ID; Profile: security_control;
+	string disposition = 18; // Profile: security_control; Caption: Disposition;
+	ocsf.v1_1_0.events.network.enums.NETWORK_FILE_ACTIVITY_DISPOSITION_ID disposition_id = 19; // Profile: security_control; Caption: Disposition ID;
 	ocsf.v1_1_0.objects.NetworkEndpoint dst_endpoint = 20; // Caption: Destination Endpoint;
 	int32 duration = 21; // Caption: Duration;
 	int64 end_time = 22; // Caption: End Time;
@@ -558,7 +558,7 @@ message NetworkFileActivity {
 	int64 expiration_time = 24; // Caption: Expiration Time;
 	ocsf.v1_1_0.objects.File file = 25; // Caption: File;
 	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 26; // Caption: Firewall Rule; Profile: security_control;
-	ocsf.v1_1_0.objects.LoadBalancer load_balancer = 27; // Profile: load_balancer; Caption: Load Balancer;
+	ocsf.v1_1_0.objects.LoadBalancer load_balancer = 27; // Caption: Load Balancer; Profile: load_balancer;
 	repeated ocsf.v1_1_0.objects.Malware malware = 28; // Caption: Malware; Profile: security_control;
 	string message = 29; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 30; // Caption: Metadata;
@@ -566,7 +566,7 @@ message NetworkFileActivity {
 	ocsf.v1_1_0.objects.NetworkProxy proxy = 32; // Caption: Proxy;
 	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 33; // Caption: Proxy Connection Info; Profile: network_proxy;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 34; // Caption: Proxy Endpoint; Profile: network_proxy;
-	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 35; // Profile: network_proxy; Caption: Proxy HTTP Request;
+	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 35; // Caption: Proxy HTTP Request; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 36; // Caption: Proxy HTTP Response; Profile: network_proxy;
 	ocsf.v1_1_0.objects.Tls proxy_tls = 37; // Caption: Proxy TLS; Profile: network_proxy;
 	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 38; // Caption: Proxy Traffic; Profile: network_proxy;
@@ -599,7 +599,7 @@ message NtpActivity {
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
 	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
 	string app_name = 7; // Caption: Application Name;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Profile: security_control; Caption: MITRE ATT&CK® Details;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 10; // Caption: Category;
 	ocsf.v1_1_0.events.network.enums.NTP_ACTIVITY_CATEGORY_UID category_uid = 11; // Caption: Category ID;
@@ -617,15 +617,15 @@ message NtpActivity {
 	int32 duration = 23; // Caption: Duration;
 	int64 end_time = 24; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 25; // Caption: Enrichments;
-	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 26; // Caption: Firewall Rule; Profile: security_control;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 26; // Profile: security_control; Caption: Firewall Rule;
 	ocsf.v1_1_0.objects.LoadBalancer load_balancer = 27; // Caption: Load Balancer; Profile: load_balancer;
-	repeated ocsf.v1_1_0.objects.Malware malware = 28; // Caption: Malware; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Malware malware = 28; // Profile: security_control; Caption: Malware;
 	string message = 29; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 30; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 31; // Caption: Observables;
 	int32 precision = 32; // Caption: Precision;
 	ocsf.v1_1_0.objects.NetworkProxy proxy = 33; // Caption: Proxy;
-	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 34; // Caption: Proxy Connection Info; Profile: network_proxy;
+	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 34; // Profile: network_proxy; Caption: Proxy Connection Info;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 35; // Caption: Proxy Endpoint; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 36; // Caption: Proxy HTTP Request; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 37; // Caption: Proxy HTTP Response; Profile: network_proxy;
@@ -693,7 +693,7 @@ message RdpActivity {
 	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 35; // Caption: Proxy Connection Info; Profile: network_proxy;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 36; // Caption: Proxy Endpoint; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 37; // Caption: Proxy HTTP Request; Profile: network_proxy;
-	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 38; // Caption: Proxy HTTP Response; Profile: network_proxy;
+	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 38; // Profile: network_proxy; Caption: Proxy HTTP Response;
 	ocsf.v1_1_0.objects.Tls proxy_tls = 39; // Caption: Proxy TLS; Profile: network_proxy;
 	ocsf.v1_1_0.objects.NetworkTraffic proxy_traffic = 40; // Caption: Proxy Traffic; Profile: network_proxy;
 	string raw_data = 41; // Caption: Raw Data;
@@ -717,9 +717,9 @@ message RdpActivity {
 	google.protobuf.Struct unmapped = 59; // Caption: Unmapped Data;
 }
 
+// URL: https://schema.ocsf.io/1.1.0/classes/smb_activity
 // Event: network
 // Event UID: 6
-// URL: https://schema.ocsf.io/1.1.0/classes/smb_activity
 message SmbActivity {
 	string action = 1; // Caption: Action; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.SMB_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
@@ -786,30 +786,30 @@ message SmbActivity {
 	google.protobuf.Struct unmapped = 63; // Caption: Unmapped Data;
 }
 
+// Event UID: 7
 // URL: https://schema.ocsf.io/1.1.0/classes/ssh_activity
 // Event: network
-// Event UID: 7
 message SshActivity {
-	string action = 1; // Caption: Action; Profile: security_control;
+	string action = 1; // Profile: security_control; Caption: Action;
 	ocsf.v1_1_0.events.network.enums.SSH_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.SSH_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
-	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	ocsf.v1_1_0.objects.Api api = 6; // Profile: cloud; Caption: API Details;
 	string app_name = 7; // Caption: Application Name;
 	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
 	string auth_type = 9; // Caption: Authentication Type;
 	ocsf.v1_1_0.events.network.enums.SSH_ACTIVITY_AUTH_TYPE_ID auth_type_id = 10; // Caption: Authentication Type ID;
-	repeated ocsf.v1_1_0.objects.Authorization authorizations = 11; // Profile: security_control; Caption: Authorization Information;
+	repeated ocsf.v1_1_0.objects.Authorization authorizations = 11; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 12; // Caption: Category;
 	ocsf.v1_1_0.events.network.enums.SSH_ACTIVITY_CATEGORY_UID category_uid = 13; // Caption: Category ID;
 	string class_name = 14; // Caption: Class;
 	ocsf.v1_1_0.events.network.enums.SSH_ACTIVITY_CLASS_UID class_uid = 15; // Caption: Class ID;
 	ocsf.v1_1_0.objects.Hassh client_hassh = 16; // Caption: Client HASSH;
-	ocsf.v1_1_0.objects.Cloud cloud = 17; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 17; // Profile: cloud; Caption: Cloud;
 	ocsf.v1_1_0.objects.NetworkConnectionInfo connection_info = 18; // Caption: Connection Info;
 	int32 count = 19; // Caption: Count;
-	ocsf.v1_1_0.objects.Device device = 20; // Caption: Device; Profile: host;
+	ocsf.v1_1_0.objects.Device device = 20; // Profile: host; Caption: Device;
 	string disposition = 21; // Caption: Disposition; Profile: security_control;
 	ocsf.v1_1_0.events.network.enums.SSH_ACTIVITY_DISPOSITION_ID disposition_id = 22; // Caption: Disposition ID; Profile: security_control;
 	ocsf.v1_1_0.objects.NetworkEndpoint dst_endpoint = 23; // Caption: Destination Endpoint;
@@ -825,7 +825,7 @@ message SshActivity {
 	string protocol_ver = 33; // Caption: Protocol Version;
 	ocsf.v1_1_0.objects.NetworkProxy proxy = 34; // Caption: Proxy;
 	ocsf.v1_1_0.objects.NetworkConnectionInfo proxy_connection_info = 35; // Caption: Proxy Connection Info; Profile: network_proxy;
-	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 36; // Profile: network_proxy; Caption: Proxy Endpoint;
+	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 36; // Caption: Proxy Endpoint; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpRequest proxy_http_request = 37; // Caption: Proxy HTTP Request; Profile: network_proxy;
 	ocsf.v1_1_0.objects.HttpResponse proxy_http_response = 38; // Caption: Proxy HTTP Response; Profile: network_proxy;
 	ocsf.v1_1_0.objects.Tls proxy_tls = 39; // Caption: Proxy TLS; Profile: network_proxy;

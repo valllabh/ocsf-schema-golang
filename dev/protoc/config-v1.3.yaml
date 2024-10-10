@@ -1,0 +1,18 @@
+---
+extensions:
+    discovery:
+        paths: # no external extensions required
+    selected: [] # blank to load all default extensions
+profiles:
+    selected: [] # blank to load all default profiles
+schema:
+    loading:
+        strategies:
+            repository:
+                branch:
+                    name: v1.3.0
+                directory:
+                    path: $CWD/build/schema-git
+                url: https://github.com/ocsf/ocsf-schema
+        strategy: repository
+    path: $CWD/schema

@@ -14,9 +14,9 @@ import "ocsf/v1_1_0/objects/objects.proto";
 
 import "google/protobuf/struct.proto";
 
-// URL: https://schema.ocsf.io/1.1.0/classes/compliance_finding
 // Event: findings
 // Event UID: 3
+// URL: https://schema.ocsf.io/1.1.0/classes/compliance_finding
 message ComplianceFinding {
 	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -62,12 +62,12 @@ message ComplianceFinding {
 // Event UID: 4
 // URL: https://schema.ocsf.io/1.1.0/classes/detection_finding
 message DetectionFinding {
-	string action = 1; // Caption: Action; Profile: security_control;
+	string action = 1; // Profile: security_control; Caption: Action;
 	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
-	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	ocsf.v1_1_0.objects.Api api = 6; // Profile: cloud; Caption: API Details;
 	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 9; // Caption: Category;
@@ -158,9 +158,9 @@ message Finding {
 	google.protobuf.Struct unmapped = 35; // Caption: Unmapped Data;
 }
 
+// Event: findings
 // Event UID: 5
 // URL: https://schema.ocsf.io/1.1.0/classes/incident_finding
-// Event: findings
 message IncidentFinding {
 	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;

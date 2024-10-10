@@ -37,7 +37,7 @@ message FileActivity {
 	int32 count = 17; // Caption: Count;
 	string create_mask = 18; // Caption: Create Mask;
 	ocsf.v1_1_0.objects.Device device = 19; // Caption: Device;
-	string disposition = 20; // Caption: Disposition; Profile: security_control;
+	string disposition = 20; // Profile: security_control; Caption: Disposition;
 	ocsf.v1_1_0.events.system.enums.FILE_ACTIVITY_DISPOSITION_ID disposition_id = 21; // Caption: Disposition ID; Profile: security_control;
 	int32 duration = 22; // Caption: Duration;
 	int64 end_time = 23; // Caption: End Time;
@@ -46,7 +46,7 @@ message FileActivity {
 	string file_diff = 26; // Caption: File Diff;
 	ocsf.v1_1_0.objects.File file_result = 27; // Caption: File Result;
 	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 28; // Caption: Firewall Rule; Profile: security_control;
-	repeated ocsf.v1_1_0.objects.Malware malware = 29; // Caption: Malware; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Malware malware = 29; // Profile: security_control; Caption: Malware;
 	string message = 30; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 31; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 32; // Caption: Observables;
@@ -69,13 +69,13 @@ message FileActivity {
 // Event UID: 3
 // URL: https://schema.ocsf.io/1.1.0/classes/kernel_activity
 message KernelActivity {
-	string action = 1; // Profile: security_control; Caption: Action;
-	ocsf.v1_1_0.events.system.enums.KERNEL_ACTIVITY_ACTION_ID action_id = 2; // Profile: security_control; Caption: Action ID;
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_1_0.events.system.enums.KERNEL_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.system.enums.KERNEL_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor;
 	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Profile: security_control; Caption: MITRE ATT&CK® Details;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 9; // Caption: Category;
 	ocsf.v1_1_0.events.system.enums.KERNEL_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
@@ -91,7 +91,7 @@ message KernelActivity {
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 20; // Caption: Enrichments;
 	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 21; // Caption: Firewall Rule; Profile: security_control;
 	ocsf.v1_1_0.objects.Kernel kernel = 22; // Caption: Kernel;
-	repeated ocsf.v1_1_0.objects.Malware malware = 23; // Caption: Malware; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Malware malware = 23; // Profile: security_control; Caption: Malware;
 	string message = 24; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 25; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 26; // Caption: Observables;
@@ -126,7 +126,7 @@ message KernelExtension {
 	ocsf.v1_1_0.events.system.enums.KERNEL_EXTENSION_CATEGORY_UID category_uid = 10; // Caption: Category ID;
 	string class_name = 11; // Caption: Class;
 	ocsf.v1_1_0.events.system.enums.KERNEL_EXTENSION_CLASS_UID class_uid = 12; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 13; // Profile: cloud; Caption: Cloud;
 	int32 count = 14; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 15; // Caption: Device;
 	string disposition = 16; // Caption: Disposition; Profile: security_control;
@@ -135,8 +135,8 @@ message KernelExtension {
 	int32 duration = 19; // Caption: Duration;
 	int64 end_time = 20; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 21; // Caption: Enrichments;
-	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 22; // Profile: security_control; Caption: Firewall Rule;
-	repeated ocsf.v1_1_0.objects.Malware malware = 23; // Profile: security_control; Caption: Malware;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 22; // Caption: Firewall Rule; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Malware malware = 23; // Caption: Malware; Profile: security_control;
 	string message = 24; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 25; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 26; // Caption: Observables;
@@ -166,8 +166,8 @@ message MemoryActivity {
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor;
 	int32 actual_permissions = 6; // Caption: Actual Permissions;
 	ocsf.v1_1_0.objects.Api api = 7; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
-	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Profile: security_control; Caption: Authorization Information;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Profile: security_control; Caption: MITRE ATT&CK® Details;
+	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
 	string base_address = 10; // Caption: Base Address;
 	string category_name = 11; // Caption: Category;
 	ocsf.v1_1_0.events.system.enums.MEMORY_ACTIVITY_CATEGORY_UID category_uid = 12; // Caption: Category ID;
@@ -176,13 +176,13 @@ message MemoryActivity {
 	ocsf.v1_1_0.objects.Cloud cloud = 15; // Caption: Cloud; Profile: cloud;
 	int32 count = 16; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 17; // Caption: Device;
-	string disposition = 18; // Caption: Disposition; Profile: security_control;
-	ocsf.v1_1_0.events.system.enums.MEMORY_ACTIVITY_DISPOSITION_ID disposition_id = 19; // Profile: security_control; Caption: Disposition ID;
+	string disposition = 18; // Profile: security_control; Caption: Disposition;
+	ocsf.v1_1_0.events.system.enums.MEMORY_ACTIVITY_DISPOSITION_ID disposition_id = 19; // Caption: Disposition ID; Profile: security_control;
 	int32 duration = 20; // Caption: Duration;
 	int64 end_time = 21; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 22; // Caption: Enrichments;
-	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 23; // Caption: Firewall Rule; Profile: security_control;
-	repeated ocsf.v1_1_0.objects.Malware malware = 24; // Caption: Malware; Profile: security_control;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 23; // Profile: security_control; Caption: Firewall Rule;
+	repeated ocsf.v1_1_0.objects.Malware malware = 24; // Profile: security_control; Caption: Malware;
 	string message = 25; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 26; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 27; // Caption: Observables;
@@ -204,9 +204,9 @@ message MemoryActivity {
 	google.protobuf.Struct unmapped = 43; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.1.0/classes/module_activity
 // Event: system
 // Event UID: 5
+// URL: https://schema.ocsf.io/1.1.0/classes/module_activity
 message ModuleActivity {
 	string action = 1; // Caption: Action; Profile: security_control;
 	ocsf.v1_1_0.events.system.enums.MODULE_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
@@ -228,7 +228,7 @@ message ModuleActivity {
 	int32 duration = 18; // Caption: Duration;
 	int64 end_time = 19; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 20; // Caption: Enrichments;
-	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 21; // Caption: Firewall Rule; Profile: security_control;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 21; // Profile: security_control; Caption: Firewall Rule;
 	repeated ocsf.v1_1_0.objects.Malware malware = 22; // Caption: Malware; Profile: security_control;
 	string message = 23; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 24; // Caption: Metadata;
@@ -253,8 +253,8 @@ message ModuleActivity {
 // Event UID: 7
 // URL: https://schema.ocsf.io/1.1.0/classes/process_activity
 message ProcessActivity {
-	string action = 1; // Caption: Action; Profile: security_control;
-	ocsf.v1_1_0.events.system.enums.PROCESS_ACTIVITY_ACTION_ID action_id = 2; // Profile: security_control; Caption: Action ID;
+	string action = 1; // Profile: security_control; Caption: Action;
+	ocsf.v1_1_0.events.system.enums.PROCESS_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.system.enums.PROCESS_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor;
@@ -306,13 +306,13 @@ message ProcessActivity {
 message RegistryKeyActivity {
 	int32 access_mask = 1; // Caption: Access Mask;
 	string action = 2; // Caption: Action; Profile: security_control;
-	ocsf.v1_1_0.events.system.enums.REGISTRY_KEY_ACTIVITY_ACTION_ID action_id = 3; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_1_0.events.system.enums.REGISTRY_KEY_ACTIVITY_ACTION_ID action_id = 3; // Profile: security_control; Caption: Action ID;
 	ocsf.v1_1_0.events.system.enums.REGISTRY_KEY_ACTIVITY_ACTIVITY_ID activity_id = 4; // Caption: Activity ID;
 	string activity_name = 5; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 6; // Caption: Actor;
 	ocsf.v1_1_0.objects.Api api = 7; // Caption: API Details; Profile: cloud;
 	repeated ocsf.v1_1_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® Details; Profile: security_control;
-	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Profile: security_control; Caption: Authorization Information;
+	repeated ocsf.v1_1_0.objects.Authorization authorizations = 9; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 10; // Caption: Category;
 	ocsf.v1_1_0.events.system.enums.REGISTRY_KEY_ACTIVITY_CATEGORY_UID category_uid = 11; // Caption: Category ID;
 	string class_name = 12; // Caption: Class;
@@ -326,7 +326,7 @@ message RegistryKeyActivity {
 	int32 duration = 20; // Caption: Duration;
 	int64 end_time = 21; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 22; // Caption: Enrichments;
-	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 23; // Profile: security_control; Caption: Firewall Rule;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 23; // Caption: Firewall Rule; Profile: security_control;
 	repeated ocsf.v1_1_0.objects.Malware malware = 24; // Caption: Malware; Profile: security_control;
 	string message = 25; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 26; // Caption: Metadata;
@@ -359,7 +359,7 @@ message RegistryValueActivity {
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor;
 	ocsf.v1_1_0.objects.Api api = 6; // Profile: cloud; Caption: API Details;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Profile: security_control; Caption: MITRE ATT&CK® Details;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 9; // Caption: Category;
 	ocsf.v1_1_0.events.system.enums.REGISTRY_VALUE_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
@@ -395,12 +395,12 @@ message RegistryValueActivity {
 	google.protobuf.Struct unmapped = 40; // Caption: Unmapped Data;
 }
 
+// URL: https://schema.ocsf.io/1.1.0/classes/resource_activity
 // Event: system
 // Event UID: 3
-// URL: https://schema.ocsf.io/1.1.0/classes/resource_activity
 message ResourceActivity {
-	string action = 1; // Profile: security_control; Caption: Action;
-	ocsf.v1_1_0.events.system.enums.RESOURCE_ACTIVITY_ACTION_ID action_id = 2; // Profile: security_control; Caption: Action ID;
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_1_0.events.system.enums.RESOURCE_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
 	ocsf.v1_1_0.events.system.enums.RESOURCE_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor;
@@ -411,10 +411,10 @@ message ResourceActivity {
 	ocsf.v1_1_0.events.system.enums.RESOURCE_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
 	string class_name = 11; // Caption: Class;
 	ocsf.v1_1_0.events.system.enums.RESOURCE_ACTIVITY_CLASS_UID class_uid = 12; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 13; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
 	int32 count = 14; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 15; // Caption: Device;
-	string disposition = 16; // Profile: security_control; Caption: Disposition;
+	string disposition = 16; // Caption: Disposition; Profile: security_control;
 	ocsf.v1_1_0.events.system.enums.RESOURCE_ACTIVITY_DISPOSITION_ID disposition_id = 17; // Caption: Disposition ID; Profile: security_control;
 	int32 duration = 18; // Caption: Duration;
 	int64 end_time = 19; // Caption: End Time;
@@ -440,9 +440,9 @@ message ResourceActivity {
 	ocsf.v1_1_0.objects.WinResource win_resource = 39; // Caption: Windows Resource;
 }
 
+// URL: https://schema.ocsf.io/1.1.0/classes/scheduled_job_activity
 // Event: system
 // Event UID: 6
-// URL: https://schema.ocsf.io/1.1.0/classes/scheduled_job_activity
 message ScheduledJobActivity {
 	string action = 1; // Caption: Action; Profile: security_control;
 	ocsf.v1_1_0.events.system.enums.SCHEDULED_JOB_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
@@ -459,14 +459,14 @@ message ScheduledJobActivity {
 	ocsf.v1_1_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
 	int32 count = 14; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 15; // Caption: Device;
-	string disposition = 16; // Caption: Disposition; Profile: security_control;
+	string disposition = 16; // Profile: security_control; Caption: Disposition;
 	ocsf.v1_1_0.events.system.enums.SCHEDULED_JOB_ACTIVITY_DISPOSITION_ID disposition_id = 17; // Caption: Disposition ID; Profile: security_control;
 	int32 duration = 18; // Caption: Duration;
 	int64 end_time = 19; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 20; // Caption: Enrichments;
 	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 21; // Caption: Firewall Rule; Profile: security_control;
 	ocsf.v1_1_0.objects.Job job = 22; // Caption: Job;
-	repeated ocsf.v1_1_0.objects.Malware malware = 23; // Profile: security_control; Caption: Malware;
+	repeated ocsf.v1_1_0.objects.Malware malware = 23; // Caption: Malware; Profile: security_control;
 	string message = 24; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 25; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 26; // Caption: Observables;
@@ -495,7 +495,7 @@ message System {
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor;
 	ocsf.v1_1_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Profile: security_control; Caption: MITRE ATT&CK® Details;
+	repeated ocsf.v1_1_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
 	repeated ocsf.v1_1_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 9; // Caption: Category;
 	ocsf.v1_1_0.events.system.enums.SYSTEM_CATEGORY_UID category_uid = 10; // Caption: Category ID;
@@ -509,7 +509,7 @@ message System {
 	int32 duration = 18; // Caption: Duration;
 	int64 end_time = 19; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 20; // Caption: Enrichments;
-	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 21; // Profile: security_control; Caption: Firewall Rule;
+	ocsf.v1_1_0.objects.FirewallRule firewall_rule = 21; // Caption: Firewall Rule; Profile: security_control;
 	repeated ocsf.v1_1_0.objects.Malware malware = 22; // Caption: Malware; Profile: security_control;
 	string message = 23; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 24; // Caption: Metadata;

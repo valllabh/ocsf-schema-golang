@@ -14,9 +14,9 @@ import "ocsf/v1_1_0/objects/objects.proto";
 
 import "google/protobuf/struct.proto";
 
-// Event: iam
 // Event UID: 1
 // URL: https://schema.ocsf.io/1.1.0/classes/account_change
+// Event: iam
 message AccountChange {
 	ocsf.v1_1_0.events.iam.enums.ACCOUNT_CHANGE_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -28,7 +28,7 @@ message AccountChange {
 	ocsf.v1_1_0.events.iam.enums.ACCOUNT_CHANGE_CLASS_UID class_uid = 8; // Caption: Class ID;
 	ocsf.v1_1_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
-	ocsf.v1_1_0.objects.Device device = 11; // Caption: Device; Profile: host;
+	ocsf.v1_1_0.objects.Device device = 11; // Profile: host; Caption: Device;
 	int32 duration = 12; // Caption: Duration;
 	int64 end_time = 13; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 14; // Caption: Enrichments;
@@ -70,9 +70,9 @@ message Authentication {
 	ocsf.v1_1_0.objects.Certificate certificate = 9; // Caption: Certificate;
 	string class_name = 10; // Caption: Class;
 	ocsf.v1_1_0.events.iam.enums.AUTHENTICATION_CLASS_UID class_uid = 11; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 12; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 12; // Caption: Cloud; Profile: cloud;
 	int32 count = 13; // Caption: Count;
-	ocsf.v1_1_0.objects.Device device = 14; // Profile: host; Caption: Device;
+	ocsf.v1_1_0.objects.Device device = 14; // Caption: Device; Profile: host;
 	ocsf.v1_1_0.objects.NetworkEndpoint dst_endpoint = 15; // Caption: Destination Endpoint;
 	int32 duration = 16; // Caption: Duration;
 	int64 end_time = 17; // Caption: End Time;
@@ -107,9 +107,9 @@ message Authentication {
 	ocsf.v1_1_0.objects.User user = 46; // Caption: User;
 }
 
+// Event: iam
 // Event UID: 3
 // URL: https://schema.ocsf.io/1.1.0/classes/authorize_session
-// Event: iam
 message AuthorizeSession {
 	ocsf.v1_1_0.events.iam.enums.AUTHORIZE_SESSION_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -121,7 +121,7 @@ message AuthorizeSession {
 	ocsf.v1_1_0.events.iam.enums.AUTHORIZE_SESSION_CLASS_UID class_uid = 8; // Caption: Class ID;
 	ocsf.v1_1_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
-	ocsf.v1_1_0.objects.Device device = 11; // Caption: Device; Profile: host;
+	ocsf.v1_1_0.objects.Device device = 11; // Profile: host; Caption: Device;
 	ocsf.v1_1_0.objects.NetworkEndpoint dst_endpoint = 12; // Caption: Destination Endpoint;
 	int32 duration = 13; // Caption: Duration;
 	int64 end_time = 14; // Caption: End Time;
@@ -148,14 +148,14 @@ message AuthorizeSession {
 	ocsf.v1_1_0.objects.User user = 35; // Caption: User;
 }
 
+// URL: https://schema.ocsf.io/1.1.0/classes/entity_management
 // Event: iam
 // Event UID: 4
-// URL: https://schema.ocsf.io/1.1.0/classes/entity_management
 message EntityManagement {
 	ocsf.v1_1_0.events.iam.enums.ENTITY_MANAGEMENT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor;
-	ocsf.v1_1_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_1_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_1_0.events.iam.enums.ENTITY_MANAGEMENT_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
@@ -187,13 +187,13 @@ message EntityManagement {
 	google.protobuf.Struct unmapped = 33; // Caption: Unmapped Data;
 }
 
+// Event: iam
 // Event UID: 6
 // URL: https://schema.ocsf.io/1.1.0/classes/group_management
-// Event: iam
 message GroupManagement {
 	ocsf.v1_1_0.events.iam.enums.GROUP_MANAGEMENT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_1_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
+	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
 	ocsf.v1_1_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_1_0.events.iam.enums.GROUP_MANAGEMENT_CATEGORY_UID category_uid = 6; // Caption: Category ID;
@@ -239,7 +239,7 @@ message Iam {
 	ocsf.v1_1_0.events.iam.enums.IAM_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_1_0.events.iam.enums.IAM_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;

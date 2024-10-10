@@ -55,9 +55,9 @@ message AccountChange {
 	ocsf.v1_2_0.objects.User user_result = 35; // Caption: User Result;
 }
 
-// URL: https://schema.ocsf.io/1.2.0/classes/authentication
 // Event: iam
 // Event UID: 2
+// URL: https://schema.ocsf.io/1.2.0/classes/authentication
 message Authentication {
 	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -71,7 +71,7 @@ message Authentication {
 	ocsf.v1_2_0.objects.Certificate certificate = 10; // Caption: Certificate;
 	string class_name = 11; // Caption: Class;
 	ocsf.v1_2_0.events.iam.enums.AUTHENTICATION_CLASS_UID class_uid = 12; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 13; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
 	int32 count = 14; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 15; // Caption: Device; Profile: host;
 	ocsf.v1_2_0.objects.NetworkEndpoint dst_endpoint = 16; // Caption: Destination Endpoint;
@@ -115,12 +115,12 @@ message AuthorizeSession {
 	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_2_0.events.iam.enums.AUTHORIZE_SESSION_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	ocsf.v1_2_0.objects.NetworkEndpoint dst_endpoint = 12; // Caption: Destination Endpoint;
@@ -151,9 +151,9 @@ message AuthorizeSession {
 	ocsf.v1_2_0.objects.User user = 37; // Caption: User;
 }
 
-// URL: https://schema.ocsf.io/1.2.0/classes/entity_management
 // Event: iam
 // Event UID: 4
+// URL: https://schema.ocsf.io/1.2.0/classes/entity_management
 message EntityManagement {
 	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -163,7 +163,7 @@ message EntityManagement {
 	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_2_0.events.iam.enums.ENTITY_MANAGEMENT_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	string comment = 10; // Caption: Comment;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 12; // Caption: Device; Profile: host;
@@ -192,9 +192,9 @@ message EntityManagement {
 	google.protobuf.Struct unmapped = 35; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.2.0/classes/group_management
 // Event: iam
 // Event UID: 6
+// URL: https://schema.ocsf.io/1.2.0/classes/group_management
 message GroupManagement {
 	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -204,7 +204,7 @@ message GroupManagement {
 	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_2_0.events.iam.enums.GROUP_MANAGEMENT_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;
@@ -234,9 +234,9 @@ message GroupManagement {
 	ocsf.v1_2_0.objects.User user = 36; // Caption: User;
 }
 
+// URL: https://schema.ocsf.io/1.2.0/classes/iam
 // Event: iam
 // Event UID: 0
-// URL: https://schema.ocsf.io/1.2.0/classes/iam
 message Iam {
 	ocsf.v1_2_0.events.iam.enums.IAM_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;

@@ -1,0 +1,182 @@
+syntax = "proto3";
+
+package ocsf.v1_3_0.events.remediation;
+
+option go_package = "/ocsf/v1_3_0/events/remediation";
+
+option java_package = "com.your.project.generated.ocsf.v1_3_0.events.remediation";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_3_0/events/remediation/enums/enums.proto";
+
+import "ocsf/v1_3_0/objects/objects.proto";
+
+import "google/protobuf/struct.proto";
+
+// URL: https://schema.ocsf.io/1.3.0/classes/file_remediation_activity
+// Event: remediation
+// Event UID: 2
+message FileRemediationActivity {
+	ocsf.v1_3_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
+	string activity_name = 2; // Caption: Activity;
+	ocsf.v1_3_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_3_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	string category_name = 5; // Caption: Category;
+	ocsf.v1_3_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
+	string class_name = 7; // Caption: Class;
+	ocsf.v1_3_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_CLASS_UID class_uid = 8; // Caption: Class ID;
+	ocsf.v1_3_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	string command_uid = 10; // Caption: Command UID;
+	int32 count = 11; // Caption: Count;
+	repeated ocsf.v1_3_0.objects.D3Fend countermeasures = 12; // Caption: Countermeasures;
+	ocsf.v1_3_0.objects.Device device = 13; // Profile: host; Caption: Device;
+	int64 duration = 14; // Caption: Duration Milliseconds;
+	int64 end_time = 15; // Caption: End Time;
+	repeated ocsf.v1_3_0.objects.Enrichment enrichments = 16; // Caption: Enrichments;
+	ocsf.v1_3_0.objects.File file = 17; // Caption: File;
+	string message = 18; // Caption: Message;
+	ocsf.v1_3_0.objects.Metadata metadata = 19; // Caption: Metadata;
+	repeated ocsf.v1_3_0.objects.Observable observables = 20; // Caption: Observables;
+	repeated ocsf.v1_3_0.objects.Osint osint = 21; // Caption: OSINT; Profile: osint;
+	string raw_data = 22; // Caption: Raw Data;
+	ocsf.v1_3_0.objects.Remediation remediation = 23; // Caption: Remediation Guidance;
+	ocsf.v1_3_0.objects.Scan scan = 24; // Caption: Scan;
+	string severity = 25; // Caption: Severity;
+	ocsf.v1_3_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_SEVERITY_ID severity_id = 26; // Caption: Severity ID;
+	int64 start_time = 27; // Caption: Start Time;
+	string status = 28; // Caption: Status;
+	string status_code = 29; // Caption: Status Code;
+	string status_detail = 30; // Caption: Status Detail;
+	ocsf.v1_3_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_STATUS_ID status_id = 31; // Caption: Status ID;
+	int64 time = 32; // Caption: Event Time;
+	int32 timezone_offset = 33; // Caption: Timezone Offset;
+	string type_name = 34; // Caption: Type Name;
+	ocsf.v1_3_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_TYPE_UID type_uid = 35; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 36; // Caption: Unmapped Data;
+}
+
+// Event UID: 4
+// URL: https://schema.ocsf.io/1.3.0/classes/network_remediation_activity
+// Event: remediation
+message NetworkRemediationActivity {
+	ocsf.v1_3_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
+	string activity_name = 2; // Caption: Activity;
+	ocsf.v1_3_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_3_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	string category_name = 5; // Caption: Category;
+	ocsf.v1_3_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
+	string class_name = 7; // Caption: Class;
+	ocsf.v1_3_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_CLASS_UID class_uid = 8; // Caption: Class ID;
+	ocsf.v1_3_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	string command_uid = 10; // Caption: Command UID;
+	ocsf.v1_3_0.objects.NetworkConnectionInfo connection_info = 11; // Caption: Connection Info;
+	int32 count = 12; // Caption: Count;
+	repeated ocsf.v1_3_0.objects.D3Fend countermeasures = 13; // Caption: Countermeasures;
+	ocsf.v1_3_0.objects.Device device = 14; // Caption: Device; Profile: host;
+	int64 duration = 15; // Caption: Duration Milliseconds;
+	int64 end_time = 16; // Caption: End Time;
+	repeated ocsf.v1_3_0.objects.Enrichment enrichments = 17; // Caption: Enrichments;
+	string message = 18; // Caption: Message;
+	ocsf.v1_3_0.objects.Metadata metadata = 19; // Caption: Metadata;
+	repeated ocsf.v1_3_0.objects.Observable observables = 20; // Caption: Observables;
+	repeated ocsf.v1_3_0.objects.Osint osint = 21; // Caption: OSINT; Profile: osint;
+	string raw_data = 22; // Caption: Raw Data;
+	ocsf.v1_3_0.objects.Remediation remediation = 23; // Caption: Remediation Guidance;
+	ocsf.v1_3_0.objects.Scan scan = 24; // Caption: Scan;
+	string severity = 25; // Caption: Severity;
+	ocsf.v1_3_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_SEVERITY_ID severity_id = 26; // Caption: Severity ID;
+	int64 start_time = 27; // Caption: Start Time;
+	string status = 28; // Caption: Status;
+	string status_code = 29; // Caption: Status Code;
+	string status_detail = 30; // Caption: Status Detail;
+	ocsf.v1_3_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_STATUS_ID status_id = 31; // Caption: Status ID;
+	int64 time = 32; // Caption: Event Time;
+	int32 timezone_offset = 33; // Caption: Timezone Offset;
+	string type_name = 34; // Caption: Type Name;
+	ocsf.v1_3_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_TYPE_UID type_uid = 35; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 36; // Caption: Unmapped Data;
+}
+
+// URL: https://schema.ocsf.io/1.3.0/classes/process_remediation_activity
+// Event: remediation
+// Event UID: 3
+message ProcessRemediationActivity {
+	ocsf.v1_3_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
+	string activity_name = 2; // Caption: Activity;
+	ocsf.v1_3_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_3_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	string category_name = 5; // Caption: Category;
+	ocsf.v1_3_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
+	string class_name = 7; // Caption: Class;
+	ocsf.v1_3_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_CLASS_UID class_uid = 8; // Caption: Class ID;
+	ocsf.v1_3_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	string command_uid = 10; // Caption: Command UID;
+	int32 count = 11; // Caption: Count;
+	repeated ocsf.v1_3_0.objects.D3Fend countermeasures = 12; // Caption: Countermeasures;
+	ocsf.v1_3_0.objects.Device device = 13; // Caption: Device; Profile: host;
+	int64 duration = 14; // Caption: Duration Milliseconds;
+	int64 end_time = 15; // Caption: End Time;
+	repeated ocsf.v1_3_0.objects.Enrichment enrichments = 16; // Caption: Enrichments;
+	string message = 17; // Caption: Message;
+	ocsf.v1_3_0.objects.Metadata metadata = 18; // Caption: Metadata;
+	repeated ocsf.v1_3_0.objects.Observable observables = 19; // Caption: Observables;
+	repeated ocsf.v1_3_0.objects.Osint osint = 20; // Profile: osint; Caption: OSINT;
+	ocsf.v1_3_0.objects.Process process = 21; // Caption: Process;
+	string raw_data = 22; // Caption: Raw Data;
+	ocsf.v1_3_0.objects.Remediation remediation = 23; // Caption: Remediation Guidance;
+	ocsf.v1_3_0.objects.Scan scan = 24; // Caption: Scan;
+	string severity = 25; // Caption: Severity;
+	ocsf.v1_3_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_SEVERITY_ID severity_id = 26; // Caption: Severity ID;
+	int64 start_time = 27; // Caption: Start Time;
+	string status = 28; // Caption: Status;
+	string status_code = 29; // Caption: Status Code;
+	string status_detail = 30; // Caption: Status Detail;
+	ocsf.v1_3_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_STATUS_ID status_id = 31; // Caption: Status ID;
+	int64 time = 32; // Caption: Event Time;
+	int32 timezone_offset = 33; // Caption: Timezone Offset;
+	string type_name = 34; // Caption: Type Name;
+	ocsf.v1_3_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_TYPE_UID type_uid = 35; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 36; // Caption: Unmapped Data;
+}
+
+// Event: remediation
+// Event UID: 1
+// URL: https://schema.ocsf.io/1.3.0/classes/remediation_activity
+message RemediationActivity {
+	ocsf.v1_3_0.events.remediation.enums.REMEDIATION_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
+	string activity_name = 2; // Caption: Activity;
+	ocsf.v1_3_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_3_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	string category_name = 5; // Caption: Category;
+	ocsf.v1_3_0.events.remediation.enums.REMEDIATION_ACTIVITY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
+	string class_name = 7; // Caption: Class;
+	ocsf.v1_3_0.events.remediation.enums.REMEDIATION_ACTIVITY_CLASS_UID class_uid = 8; // Caption: Class ID;
+	ocsf.v1_3_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	string command_uid = 10; // Caption: Command UID;
+	int32 count = 11; // Caption: Count;
+	repeated ocsf.v1_3_0.objects.D3Fend countermeasures = 12; // Caption: Countermeasures;
+	ocsf.v1_3_0.objects.Device device = 13; // Caption: Device; Profile: host;
+	int64 duration = 14; // Caption: Duration Milliseconds;
+	int64 end_time = 15; // Caption: End Time;
+	repeated ocsf.v1_3_0.objects.Enrichment enrichments = 16; // Caption: Enrichments;
+	string message = 17; // Caption: Message;
+	ocsf.v1_3_0.objects.Metadata metadata = 18; // Caption: Metadata;
+	repeated ocsf.v1_3_0.objects.Observable observables = 19; // Caption: Observables;
+	repeated ocsf.v1_3_0.objects.Osint osint = 20; // Caption: OSINT; Profile: osint;
+	string raw_data = 21; // Caption: Raw Data;
+	ocsf.v1_3_0.objects.Remediation remediation = 22; // Caption: Remediation Guidance;
+	ocsf.v1_3_0.objects.Scan scan = 23; // Caption: Scan;
+	string severity = 24; // Caption: Severity;
+	ocsf.v1_3_0.events.remediation.enums.REMEDIATION_ACTIVITY_SEVERITY_ID severity_id = 25; // Caption: Severity ID;
+	int64 start_time = 26; // Caption: Start Time;
+	string status = 27; // Caption: Status;
+	string status_code = 28; // Caption: Status Code;
+	string status_detail = 29; // Caption: Status Detail;
+	ocsf.v1_3_0.events.remediation.enums.REMEDIATION_ACTIVITY_STATUS_ID status_id = 30; // Caption: Status ID;
+	int64 time = 31; // Caption: Event Time;
+	int32 timezone_offset = 32; // Caption: Timezone Offset;
+	string type_name = 33; // Caption: Type Name;
+	ocsf.v1_3_0.events.remediation.enums.REMEDIATION_ACTIVITY_TYPE_UID type_uid = 34; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 35; // Caption: Unmapped Data;
+}

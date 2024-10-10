@@ -14,9 +14,9 @@ import "ocsf/v1_1_0/objects/objects.proto";
 
 import "google/protobuf/struct.proto";
 
+// Event: discovery
 // Event UID: 2
 // URL: https://schema.ocsf.io/1.1.0/classes/config_state
-// Event: discovery
 message ConfigState {
 	ocsf.v1_1_0.events.discovery.enums.CONFIG_STATE_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -27,7 +27,7 @@ message ConfigState {
 	ocsf.v1_1_0.objects.CisBenchmarkResult cis_benchmark_result = 7; // Caption: CIS Benchmark Result;
 	string class_name = 8; // Caption: Class;
 	ocsf.v1_1_0.events.discovery.enums.CONFIG_STATE_CLASS_UID class_uid = 9; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 10; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 10; // Profile: cloud; Caption: Cloud;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 12; // Caption: Device;
 	int32 duration = 13; // Caption: Duration;
@@ -51,19 +51,19 @@ message ConfigState {
 	google.protobuf.Struct unmapped = 31; // Caption: Unmapped Data;
 }
 
+// URL: https://schema.ocsf.io/1.1.0/classes/device_config_state_change
 // Event: discovery
 // Event UID: 19
-// URL: https://schema.ocsf.io/1.1.0/classes/device_config_state_change
 message DeviceConfigStateChange {
 	ocsf.v1_1_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor;
-	ocsf.v1_1_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_1_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_1_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_1_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 11; // Caption: Device;
 	int32 duration = 12; // Caption: Duration;
@@ -134,12 +134,12 @@ message DiscoveryResult {
 	ocsf.v1_1_0.events.discovery.enums.DISCOVERY_RESULT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_1_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_1_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_1_0.events.discovery.enums.DISCOVERY_RESULT_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_1_0.events.discovery.enums.DISCOVERY_RESULT_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;
@@ -241,8 +241,8 @@ message PatchState {
 message PrefetchInfo {
 	ocsf.v1_1_0.events.discovery.enums.PREFETCH_INFO_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_1_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_1_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
+	ocsf.v1_1_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_1_0.events.discovery.enums.PREFETCH_INFO_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
@@ -280,7 +280,7 @@ message PrefetchInfo {
 message RegistryKeyInfo {
 	ocsf.v1_1_0.events.discovery.enums.REGISTRY_KEY_INFO_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_1_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
 	ocsf.v1_1_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_1_0.events.discovery.enums.REGISTRY_KEY_INFO_CATEGORY_UID category_uid = 6; // Caption: Category ID;
@@ -311,9 +311,9 @@ message RegistryKeyInfo {
 	google.protobuf.Struct unmapped = 31; // Caption: Unmapped Data;
 }
 
+// Event: discovery
 // Event UID: 5
 // URL: https://schema.ocsf.io/1.1.0/classes/registry_value_info
-// Event: discovery
 message RegistryValueInfo {
 	ocsf.v1_1_0.events.discovery.enums.REGISTRY_VALUE_INFO_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -323,7 +323,7 @@ message RegistryValueInfo {
 	ocsf.v1_1_0.events.discovery.enums.REGISTRY_VALUE_INFO_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_1_0.events.discovery.enums.REGISTRY_VALUE_INFO_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_1_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;
@@ -348,9 +348,9 @@ message RegistryValueInfo {
 	google.protobuf.Struct unmapped = 31; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.1.0/classes/user_inventory
 // Event: discovery
 // Event UID: 3
+// URL: https://schema.ocsf.io/1.1.0/classes/user_inventory
 message UserInventory {
 	ocsf.v1_1_0.events.discovery.enums.USER_INVENTORY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;

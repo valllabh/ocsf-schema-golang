@@ -130,7 +130,7 @@ message ApplicationLifecycle {
 message WebResourceAccessActivity {
 	ocsf.v1_0_0.events.application.enums.WEB_RESOURCE_ACCESS_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_0_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
 	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_0_0.events.application.enums.WEB_RESOURCE_ACCESS_ACTIVITY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
@@ -166,9 +166,9 @@ message WebResourceAccessActivity {
 	repeated ocsf.v1_0_0.objects.WebResource web_resources = 36; // Caption: Web Resources;
 }
 
-// URL: https://schema.ocsf.io/1.0.0/classes/web_resources_activity
 // Event: application
 // Event UID: 1
+// URL: https://schema.ocsf.io/1.0.0/classes/web_resources_activity
 message WebResourcesActivity {
 	ocsf.v1_0_0.events.application.enums.WEB_RESOURCES_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -180,7 +180,7 @@ message WebResourcesActivity {
 	ocsf.v1_0_0.events.application.enums.WEB_RESOURCES_ACTIVITY_CLASS_UID class_uid = 8; // Caption: Class ID;
 	ocsf.v1_0_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
-	ocsf.v1_0_0.objects.Device device = 11; // Profile: host; Caption: Device;
+	ocsf.v1_0_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	ocsf.v1_0_0.objects.NetworkEndpoint dst_endpoint = 12; // Caption: Destination Endpoint;
 	int32 duration = 13; // Caption: Duration;
 	int64 end_time = 14; // Caption: End Time;

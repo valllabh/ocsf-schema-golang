@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package ocsf.v1_3_0.events.other.enums;
+
+option go_package = "/ocsf/v1_3_0/events/other/enums";
+
+option java_package = "com.your.project.generated.ocsf.v1_3_0.events.other.enums";
+
+option java_multiple_files = true;
+
+enum BASE_EVENT_ACTIVITY_ID {
+	BASE_EVENT_ACTIVITY_ID_UNKNOWN = 0; // Type: OCSF_VALUE; EnumValue: 0;
+	BASE_EVENT_ACTIVITY_ID_OTHER = 99; // EnumValue: 99; Type: OCSF_VALUE;
+}
+
+enum BASE_EVENT_CATEGORY_UID {
+	BASE_EVENT_CATEGORY_UID_UNCATEGORIZED = 0; // Type: OCSF_VALUE; EnumValue: 0;
+}
+
+enum BASE_EVENT_CLASS_UID {
+	BASE_EVENT_CLASS_UID_BASE_EVENT = 0; // Type: OCSF_VALUE; EnumValue: 0;
+}
+
+enum BASE_EVENT_SEVERITY_ID {
+	BASE_EVENT_SEVERITY_ID_UNKNOWN = 0; // EnumValue: 0; Type: OCSF_VALUE;
+	BASE_EVENT_SEVERITY_ID_INFORMATIONAL = 1; // Type: OCSF_VALUE; EnumValue: 1;
+	BASE_EVENT_SEVERITY_ID_LOW = 2; // Type: OCSF_VALUE; EnumValue: 2;
+	BASE_EVENT_SEVERITY_ID_MEDIUM = 3; // Type: OCSF_VALUE; EnumValue: 3;
+	BASE_EVENT_SEVERITY_ID_HIGH = 4; // Type: OCSF_VALUE; EnumValue: 4;
+	BASE_EVENT_SEVERITY_ID_CRITICAL = 5; // Type: OCSF_VALUE; EnumValue: 5;
+	BASE_EVENT_SEVERITY_ID_FATAL = 6; // EnumValue: 6; Type: OCSF_VALUE;
+	BASE_EVENT_SEVERITY_ID_OTHER = 99; // Type: OCSF_VALUE; EnumValue: 99;
+}
+
+enum BASE_EVENT_STATUS_ID {
+	BASE_EVENT_STATUS_ID_UNKNOWN = 0; // Type: OCSF_VALUE; EnumValue: 0;
+	BASE_EVENT_STATUS_ID_SUCCESS = 1; // Type: OCSF_VALUE; EnumValue: 1;
+	BASE_EVENT_STATUS_ID_FAILURE = 2; // Type: OCSF_VALUE; EnumValue: 2;
+	BASE_EVENT_STATUS_ID_OTHER = 99; // Type: OCSF_VALUE; EnumValue: 99;
+}

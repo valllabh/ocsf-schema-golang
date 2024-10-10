@@ -475,7 +475,7 @@ message HttpHeader {
 message HttpRequest {
 	string args = 1; // Caption: HTTP Arguments;
 	repeated ocsf.v1_1_0.objects.HttpHeader http_headers = 2; // Caption: HTTP Headers;
-	string http_method = 3; // Caption: HTTP Method; AllowedValues: CONNECT, DELETE, GET, HEAD, OPTIONS, POST, PUT, TRACE;
+	string http_method = 3; // Caption: HTTP Method; AllowedValues: HEAD, OPTIONS, POST, PUT, TRACE, CONNECT, DELETE, GET;
 	int32 length = 4; // Caption: Response Length;
 	string referrer = 5; // Caption: HTTP Referrer;
 	string uid = 6; // Caption: Unique ID;
@@ -705,7 +705,7 @@ message NetworkEndpoint {
 	ocsf.v1_1_0.objects.Location location = 10; // Caption: Geo Location;
 	string mac = 11; // Caption: MAC Address;
 	string name = 12; // Caption: Name;
-	int32 namespace_pid = 13; // Profile: container; Caption: Namespace PID;
+	int32 namespace_pid = 13; // Caption: Namespace PID; Profile: container;
 	ocsf.v1_1_0.objects.Os os = 14; // Caption: OS;
 	int32 port = 15; // Caption: Port;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 16; // Caption: Proxy Endpoint;
@@ -832,7 +832,7 @@ message Process {
 	repeated string lineage = 11; // Caption: Lineage;
 	repeated string loaded_modules = 12; // Caption: Loaded Modules;
 	string name = 13; // Caption: Name;
-	int32 namespace_pid = 14; // Caption: Namespace PID; Profile: container;
+	int32 namespace_pid = 14; // Profile: container; Caption: Namespace PID;
 	ocsf.v1_1_0.objects.Process parent_process = 15; // Caption: Parent Process;
 	int32 pid = 16; // Caption: Process ID;
 	string sandbox = 17; // Caption: Sandbox;

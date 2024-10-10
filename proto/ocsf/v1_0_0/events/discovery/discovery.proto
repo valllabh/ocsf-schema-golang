@@ -57,7 +57,7 @@ message ConfigState {
 message Discovery {
 	ocsf.v1_0_0.events.discovery.enums.DISCOVERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_0_0.objects.Api api = 3; // Caption: API Details; Profile: cloud;
+	ocsf.v1_0_0.objects.Api api = 3; // Profile: cloud; Caption: API Details;
 	string category_name = 4; // Caption: Category;
 	ocsf.v1_0_0.events.discovery.enums.DISCOVERY_CATEGORY_UID category_uid = 5; // Caption: Category ID;
 	string class_name = 6; // Caption: Class;
@@ -85,9 +85,9 @@ message Discovery {
 	google.protobuf.Struct unmapped = 28; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.0.0/classes/inventory_info
 // Event: discovery
 // Event UID: 1
+// URL: https://schema.ocsf.io/1.0.0/classes/inventory_info
 message InventoryInfo {
 	ocsf.v1_0_0.events.discovery.enums.INVENTORY_INFO_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;

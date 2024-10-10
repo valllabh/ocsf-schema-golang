@@ -121,7 +121,7 @@ message Cve {
 
 message Cvss {
 	float base_score = 1; // Caption: Base Score;
-	string depth = 2; // Caption: CVSS Depth; AllowedValues: Environmental, Temporal, Base;
+	string depth = 2; // Caption: CVSS Depth; AllowedValues: Temporal, Base, Environmental;
 	repeated ocsf.v1_0_0.objects.Metric metrics = 3; // Caption: Metrics;
 	float overall_score = 4; // Caption: Overall Score;
 	string severity = 5; // Caption: Severity;
@@ -350,7 +350,7 @@ message HttpHeader {
 message HttpRequest {
 	string args = 1; // Caption: HTTP Arguments;
 	repeated ocsf.v1_0_0.objects.HttpHeader http_headers = 2; // Caption: HTTP Headers;
-	string http_method = 3; // Caption: HTTP Method; AllowedValues: OPTIONS, POST, PUT, TRACE, CONNECT, DELETE, GET, HEAD;
+	string http_method = 3; // Caption: HTTP Method; AllowedValues: TRACE, CONNECT, DELETE, GET, HEAD, OPTIONS, POST, PUT;
 	string referrer = 4; // Caption: HTTP Referrer;
 	string uid = 5; // Caption: Unique ID;
 	ocsf.v1_0_0.objects.Url url = 6; // Caption: URL;
@@ -609,7 +609,7 @@ message Process {
 	ocsf.v1_0_0.objects.Container container = 3; // Caption: Container; Profile: container;
 	int64 created_time = 4; // Caption: Created Time;
 	int32 egid = 5; // Caption: Effective Group ID; Profile: linux/linux_users;
-	int32 euid = 6; // Caption: Effective User ID; Profile: linux/linux_users;
+	int32 euid = 6; // Profile: linux/linux_users; Caption: Effective User ID;
 	ocsf.v1_0_0.objects.File file = 7; // Caption: File;
 	ocsf.v1_0_0.objects.Group group = 8; // Caption: Group; Profile: linux/linux_users;
 	string integrity = 9; // Caption: Integrity;
@@ -683,14 +683,14 @@ message Request {
 }
 
 message ResourceDetails {
-	string cloud_partition = 1; // Profile: cloud; Caption: Cloud Partition;
+	string cloud_partition = 1; // Caption: Cloud Partition; Profile: cloud;
 	string criticality = 2; // Caption: Criticality;
 	google.protobuf.Struct data = 3; // Caption: Data;
 	ocsf.v1_0_0.objects.Group group = 4; // Caption: Group;
 	repeated string labels = 5; // Caption: Labels;
 	string name = 6; // Caption: Name;
 	ocsf.v1_0_0.objects.User owner = 7; // Caption: Owner;
-	string region = 8; // Caption: Region; Profile: cloud;
+	string region = 8; // Profile: cloud; Caption: Region;
 	string type = 9; // Caption: Type;
 	string uid = 10; // Caption: Unique ID;
 	string version = 11; // Caption: Version;

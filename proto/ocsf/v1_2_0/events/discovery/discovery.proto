@@ -21,7 +21,7 @@ message AdminGroupQuery {
 	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_2_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.ADMIN_GROUP_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
@@ -99,7 +99,7 @@ message DeviceConfigStateChange {
 	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor;
-	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_2_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.DEVICE_CONFIG_STATE_CHANGE_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
@@ -134,9 +134,9 @@ message DeviceConfigStateChange {
 	google.protobuf.Struct unmapped = 36; // Caption: Unmapped Data;
 }
 
+// URL: https://schema.ocsf.io/1.2.0/classes/discovery
 // Event: discovery
 // Event UID: 0
-// URL: https://schema.ocsf.io/1.2.0/classes/discovery
 message Discovery {
 	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -174,15 +174,15 @@ message Discovery {
 message DiscoveryResult {
 	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
 	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_2_0.events.discovery.enums.DISCOVERY_RESULT_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
-	ocsf.v1_2_0.objects.Device device = 11; // Profile: host; Caption: Device;
+	ocsf.v1_2_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;
 	int64 end_time = 13; // Caption: End Time;
 	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 14; // Caption: Enrichments;
@@ -247,13 +247,13 @@ message FileQuery {
 	google.protobuf.Struct unmapped = 34; // Caption: Unmapped Data;
 }
 
+// Event: discovery
 // Event UID: 8
 // URL: https://schema.ocsf.io/1.2.0/classes/folder_query
-// Event: discovery
 message FolderQuery {
 	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_2_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
+	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
 	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.FOLDER_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
@@ -330,12 +330,12 @@ message JobQuery {
 	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_2_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_2_0.events.discovery.enums.JOB_QUERY_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;
@@ -370,7 +370,7 @@ message KernelObjectQuery {
 	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_2_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.KERNEL_OBJECT_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
@@ -403,9 +403,9 @@ message KernelObjectQuery {
 	google.protobuf.Struct unmapped = 34; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.2.0/classes/module_query
 // Event: discovery
 // Event UID: 11
+// URL: https://schema.ocsf.io/1.2.0/classes/module_query
 message ModuleQuery {
 	ocsf.v1_2_0.events.discovery.enums.MODULE_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -450,7 +450,7 @@ message ModuleQuery {
 message NetworkConnectionQuery {
 	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
 	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.NETWORK_CONNECTION_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
@@ -487,13 +487,13 @@ message NetworkConnectionQuery {
 	google.protobuf.Struct unmapped = 37; // Caption: Unmapped Data;
 }
 
+// Event: discovery
 // Event UID: 13
 // URL: https://schema.ocsf.io/1.2.0/classes/networks_query
-// Event: discovery
 message NetworksQuery {
 	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
 	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.NETWORKS_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
@@ -527,9 +527,9 @@ message NetworksQuery {
 	google.protobuf.Struct unmapped = 34; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.2.0/classes/patch_state
 // Event: discovery
 // Event UID: 4
+// URL: https://schema.ocsf.io/1.2.0/classes/patch_state
 message PatchState {
 	ocsf.v1_2_0.events.discovery.enums.PATCH_STATE_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -563,9 +563,9 @@ message PatchState {
 	google.protobuf.Struct unmapped = 30; // Caption: Unmapped Data;
 }
 
-// Event UID: 14
 // URL: https://schema.ocsf.io/1.2.0/classes/peripheral_device_query
 // Event: discovery
+// Event UID: 14
 message PeripheralDeviceQuery {
 	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -575,7 +575,7 @@ message PeripheralDeviceQuery {
 	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_2_0.events.discovery.enums.PERIPHERAL_DEVICE_QUERY_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;
@@ -657,7 +657,7 @@ message ProcessQuery {
 	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_2_0.events.discovery.enums.PROCESS_QUERY_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;
@@ -685,9 +685,9 @@ message ProcessQuery {
 	google.protobuf.Struct unmapped = 34; // Caption: Unmapped Data;
 }
 
+// URL: https://schema.ocsf.io/1.2.0/classes/registry_key_query
 // Event: discovery
 // Event UID: 4
-// URL: https://schema.ocsf.io/1.2.0/classes/registry_key_query
 message RegistryKeyQuery {
 	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -699,7 +699,7 @@ message RegistryKeyQuery {
 	ocsf.v1_2_0.events.discovery.enums.REGISTRY_KEY_QUERY_CLASS_UID class_uid = 8; // Caption: Class ID;
 	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
-	ocsf.v1_2_0.objects.Device device = 11; // Caption: Device; Profile: host;
+	ocsf.v1_2_0.objects.Device device = 11; // Profile: host; Caption: Device;
 	int32 duration = 12; // Caption: Duration;
 	int64 end_time = 13; // Caption: End Time;
 	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 14; // Caption: Enrichments;
@@ -731,7 +731,7 @@ message RegistryKeyQuery {
 message RegistryValueQuery {
 	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_2_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
 	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.REGISTRY_VALUE_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
@@ -772,7 +772,7 @@ message ServiceQuery {
 	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_2_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.discovery.enums.SERVICE_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
@@ -817,7 +817,7 @@ message SessionQuery {
 	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_2_0.events.discovery.enums.SESSION_QUERY_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 11; // Caption: Device; Profile: host;
 	int32 duration = 12; // Caption: Duration;

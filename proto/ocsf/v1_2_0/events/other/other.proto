@@ -14,9 +14,9 @@ import "ocsf/v1_2_0/objects/objects.proto";
 
 import "google/protobuf/struct.proto";
 
+// URL: https://schema.ocsf.io/1.2.0/classes/base_event
 // Event: other
 // Event UID: 0
-// URL: https://schema.ocsf.io/1.2.0/classes/base_event
 message BaseEvent {
 	ocsf.v1_2_0.events.other.enums.BASE_EVENT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;

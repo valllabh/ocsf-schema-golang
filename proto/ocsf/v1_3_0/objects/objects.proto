@@ -1,0 +1,1373 @@
+syntax = "proto3";
+
+package ocsf.v1_3_0.objects;
+
+option go_package = "/ocsf/v1_3_0/objects";
+
+option java_package = "com.your.project.generated.ocsf.v1_3_0.objects";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_3_0/objects/enums/enums.proto";
+
+import "google/protobuf/struct.proto";
+
+message Account {
+	repeated string labels = 1; // Caption: Labels;
+	string name = 2; // Caption: Name;
+	string type = 3; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.ACCOUNT_TYPE_ID type_id = 4; // Caption: Type ID;
+	string uid = 5; // Caption: Unique ID;
+}
+
+message Actor {
+	string app_name = 1; // Caption: Application Name;
+	string app_uid = 2; // Caption: Application ID;
+	repeated ocsf.v1_3_0.objects.Authorization authorizations = 3; // Caption: Authorization Information;
+	ocsf.v1_3_0.objects.Idp idp = 4; // Caption: Identity Provider;
+	string invoked_by = 5; // Caption: Invoked by;
+	ocsf.v1_3_0.objects.Process process = 6; // Caption: Process;
+	ocsf.v1_3_0.objects.Session session = 7; // Caption: Session;
+	ocsf.v1_3_0.objects.User user = 8; // Caption: User;
+}
+
+message AffectedCode {
+	int32 end_line = 1; // Caption: End Line;
+	ocsf.v1_3_0.objects.File file = 2; // Caption: File;
+	ocsf.v1_3_0.objects.User owner = 3; // Caption: Owner;
+	ocsf.v1_3_0.objects.Remediation remediation = 4; // Caption: Remediation Guidance;
+	int32 start_line = 5; // Caption: Start Line;
+}
+
+message AffectedPackage {
+	string architecture = 1; // Caption: Architecture;
+	string cpe_name = 2; // Caption: The product CPE identifier;
+	int32 epoch = 3; // Caption: Epoch;
+	string fixed_in_version = 4; // Caption: Fixed In Version;
+	ocsf.v1_3_0.objects.Fingerprint hash = 5; // Caption: Hash;
+	string license = 6; // Caption: Software License;
+	string name = 7; // Caption: Name;
+	string package_manager = 8; // Caption: Package Manager;
+	string path = 9; // Caption: Path;
+	string purl = 10; // Caption: Package URL;
+	string release = 11; // Caption: Software Release Details;
+	ocsf.v1_3_0.objects.Remediation remediation = 12; // Caption: Remediation Guidance;
+	string type = 13; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.AFFECTED_PACKAGE_TYPE_ID type_id = 14; // Caption: Type ID;
+	string vendor_name = 15; // Caption: Vendor Name;
+	string version = 16; // Caption: Version;
+}
+
+message Agent {
+	string name = 1; // Caption: Name;
+	repeated ocsf.v1_3_0.objects.Policy policies = 2; // Caption: Policies;
+	string type = 3; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.AGENT_TYPE_ID type_id = 4; // Caption: Type ID;
+	string uid = 5; // Caption: Unique ID;
+	string uid_alt = 6; // Caption: Alternate ID;
+	string vendor_name = 7; // Caption: Vendor Name;
+	string version = 8; // Caption: Version;
+}
+
+message Analytic {
+	string category = 1; // Caption: Category;
+	string desc = 2; // Caption: Description;
+	string name = 3; // Caption: Name;
+	repeated ocsf.v1_3_0.objects.Analytic related_analytics = 4; // Caption: Related Analytics;
+	string type = 5; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.ANALYTIC_TYPE_ID type_id = 6; // Caption: Type ID;
+	string uid = 7; // Caption: Unique ID;
+	string version = 8; // Caption: Version;
+}
+
+message Api {
+	ocsf.v1_3_0.objects.Group group = 1; // Caption: Group;
+	string operation = 2; // Caption: Operation;
+	ocsf.v1_3_0.objects.Request request = 3; // Caption: API Request Details;
+	ocsf.v1_3_0.objects.Response response = 4; // Caption: API Response Details;
+	ocsf.v1_3_0.objects.Service service = 5; // Caption: Service;
+	string version = 6; // Caption: Version;
+}
+
+message Attack {
+	ocsf.v1_3_0.objects.SubTechnique sub_technique = 1; // Caption: Sub Technique;
+	ocsf.v1_3_0.objects.Tactic tactic = 2; // Caption: Tactic;
+	repeated ocsf.v1_3_0.objects.Tactic tactics = 3; // Caption: Tactics;
+	ocsf.v1_3_0.objects.Technique technique = 4; // Caption: Technique;
+	string version = 5; // Caption: Version;
+}
+
+message AuthFactor {
+	ocsf.v1_3_0.objects.Device device = 1; // Caption: Device;
+	string email_addr = 2; // Caption: Email Address;
+	string factor_type = 3; // Caption: Factor Type;
+	ocsf.v1_3_0.objects.enums.AUTH_FACTOR_FACTOR_TYPE_ID factor_type_id = 4; // Caption: Factor Type ID;
+	bool is_hotp = 5; // Caption: HMAC-based One-time Password (HOTP);
+	bool is_totp = 6; // Caption: Time-based One-time Password (TOTP);
+	string phone_number = 7; // Caption: Phone Number;
+	string provider = 8; // Caption: Provider;
+	repeated string security_questions = 9; // Caption: Security Questions;
+}
+
+message Authorization {
+	string decision = 1; // Caption: Authorization Decision/Outcome;
+	ocsf.v1_3_0.objects.Policy policy = 2; // Caption: Policy;
+}
+
+message AutonomousSystem {
+	string name = 1; // Caption: Name;
+	int32 number = 2; // Caption: Number;
+}
+
+message Certificate {
+	int64 created_time = 1; // Caption: Created Time;
+	int64 expiration_time = 2; // Caption: Expiration Time;
+	repeated ocsf.v1_3_0.objects.Fingerprint fingerprints = 3; // Caption: Fingerprints;
+	bool is_self_signed = 4; // Caption: Certificate Self-Signed;
+	string issuer = 5; // Caption: Issuer Details;
+	string serial_number = 6; // Caption: Serial Number;
+	string subject = 7; // Caption: Subject Details;
+	string uid = 8; // Caption: Unique ID;
+	string version = 9; // Caption: Version;
+}
+
+message CisBenchmarkResult {
+	string desc = 1; // Caption: Description;
+	string name = 2; // Caption: Name;
+	ocsf.v1_3_0.objects.Remediation remediation = 3; // Caption: Remediation Guidance;
+	ocsf.v1_3_0.objects.Rule rule = 4; // Caption: Rule;
+}
+
+message CisCsc {
+	string control = 1; // Caption: Security Control;
+	string version = 2; // Caption: Version;
+}
+
+message Cloud {
+	ocsf.v1_3_0.objects.Account account = 1; // Caption: Account;
+	ocsf.v1_3_0.objects.Organization org = 2; // Caption: Organization;
+	string project_uid = 3; // Caption: Project ID;
+	string provider = 4; // Caption: Provider;
+	string region = 5; // Caption: Region;
+	string zone = 6; // Caption: Network Zone;
+}
+
+message Compliance {
+	repeated ocsf.v1_3_0.objects.KbArticle compliance_references = 1; // Caption: Complaince References Articles;
+	repeated ocsf.v1_3_0.objects.KbArticle compliance_standards = 2; // Caption: Compliance Standards Articles;
+	string control = 3; // Caption: Security Control;
+	repeated string requirements = 4; // Caption: Compliance Requirements;
+	repeated string standards = 5; // Caption: Security Standards;
+	string status = 6; // Caption: Status;
+	string status_code = 7; // Caption: Status Code;
+	string status_detail = 8; // Caption: Status Detail;
+	ocsf.v1_3_0.objects.enums.COMPLIANCE_STATUS_ID status_id = 9; // Caption: Status ID;
+}
+
+message Container {
+	ocsf.v1_3_0.objects.Fingerprint hash = 1; // Caption: Hash;
+	ocsf.v1_3_0.objects.Image image = 2; // Caption: Image;
+	string name = 3; // Caption: Name;
+	string network_driver = 4; // Caption: Network Driver;
+	string orchestrator = 5; // Caption: Orchestrator;
+	string pod_uuid = 6; // Caption: Pod UUID;
+	string runtime = 7; // Caption: Runtime;
+	int64 size = 8; // Caption: Size;
+	string tag = 9; // Caption: Image Tag;
+	string uid = 10; // Caption: Unique ID;
+}
+
+message Cve {
+	int64 created_time = 1; // Caption: Created Time;
+	repeated ocsf.v1_3_0.objects.Cvss cvss = 2; // Caption: CVSS Score;
+	ocsf.v1_3_0.objects.Cwe cwe = 3; // Caption: CWE;
+	string cwe_uid = 4; // Caption: CWE UID;
+	string cwe_url = 5; // Caption: CWE URL;
+	string desc = 6; // Caption: Description;
+	ocsf.v1_3_0.objects.Epss epss = 7; // Caption: EPSS;
+	int64 modified_time = 8; // Caption: Modified Time;
+	ocsf.v1_3_0.objects.Product product = 9; // Caption: Product;
+	repeated string references = 10; // Caption: References;
+	string title = 11; // Caption: Title;
+	string type = 12; // Caption: Type;
+	string uid = 13; // Caption: Unique ID;
+}
+
+message Cvss {
+	float base_score = 1; // Caption: Base Score;
+	string depth = 2; // Caption: CVSS Depth; AllowedValues: Environmental, Temporal, Base;
+	repeated ocsf.v1_3_0.objects.Metric metrics = 3; // Caption: Metrics;
+	float overall_score = 4; // Caption: Overall Score;
+	string severity = 5; // Caption: Severity;
+	string vector_string = 6; // Caption: Vector String;
+	string version = 7; // Caption: Version;
+}
+
+message Cwe {
+	string caption = 1; // Caption: Caption;
+	string src_url = 2; // Caption: Source URL;
+	string uid = 3; // Caption: Unique ID;
+}
+
+message D3FTactic {
+	string name = 1; // Caption: Name;
+	string src_url = 2; // Caption: Source URL;
+	string uid = 3; // Caption: Unique ID;
+}
+
+message D3FTechnique {
+	string name = 1; // Caption: Name;
+	string src_url = 2; // Caption: Source URL;
+	string uid = 3; // Caption: Unique ID;
+}
+
+message D3Fend {
+	ocsf.v1_3_0.objects.D3FTactic d3f_tactic = 1; // Caption: MITRE DEFEND™ Tactic;
+	ocsf.v1_3_0.objects.D3FTechnique d3f_technique = 2; // Caption: MITRE DEFEND™ Technique;
+	string version = 3; // Caption: Version;
+}
+
+message DataClassification {
+	string category = 1; // Caption: Category;
+	ocsf.v1_3_0.objects.enums.DATA_CLASSIFICATION_CATEGORY_ID category_id = 2; // Caption: Category ID;
+	string confidentiality = 3; // Caption: Confidentiality;
+	ocsf.v1_3_0.objects.enums.DATA_CLASSIFICATION_CONFIDENTIALITY_ID confidentiality_id = 4; // Caption: Confidentiality ID;
+	ocsf.v1_3_0.objects.Policy policy = 5; // Caption: Policy;
+}
+
+message DataSecurity {
+	string category = 1; // Caption: Category;
+	ocsf.v1_3_0.objects.enums.DATA_SECURITY_CATEGORY_ID category_id = 2; // Caption: Category ID;
+	string confidentiality = 3; // Caption: Confidentiality;
+	ocsf.v1_3_0.objects.enums.DATA_SECURITY_CONFIDENTIALITY_ID confidentiality_id = 4; // Caption: Confidentiality ID;
+	string data_lifecycle_state = 5; // Caption: Data Lifecycle State;
+	ocsf.v1_3_0.objects.enums.DATA_SECURITY_DATA_LIFECYCLE_STATE_ID data_lifecycle_state_id = 6; // Caption: Data Lifecycle State ID;
+	string detection_pattern = 7; // Caption: Detection Pattern;
+	string detection_system = 8; // Caption: Detection System;
+	ocsf.v1_3_0.objects.enums.DATA_SECURITY_DETECTION_SYSTEM_ID detection_system_id = 9; // Caption: Detection System ID;
+	string pattern_match = 10; // Caption: Pattern Match;
+	ocsf.v1_3_0.objects.Policy policy = 11; // Caption: Policy;
+}
+
+message Database {
+	int64 created_time = 1; // Caption: Created Time;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 2; // Caption: Data Classification; Profile: data_classification;
+	string desc = 3; // Caption: Description;
+	repeated ocsf.v1_3_0.objects.Group groups = 4; // Caption: Groups;
+	int64 modified_time = 5; // Caption: Modified Time;
+	string name = 6; // Caption: Name;
+	int64 size = 7; // Caption: Size;
+	string type = 8; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.DATABASE_TYPE_ID type_id = 9; // Caption: Type ID;
+	string uid = 10; // Caption: Unique ID;
+}
+
+message Databucket {
+	int64 created_time = 1; // Caption: Created Time;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 2; // Caption: Data Classification; Profile: data_classification;
+	string desc = 3; // Caption: Description;
+	ocsf.v1_3_0.objects.File file = 4; // Caption: File;
+	repeated ocsf.v1_3_0.objects.Group groups = 5; // Caption: Groups;
+	int64 modified_time = 6; // Caption: Modified Time;
+	string name = 7; // Caption: Name;
+	int64 size = 8; // Caption: Size;
+	string type = 9; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.DATABUCKET_TYPE_ID type_id = 10; // Caption: Type ID;
+	string uid = 11; // Caption: Unique ID;
+}
+
+message DceRpc {
+	string command = 1; // Caption: Command;
+	string command_response = 2; // Caption: Command Response;
+	repeated string flags = 3; // Caption: Flags;
+	int32 opnum = 4; // Caption: Opnum;
+	ocsf.v1_3_0.objects.RpcInterface rpc_interface = 5; // Caption: Remote Procedure Call Interface;
+}
+
+message Device {
+	repeated ocsf.v1_3_0.objects.Agent agent_list = 1; // Caption: Agent List;
+	string autoscale_uid = 2; // Caption: Autoscale UID;
+	int64 boot_time = 3; // Caption: Boot Time;
+	ocsf.v1_3_0.objects.Container container = 4; // Caption: Container; Profile: container;
+	int64 created_time = 5; // Caption: Created Time;
+	string desc = 6; // Caption: Description;
+	string domain = 7; // Caption: Domain;
+	int64 first_seen_time = 8; // Caption: First Seen;
+	repeated ocsf.v1_3_0.objects.Group groups = 9; // Caption: Groups;
+	string hostname = 10; // Caption: Hostname;
+	ocsf.v1_3_0.objects.DeviceHwInfo hw_info = 11; // Caption: Hardware Info;
+	string hypervisor = 12; // Caption: Hypervisor;
+	ocsf.v1_3_0.objects.Image image = 13; // Caption: Image;
+	string imei = 14; // Caption: IMEI;
+	string instance_uid = 15; // Caption: Instance ID;
+	string interface_name = 16; // Caption: Network Interface Name;
+	string interface_uid = 17; // Caption: Network Interface ID;
+	string ip = 18; // Caption: IP Address;
+	bool is_compliant = 19; // Caption: Compliant Device;
+	bool is_managed = 20; // Caption: Managed Device;
+	bool is_personal = 21; // Caption: Personal Device;
+	bool is_trusted = 22; // Caption: Trusted Device;
+	int64 last_seen_time = 23; // Caption: Last Seen;
+	ocsf.v1_3_0.objects.Location location = 24; // Caption: Geo Location;
+	string mac = 25; // Caption: MAC Address;
+	int64 modified_time = 26; // Caption: Modified Time;
+	string name = 27; // Caption: Name;
+	int32 namespace_pid = 28; // Caption: Namespace PID; Profile: container;
+	repeated ocsf.v1_3_0.objects.NetworkInterface network_interfaces = 29; // Caption: Network Interfaces;
+	ocsf.v1_3_0.objects.Organization org = 30; // Caption: Organization;
+	ocsf.v1_3_0.objects.Os os = 31; // Caption: OS;
+	ocsf.v1_3_0.objects.User owner = 32; // Caption: Owner;
+	string region = 33; // Caption: Region;
+	string risk_level = 34; // Caption: Risk Level;
+	ocsf.v1_3_0.objects.enums.DEVICE_RISK_LEVEL_ID risk_level_id = 35; // Caption: Risk Level ID;
+	int32 risk_score = 36; // Caption: Risk Score;
+	string subnet = 37; // Caption: Subnet;
+	string subnet_uid = 38; // Caption: Subnet UID;
+	string type = 39; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.DEVICE_TYPE_ID type_id = 40; // Caption: Type ID;
+	string uid = 41; // Caption: Unique ID;
+	string uid_alt = 42; // Caption: Alternate ID;
+	string vlan_uid = 43; // Caption: VLAN;
+	string vpc_uid = 44; // Caption: VPC UID;
+	string zone = 45; // Caption: Network Zone;
+}
+
+message DeviceHwInfo {
+	string bios_date = 1; // Caption: BIOS Date;
+	string bios_manufacturer = 2; // Caption: BIOS Manufacturer;
+	string bios_ver = 3; // Caption: BIOS Version;
+	string chassis = 4; // Caption: Chassis;
+	int32 cpu_bits = 5; // Caption: CPU Bits;
+	int32 cpu_cores = 6; // Caption: CPU Cores;
+	int32 cpu_count = 7; // Caption: CPU Count;
+	int32 cpu_speed = 8; // Caption: Processor Speed;
+	string cpu_type = 9; // Caption: Processor Type;
+	ocsf.v1_3_0.objects.Display desktop_display = 10; // Caption: Desktop Display;
+	ocsf.v1_3_0.objects.KeyboardInfo keyboard_info = 11; // Caption: Keyboard Information;
+	int32 ram_size = 12; // Caption: RAM Size;
+	string serial_number = 13; // Caption: Serial Number;
+}
+
+message DigitalSignature {
+	string algorithm = 1; // Caption: Algorithm;
+	ocsf.v1_3_0.objects.enums.DIGITAL_SIGNATURE_ALGORITHM_ID algorithm_id = 2; // Caption: Algorithm ID;
+	ocsf.v1_3_0.objects.Certificate certificate = 3; // Caption: Certificate;
+	int64 created_time = 4; // Caption: Created Time;
+	string developer_uid = 5; // Caption: Developer UID;
+	ocsf.v1_3_0.objects.Fingerprint digest = 6; // Caption: Message Digest;
+	string state = 7; // Caption: State;
+	ocsf.v1_3_0.objects.enums.DIGITAL_SIGNATURE_STATE_ID state_id = 8; // Caption: State ID;
+}
+
+message Display {
+	int32 color_depth = 1; // Caption: Color Depth;
+	int32 physical_height = 2; // Caption: Physical Height;
+	int32 physical_orientation = 3; // Caption: Physical Orientation;
+	int32 physical_width = 4; // Caption: Physical Width;
+	int32 scale_factor = 5; // Caption: Scale Factor;
+}
+
+message DnsAnswer {
+	string class = 1; // Caption: Class;
+	repeated ocsf.v1_3_0.objects.enums.DNS_ANSWER_FLAG_IDS flag_ids = 2; // Caption: Communication Flag IDs;
+	repeated string flags = 3; // Caption: Flags;
+	int32 packet_uid = 4; // Caption: Packet UID;
+	string rdata = 5; // Caption: DNS RData;
+	int32 ttl = 6; // Caption: TTL;
+	string type = 7; // Caption: Type;
+}
+
+message DnsQuery {
+	string class = 1; // Caption: Class;
+	string hostname = 2; // Caption: Hostname;
+	string opcode = 3; // Caption: DNS Opcode;
+	ocsf.v1_3_0.objects.enums.DNS_QUERY_OPCODE_ID opcode_id = 4; // Caption: DNS Opcode ID;
+	int32 packet_uid = 5; // Caption: Packet UID;
+	string type = 6; // Caption: Type;
+}
+
+message DomainContact {
+	string email_addr = 1; // Caption: Email Address;
+	ocsf.v1_3_0.objects.Location location = 2; // Caption: Geo Location;
+	string name = 3; // Caption: Name;
+	string phone_number = 4; // Caption: Phone Number;
+	string type = 5; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.DOMAIN_CONTACT_TYPE_ID type_id = 6; // Caption: Type ID;
+	string uid = 7; // Caption: Unique ID;
+}
+
+message Email {
+	repeated string cc = 1; // Caption: Cc;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 2; // Caption: Data Classification; Profile: data_classification;
+	string delivered_to = 3; // Caption: Delivered To;
+	string from = 4; // Caption: From;
+	string message_uid = 5; // Caption: Message UID;
+	string raw_header = 6; // Caption: Raw Header;
+	string reply_to = 7; // Caption: Reply To;
+	int64 size = 8; // Caption: Size;
+	string smtp_from = 9; // Caption: SMTP From;
+	repeated string smtp_to = 10; // Caption: SMTP To;
+	string subject = 11; // Caption: Subject Details;
+	repeated string to = 12; // Caption: To;
+	string uid = 13; // Caption: Unique ID;
+	repeated string x_originating_ip = 14; // Caption: X-Originating-IP;
+}
+
+message EmailAuth {
+	string dkim = 1; // Caption: DKIM Status;
+	string dkim_domain = 2; // Caption: DKIM Domain;
+	string dkim_signature = 3; // Caption: DKIM Signature;
+	string dmarc = 4; // Caption: DMARC Status;
+	string dmarc_override = 5; // Caption: DMARC Override;
+	string dmarc_policy = 6; // Caption: DMARC Policy;
+	string spf = 7; // Caption: SPF Status;
+}
+
+message EndpointConnection {
+	int32 code = 1; // Caption: Response Code;
+	ocsf.v1_3_0.objects.NetworkEndpoint network_endpoint = 2; // Caption: Network Endpoint;
+}
+
+message Enrichment {
+	int64 created_time = 1; // Caption: Created Time;
+	google.protobuf.Struct data = 2; // Caption: Data;
+	string desc = 3; // Caption: Description;
+	string name = 4; // Caption: Name;
+	string provider = 5; // Caption: Provider;
+	ocsf.v1_3_0.objects.Reputation reputation = 6; // Caption: Reputation Scores;
+	string short_desc = 7; // Caption: Short Description;
+	string src_url = 8; // Caption: Source URL;
+	string type = 9; // Caption: Type;
+	string value = 10; // Caption: Value;
+}
+
+message Epss {
+	int64 created_time = 1; // Caption: Created Time;
+	float percentile = 2; // Caption: EPSS Percentile;
+	string score = 3; // Caption: Reputation Score;
+	string version = 4; // Caption: Version;
+}
+
+message Evidences {
+	ocsf.v1_3_0.objects.Actor actor = 1; // Caption: Actor;
+	ocsf.v1_3_0.objects.Api api = 2; // Caption: API Details;
+	ocsf.v1_3_0.objects.NetworkConnectionInfo connection_info = 3; // Caption: Connection Info;
+	ocsf.v1_3_0.objects.Container container = 4; // Caption: Container;
+	google.protobuf.Struct data = 5; // Caption: Data;
+	ocsf.v1_3_0.objects.Database database = 6; // Caption: Database;
+	ocsf.v1_3_0.objects.Databucket databucket = 7; // Caption: Databucket;
+	ocsf.v1_3_0.objects.Device device = 8; // Caption: Device;
+	ocsf.v1_3_0.objects.NetworkEndpoint dst_endpoint = 9; // Caption: Destination Endpoint;
+	ocsf.v1_3_0.objects.Email email = 10; // Caption: Email;
+	ocsf.v1_3_0.objects.File file = 11; // Caption: File;
+	ocsf.v1_3_0.objects.Job job = 12; // Caption: Job;
+	ocsf.v1_3_0.objects.Process process = 13; // Caption: Process;
+	ocsf.v1_3_0.objects.DnsQuery query = 14; // Caption: DNS Query;
+	ocsf.v1_3_0.objects.RegKey reg_key = 15; // Caption: Registry Key;
+	ocsf.v1_3_0.objects.RegValue reg_value = 16; // Caption: Registry Value;
+	ocsf.v1_3_0.objects.NetworkEndpoint src_endpoint = 17; // Caption: Source Endpoint;
+	ocsf.v1_3_0.objects.Url url = 18; // Caption: URL;
+	ocsf.v1_3_0.objects.User user = 19; // Caption: User;
+	ocsf.v1_3_0.objects.WinService win_service = 20; // Caption: Windows Service;
+}
+
+message Extension {
+	string name = 1; // Caption: Name;
+	string uid = 2; // Caption: Unique ID;
+	string version = 3; // Caption: Version;
+}
+
+message Feature {
+	string name = 1; // Caption: Name;
+	string uid = 2; // Caption: Unique ID;
+	string version = 3; // Caption: Version;
+}
+
+message File {
+	int64 accessed_time = 1; // Caption: Accessed Time;
+	ocsf.v1_3_0.objects.User accessor = 2; // Caption: Accessor;
+	int32 attributes = 3; // Caption: Attributes;
+	string company_name = 4; // Caption: Company Name;
+	string confidentiality = 5; // Caption: Confidentiality;
+	ocsf.v1_3_0.objects.enums.FILE_CONFIDENTIALITY_ID confidentiality_id = 6; // Caption: Confidentiality ID;
+	int64 created_time = 7; // Caption: Created Time;
+	ocsf.v1_3_0.objects.User creator = 8; // Caption: Creator;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 9; // Caption: Data Classification; Profile: data_classification;
+	string desc = 10; // Caption: Description;
+	string ext = 11; // Caption: Extension;
+	repeated ocsf.v1_3_0.objects.Fingerprint hashes = 12; // Caption: Hashes;
+	bool is_system = 13; // Caption: System;
+	string mime_type = 14; // Caption: MIME type;
+	int64 modified_time = 15; // Caption: Modified Time;
+	ocsf.v1_3_0.objects.User modifier = 16; // Caption: Modifier;
+	string name = 17; // Caption: Name;
+	ocsf.v1_3_0.objects.User owner = 18; // Caption: Owner;
+	string parent_folder = 19; // Caption: Parent Folder;
+	string path = 20; // Caption: Path;
+	ocsf.v1_3_0.objects.Product product = 21; // Caption: Product;
+	string security_descriptor = 22; // Caption: Security Descriptor;
+	ocsf.v1_3_0.objects.DigitalSignature signature = 23; // Caption: Digital Signature;
+	int64 size = 24; // Caption: Size;
+	string type = 25; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.FILE_TYPE_ID type_id = 26; // Caption: Type ID;
+	string uid = 27; // Caption: Unique ID;
+	string version = 28; // Caption: Version;
+	google.protobuf.Struct xattributes = 29; // Caption: Extended Attributes;
+}
+
+message FindingInfo {
+	ocsf.v1_3_0.objects.Analytic analytic = 1; // Caption: Analytic;
+	repeated ocsf.v1_3_0.objects.Attack attacks = 2; // Caption: MITRE ATT&CK® Details;
+	int64 created_time = 3; // Caption: Created Time;
+	repeated string data_sources = 4; // Caption: Data Sources;
+	string desc = 5; // Caption: Description;
+	int64 first_seen_time = 6; // Caption: First Seen;
+	repeated ocsf.v1_3_0.objects.KillChainPhase kill_chain = 7; // Caption: Kill Chain;
+	int64 last_seen_time = 8; // Caption: Last Seen;
+	int64 modified_time = 9; // Caption: Modified Time;
+	string product_uid = 10; // Caption: Product Identifier;
+	repeated ocsf.v1_3_0.objects.Analytic related_analytics = 11; // Caption: Related Analytics;
+	repeated ocsf.v1_3_0.objects.RelatedEvent related_events = 12; // Caption: Related Events;
+	string src_url = 13; // Caption: Source URL;
+	string title = 14; // Caption: Title;
+	repeated string types = 15; // Caption: Types;
+	string uid = 16; // Caption: Unique ID;
+}
+
+message Fingerprint {
+	string algorithm = 1; // Caption: Algorithm;
+	ocsf.v1_3_0.objects.enums.FINGERPRINT_ALGORITHM_ID algorithm_id = 2; // Caption: Algorithm ID;
+	string value = 3; // Caption: Value;
+}
+
+message FirewallRule {
+	string category = 1; // Caption: Category;
+	string condition = 2; // Caption: Condition;
+	string desc = 3; // Caption: Description;
+	int64 duration = 4; // Caption: Duration Milliseconds;
+	repeated string match_details = 5; // Caption: Match Details;
+	string match_location = 6; // Caption: Match Location;
+	string name = 7; // Caption: Name;
+	int32 rate_limit = 8; // Caption: Rate Limit;
+	string sensitivity = 9; // Caption: Sensitivity;
+	string type = 10; // Caption: Type;
+	string uid = 11; // Caption: Unique ID;
+	string version = 12; // Caption: Version;
+}
+
+message Group {
+	string desc = 1; // Caption: Description;
+	string domain = 2; // Caption: Domain;
+	string name = 3; // Caption: Name;
+	repeated string privileges = 4; // Caption: Privileges;
+	string type = 5; // Caption: Type;
+	string uid = 6; // Caption: Unique ID;
+}
+
+message Hassh {
+	string algorithm = 1; // Caption: Algorithm;
+	ocsf.v1_3_0.objects.Fingerprint fingerprint = 2; // Caption: Fingerprint;
+}
+
+message HttpCookie {
+	string domain = 1; // Caption: Domain;
+	int64 expiration_time = 2; // Caption: Expiration Time;
+	bool http_only = 3; // Caption: HTTP Only;
+	bool is_http_only = 4; // Caption: HTTP Only;
+	bool is_secure = 5; // Caption: Secure;
+	string name = 6; // Caption: Name;
+	string path = 7; // Caption: Path;
+	string samesite = 8; // Caption: SameSite;
+	bool secure = 9; // Caption: Secure;
+	string value = 10; // Caption: Value;
+}
+
+message HttpHeader {
+	string name = 1; // Caption: Name;
+	string value = 2; // Caption: Value;
+}
+
+message HttpRequest {
+	string args = 1; // Caption: HTTP Arguments;
+	repeated ocsf.v1_3_0.objects.HttpHeader http_headers = 2; // Caption: HTTP Headers;
+	string http_method = 3; // AllowedValues: TRACE, CONNECT, DELETE, GET, HEAD, OPTIONS, POST, PUT; Caption: HTTP Method;
+	int32 length = 4; // Caption: Response Length;
+	string referrer = 5; // Caption: HTTP Referrer;
+	string uid = 6; // Caption: Unique ID;
+	ocsf.v1_3_0.objects.Url url = 7; // Caption: URL;
+	string user_agent = 8; // Caption: HTTP User-Agent;
+	string version = 9; // Caption: Version;
+	repeated string x_forwarded_for = 10; // Caption: X-Forwarded-For;
+}
+
+message HttpResponse {
+	int32 code = 1; // Caption: Response Code;
+	string content_type = 2; // Caption: HTTP Content Type;
+	repeated ocsf.v1_3_0.objects.HttpHeader http_headers = 3; // Caption: HTTP Headers;
+	int32 latency = 4; // Caption: Latency;
+	int32 length = 5; // Caption: Response Length;
+	string message = 6; // Caption: Message;
+	string status = 7; // Caption: Status;
+}
+
+message Idp {
+	string name = 1; // Caption: Name;
+	string uid = 2; // Caption: Unique ID;
+}
+
+message Image {
+	repeated string labels = 1; // Caption: Labels;
+	string name = 2; // Caption: Name;
+	string path = 3; // Caption: Path;
+	string tag = 4; // Caption: Image Tag;
+	string uid = 5; // Caption: Unique ID;
+}
+
+message Ja4Fingerprint {
+	string section_a = 1; // Caption: JA4 Section A;
+	string section_b = 2; // Caption: JA4 Section B;
+	string section_c = 3; // Caption: JA4 Section C;
+	string section_d = 4; // Caption: JA4 Section D;
+	string type = 5; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.JA_4_FINGERPRINT_TYPE_ID type_id = 6; // Caption: Type ID;
+	string value = 7; // Caption: Value;
+}
+
+message Job {
+	string cmd_line = 1; // Caption: Command Line;
+	int64 created_time = 2; // Caption: Created Time;
+	string desc = 3; // Caption: Description;
+	ocsf.v1_3_0.objects.File file = 4; // Caption: File;
+	int64 last_run_time = 5; // Caption: Last Run;
+	string name = 6; // Caption: Name;
+	int64 next_run_time = 7; // Caption: Next Run;
+	string run_state = 8; // Caption: Run State;
+	ocsf.v1_3_0.objects.enums.JOB_RUN_STATE_ID run_state_id = 9; // Caption: Run State ID;
+	ocsf.v1_3_0.objects.User user = 10; // Caption: User;
+}
+
+message KbArticle {
+	ocsf.v1_3_0.objects.Timespan avg_timespan = 1; // Caption: Average Timespan;
+	string bulletin = 2; // Caption: Patch Bulletin;
+	string classification = 3; // Caption: Classification;
+	int64 created_time = 4; // Caption: Created Time;
+	string install_state = 5; // Caption: Install State;
+	ocsf.v1_3_0.objects.enums.KB_ARTICLE_INSTALL_STATE_ID install_state_id = 6; // Caption: Install State ID;
+	bool is_superseded = 7; // Caption: The patch is superseded.;
+	ocsf.v1_3_0.objects.Os os = 8; // Caption: OS;
+	ocsf.v1_3_0.objects.Product product = 9; // Caption: Product;
+	string severity = 10; // Caption: Severity;
+	int64 size = 11; // Caption: Size;
+	string src_url = 12; // Caption: Source URL;
+	string title = 13; // Caption: Title;
+	string uid = 14; // Caption: Unique ID;
+}
+
+message Kernel {
+	bool is_system = 1; // Caption: System;
+	string name = 2; // Caption: Name;
+	string path = 3; // Caption: Path;
+	string system_call = 4; // Caption: System Call;
+	string type = 5; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.KERNEL_TYPE_ID type_id = 6; // Caption: Type ID;
+}
+
+message KernelDriver {
+	ocsf.v1_3_0.objects.File file = 1; // Caption: File;
+}
+
+message KeyboardInfo {
+	int32 function_keys = 1; // Caption: Function Keys;
+	string ime = 2; // Caption: IME;
+	string keyboard_layout = 3; // Caption: Keyboard Layout;
+	int32 keyboard_subtype = 4; // Caption: Keyboard Subtype;
+	string keyboard_type = 5; // Caption: Keyboard Type;
+}
+
+message KillChainPhase {
+	string phase = 1; // Caption: Kill Chain Phase;
+	ocsf.v1_3_0.objects.enums.KILL_CHAIN_PHASE_PHASE_ID phase_id = 2; // Caption: Kill Chain Phase ID;
+}
+
+message LdapPerson {
+	string cost_center = 1; // Caption: Cost Center;
+	int64 created_time = 2; // Caption: Created Time;
+	int64 deleted_time = 3; // Caption: Deleted Time;
+	repeated string email_addrs = 4; // Caption: Email Addresses;
+	string employee_uid = 5; // Caption: Employee ID;
+	string given_name = 6; // Caption: Given Name;
+	int64 hire_time = 7; // Caption: Hire Time;
+	string job_title = 8; // Caption: Job Title;
+	repeated string labels = 9; // Caption: Labels;
+	int64 last_login_time = 10; // Caption: Last Login;
+	string ldap_cn = 11; // Caption: LDAP Common Name;
+	string ldap_dn = 12; // Caption: LDAP Distinguished Name;
+	int64 leave_time = 13; // Caption: Leave Time;
+	ocsf.v1_3_0.objects.Location location = 14; // Caption: Geo Location;
+	ocsf.v1_3_0.objects.User manager = 15; // Caption: Manager;
+	int64 modified_time = 16; // Caption: Modified Time;
+	string office_location = 17; // Caption: Office Location;
+	string surname = 18; // Caption: Surname;
+}
+
+message LoadBalancer {
+	string classification = 1; // Caption: Classification;
+	int32 code = 2; // Caption: Response Code;
+	ocsf.v1_3_0.objects.NetworkEndpoint dst_endpoint = 3; // Caption: Destination Endpoint;
+	repeated ocsf.v1_3_0.objects.EndpointConnection endpoint_connections = 4; // Caption: Endpoint Connections;
+	string error_message = 5; // Caption: Error Message;
+	string ip = 6; // Caption: IP Address;
+	string message = 7; // Caption: Message;
+	repeated ocsf.v1_3_0.objects.Metric metrics = 8; // Caption: Metrics;
+	string name = 9; // Caption: Name;
+	string status_detail = 10; // Caption: Status Detail;
+	string uid = 11; // Caption: Unique ID;
+}
+
+message Location {
+	string city = 1; // Caption: City;
+	string continent = 2; // Caption: Continent;
+	repeated float coordinates = 3; // Caption: Coordinates;
+	string country = 4; // Caption: Country;
+	string desc = 5; // Caption: Description;
+	string geohash = 6; // Caption: Geohash;
+	bool is_on_premises = 7; // Caption: On Premises;
+	string isp = 8; // Caption: ISP;
+	float lat = 9; // Caption: Latitude;
+	float long = 10; // Caption: Longitude;
+	string postal_code = 11; // Caption: Postal Code;
+	string provider = 12; // Caption: Provider;
+	string region = 13; // Caption: Region;
+}
+
+message Logger {
+	ocsf.v1_3_0.objects.Device device = 1; // Caption: Device;
+	string log_level = 2; // Caption: Log Level;
+	string log_name = 3; // Caption: Log Name;
+	string log_provider = 4; // Caption: Log Provider;
+	string log_version = 5; // Caption: Log Version;
+	int64 logged_time = 6; // Caption: Logged Time;
+	string name = 7; // Caption: Name;
+	ocsf.v1_3_0.objects.Product product = 8; // Caption: Product;
+	int64 transmit_time = 9; // Caption: Transmission Time;
+	string uid = 10; // Caption: Unique ID;
+	string version = 11; // Caption: Version;
+}
+
+message Malware {
+	repeated ocsf.v1_3_0.objects.enums.MALWARE_CLASSIFICATION_IDS classification_ids = 1; // Caption: Classification IDs;
+	repeated string classifications = 2; // Caption: Classifications;
+	repeated ocsf.v1_3_0.objects.Cve cves = 3; // Caption: CVE List;
+	string name = 4; // Caption: Name;
+	string path = 5; // Caption: Path;
+	string provider = 6; // Caption: Provider;
+	string uid = 7; // Caption: Unique ID;
+}
+
+message ManagedEntity {
+	google.protobuf.Struct data = 1; // Caption: Data;
+	ocsf.v1_3_0.objects.Device device = 2; // Caption: Device;
+	ocsf.v1_3_0.objects.Email email = 3; // Caption: Email;
+	ocsf.v1_3_0.objects.Group group = 4; // Caption: Group;
+	string name = 5; // Caption: Name;
+	ocsf.v1_3_0.objects.Organization org = 6; // Caption: Organization;
+	ocsf.v1_3_0.objects.Policy policy = 7; // Caption: Policy;
+	string type = 8; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.MANAGED_ENTITY_TYPE_ID type_id = 9; // Caption: Type ID;
+	string uid = 10; // Caption: Unique ID;
+	ocsf.v1_3_0.objects.User user = 11; // Caption: User;
+	string version = 12; // Caption: Version;
+}
+
+message Metadata {
+	string correlation_uid = 1; // Caption: Correlation UID;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 2; // Caption: Data Classification; Profile: data_classification;
+	string event_code = 3; // Caption: Event Code;
+	ocsf.v1_3_0.objects.Extension extension = 4; // Caption: Schema Extension;
+	repeated ocsf.v1_3_0.objects.Extension extensions = 5; // Caption: Schema Extensions;
+	repeated string labels = 6; // Caption: Labels;
+	string log_level = 7; // Caption: Log Level;
+	string log_name = 8; // Caption: Log Name;
+	string log_provider = 9; // Caption: Log Provider;
+	string log_version = 10; // Caption: Log Version;
+	int64 logged_time = 11; // Caption: Logged Time;
+	repeated ocsf.v1_3_0.objects.Logger loggers = 12; // Caption: Loggers;
+	int64 modified_time = 13; // Caption: Modified Time;
+	string original_time = 14; // Caption: Original Time;
+	int64 processed_time = 15; // Caption: Processed Time;
+	ocsf.v1_3_0.objects.Product product = 16; // Caption: Product;
+	repeated string profiles = 17; // Caption: Profiles;
+	int32 sequence = 18; // Caption: Sequence Number;
+	string tenant_uid = 19; // Caption: Tenant UID;
+	string uid = 20; // Caption: Unique ID;
+	string version = 21; // Caption: Version;
+}
+
+message Metric {
+	string name = 1; // Caption: Name;
+	string value = 2; // Caption: Value;
+}
+
+message Module {
+	string base_address = 1; // Caption: Base Address;
+	ocsf.v1_3_0.objects.File file = 2; // Caption: File;
+	string function_name = 3; // Caption: Function Name;
+	string load_type = 4; // Caption: Load Type;
+	ocsf.v1_3_0.objects.enums.MODULE_LOAD_TYPE_ID load_type_id = 5; // Caption: Load Type ID;
+	string start_address = 6; // Caption: Start Address;
+	string type = 7; // Caption: Type;
+}
+
+message NetworkConnectionInfo {
+	string boundary = 1; // Caption: Boundary;
+	ocsf.v1_3_0.objects.enums.NETWORK_CONNECTION_INFO_BOUNDARY_ID boundary_id = 2; // Caption: Boundary ID;
+	string direction = 3; // Caption: Direction;
+	ocsf.v1_3_0.objects.enums.NETWORK_CONNECTION_INFO_DIRECTION_ID direction_id = 4; // Caption: Direction ID;
+	string protocol_name = 5; // Caption: Protocol Name;
+	int32 protocol_num = 6; // Caption: Protocol Number;
+	string protocol_ver = 7; // Caption: Protocol Version;
+	ocsf.v1_3_0.objects.enums.NETWORK_CONNECTION_INFO_PROTOCOL_VER_ID protocol_ver_id = 8; // Caption: Protocol Version ID;
+	ocsf.v1_3_0.objects.Session session = 9; // Caption: Session;
+	int32 tcp_flags = 10; // Caption: TCP Flags;
+	string uid = 11; // Caption: Unique ID;
+}
+
+message NetworkEndpoint {
+	repeated ocsf.v1_3_0.objects.Agent agent_list = 1; // Caption: Agent List;
+	ocsf.v1_3_0.objects.AutonomousSystem autonomous_system = 2; // Caption: Autonomous System;
+	ocsf.v1_3_0.objects.Container container = 3; // Caption: Container; Profile: container;
+	string domain = 4; // Caption: Domain;
+	string hostname = 5; // Caption: Hostname;
+	ocsf.v1_3_0.objects.DeviceHwInfo hw_info = 6; // Caption: Hardware Info;
+	string instance_uid = 7; // Caption: Instance ID;
+	string interface_name = 8; // Caption: Network Interface Name;
+	string interface_uid = 9; // Caption: Network Interface ID;
+	repeated string intermediate_ips = 10; // Caption: Intermediate IP Addresses;
+	string ip = 11; // Caption: IP Address;
+	ocsf.v1_3_0.objects.Location location = 12; // Caption: Geo Location;
+	string mac = 13; // Caption: MAC Address;
+	string name = 14; // Caption: Name;
+	int32 namespace_pid = 15; // Caption: Namespace PID; Profile: container;
+	ocsf.v1_3_0.objects.Os os = 16; // Caption: OS;
+	ocsf.v1_3_0.objects.User owner = 17; // Caption: Owner;
+	int32 port = 18; // Caption: Port;
+	ocsf.v1_3_0.objects.NetworkProxy proxy_endpoint = 19; // Caption: Proxy Endpoint;
+	string subnet_uid = 20; // Caption: Subnet UID;
+	string svc_name = 21; // Caption: Service Name;
+	string type = 22; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.NETWORK_ENDPOINT_TYPE_ID type_id = 23; // Caption: Type ID;
+	string uid = 24; // Caption: Unique ID;
+	string vlan_uid = 25; // Caption: VLAN;
+	string vpc_uid = 26; // Caption: VPC UID;
+	string zone = 27; // Caption: Network Zone;
+}
+
+message NetworkInterface {
+	string hostname = 1; // Caption: Hostname;
+	string ip = 2; // Caption: IP Address;
+	string mac = 3; // Caption: MAC Address;
+	string name = 4; // Caption: Name;
+	string namespace = 5; // Caption: Namespace;
+	int32 subnet_prefix = 6; // Caption: Subnet Prefix Length;
+	string type = 7; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.NETWORK_INTERFACE_TYPE_ID type_id = 8; // Caption: Type ID;
+	string uid = 9; // Caption: Unique ID;
+}
+
+message NetworkProxy {
+	repeated ocsf.v1_3_0.objects.Agent agent_list = 1; // Caption: Agent List;
+	ocsf.v1_3_0.objects.AutonomousSystem autonomous_system = 2; // Caption: Autonomous System;
+	ocsf.v1_3_0.objects.Container container = 3; // Profile: container; Caption: Container;
+	string domain = 4; // Caption: Domain;
+	string hostname = 5; // Caption: Hostname;
+	ocsf.v1_3_0.objects.DeviceHwInfo hw_info = 6; // Caption: Hardware Info;
+	string instance_uid = 7; // Caption: Instance ID;
+	string interface_name = 8; // Caption: Network Interface Name;
+	string interface_uid = 9; // Caption: Network Interface ID;
+	repeated string intermediate_ips = 10; // Caption: Intermediate IP Addresses;
+	string ip = 11; // Caption: IP Address;
+	ocsf.v1_3_0.objects.Location location = 12; // Caption: Geo Location;
+	string mac = 13; // Caption: MAC Address;
+	string name = 14; // Caption: Name;
+	int32 namespace_pid = 15; // Caption: Namespace PID; Profile: container;
+	ocsf.v1_3_0.objects.Os os = 16; // Caption: OS;
+	ocsf.v1_3_0.objects.User owner = 17; // Caption: Owner;
+	int32 port = 18; // Caption: Port;
+	ocsf.v1_3_0.objects.NetworkProxy proxy_endpoint = 19; // Caption: Proxy Endpoint;
+	string subnet_uid = 20; // Caption: Subnet UID;
+	string svc_name = 21; // Caption: Service Name;
+	string type = 22; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.NETWORK_PROXY_TYPE_ID type_id = 23; // Caption: Type ID;
+	string uid = 24; // Caption: Unique ID;
+	string vlan_uid = 25; // Caption: VLAN;
+	string vpc_uid = 26; // Caption: VPC UID;
+	string zone = 27; // Caption: Network Zone;
+}
+
+message NetworkTraffic {
+	int64 bytes = 1; // Caption: Total Bytes;
+	int64 bytes_in = 2; // Caption: Bytes In;
+	int64 bytes_out = 3; // Caption: Bytes Out;
+	int64 chunks = 4; // Caption: Chunks;
+	int64 chunks_in = 5; // Caption: Chunks In;
+	int64 chunks_out = 6; // Caption: Chunks Out;
+	int64 packets = 7; // Caption: Total Packets;
+	int64 packets_in = 8; // Caption: Packets In;
+	int64 packets_out = 9; // Caption: Packets Out;
+}
+
+message Observable {
+	string name = 1; // Caption: Name;
+	ocsf.v1_3_0.objects.Reputation reputation = 2; // Caption: Reputation Scores;
+	string type = 3; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.OBSERVABLE_TYPE_ID type_id = 4; // Caption: Type ID;
+	string value = 5; // Caption: Value;
+}
+
+message Organization {
+	string name = 1; // Caption: Name;
+	string ou_name = 2; // Caption: Org Unit Name;
+	string ou_uid = 3; // Caption: Org Unit ID;
+	string uid = 4; // Caption: Unique ID;
+}
+
+message Os {
+	string build = 1; // Caption: OS Build;
+	string country = 2; // Caption: Country;
+	string cpe_name = 3; // Caption: The product CPE identifier;
+	int32 cpu_bits = 4; // Caption: CPU Bits;
+	string edition = 5; // Caption: OS Edition;
+	string lang = 6; // Caption: Language;
+	string name = 7; // Caption: Name;
+	string sp_name = 8; // Caption: OS Service Pack;
+	int32 sp_ver = 9; // Caption: OS Service Pack Version;
+	string type = 10; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.OS_TYPE_ID type_id = 11; // Caption: Type ID;
+	string version = 12; // Caption: Version;
+}
+
+message Osint {
+	repeated ocsf.v1_3_0.objects.DnsAnswer answers = 1; // Caption: DNS Answer;
+	repeated ocsf.v1_3_0.objects.Attack attacks = 2; // Caption: MITRE ATT&CK® Details;
+	ocsf.v1_3_0.objects.AutonomousSystem autonomous_system = 3; // Caption: Autonomous System;
+	string comment = 4; // Caption: Comment;
+	string confidence = 5; // Caption: Confidence;
+	ocsf.v1_3_0.objects.enums.OSINT_CONFIDENCE_ID confidence_id = 6; // Caption: Confidence Id;
+	ocsf.v1_3_0.objects.Email email = 7; // Caption: Email;
+	ocsf.v1_3_0.objects.EmailAuth email_auth = 8; // Caption: Email Authentication;
+	repeated ocsf.v1_3_0.objects.KillChainPhase kill_chain = 9; // Caption: Kill Chain;
+	ocsf.v1_3_0.objects.Location location = 10; // Caption: Geo Location;
+	string name = 11; // Caption: Name;
+	repeated ocsf.v1_3_0.objects.DigitalSignature signatures = 12; // Caption: Digital Signatures;
+	string src_url = 13; // Caption: Source URL;
+	repeated string subdomains = 14; // Caption: Subdomains;
+	string tlp = 15; // Caption: Traffic Light Protocol; AllowedValues: GREEN, RED, AMBER, AMBER STRICT, CLEAR;
+	string type = 16; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.OSINT_TYPE_ID type_id = 17; // Caption: Type ID;
+	string uid = 18; // Caption: Unique ID;
+	string value = 19; // Caption: Value;
+	string vendor_name = 20; // Caption: Vendor Name;
+	repeated ocsf.v1_3_0.objects.Vulnerability vulnerabilities = 21; // Caption: Vulnerabilities;
+	ocsf.v1_3_0.objects.Whois whois = 22; // Caption: WHOIS;
+}
+
+message Package {
+	string architecture = 1; // Caption: Architecture;
+	string cpe_name = 2; // Caption: The product CPE identifier;
+	int32 epoch = 3; // Caption: Epoch;
+	ocsf.v1_3_0.objects.Fingerprint hash = 4; // Caption: Hash;
+	string license = 5; // Caption: Software License;
+	string name = 6; // Caption: Name;
+	string purl = 7; // Caption: Package URL;
+	string release = 8; // Caption: Software Release Details;
+	string type = 9; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.PACKAGE_TYPE_ID type_id = 10; // Caption: Type ID;
+	string vendor_name = 11; // Caption: Vendor Name;
+	string version = 12; // Caption: Version;
+}
+
+message PeripheralDevice {
+	string class = 1; // Caption: Class;
+	string model = 2; // Caption: Model;
+	string name = 3; // Caption: Name;
+	string serial_number = 4; // Caption: Serial Number;
+	string uid = 5; // Caption: Unique ID;
+	string vendor_name = 6; // Caption: Vendor Name;
+}
+
+message Policy {
+	string desc = 1; // Caption: Description;
+	ocsf.v1_3_0.objects.Group group = 2; // Caption: Group;
+	bool is_applied = 3; // Caption: Applied;
+	string name = 4; // Caption: Name;
+	string uid = 5; // Caption: Unique ID;
+	string version = 6; // Caption: Version;
+}
+
+message Process {
+	int32 auid = 1; // Caption: Audit User ID; Profile: linux/linux_users;
+	string cmd_line = 2; // Caption: Command Line;
+	ocsf.v1_3_0.objects.Container container = 3; // Caption: Container; Profile: container;
+	int64 created_time = 4; // Caption: Created Time;
+	int32 egid = 5; // Caption: Effective Group ID; Profile: linux/linux_users;
+	int32 euid = 6; // Caption: Effective User ID; Profile: linux/linux_users;
+	ocsf.v1_3_0.objects.File file = 7; // Caption: File;
+	ocsf.v1_3_0.objects.Group group = 8; // Profile: linux/linux_users; Caption: Group;
+	string integrity = 9; // Caption: Integrity;
+	ocsf.v1_3_0.objects.enums.PROCESS_INTEGRITY_ID integrity_id = 10; // Caption: Integrity Level;
+	repeated string lineage = 11; // Caption: Lineage;
+	repeated string loaded_modules = 12; // Caption: Loaded Modules;
+	string name = 13; // Caption: Name;
+	int32 namespace_pid = 14; // Caption: Namespace PID; Profile: container;
+	ocsf.v1_3_0.objects.Process parent_process = 15; // Caption: Parent Process;
+	int32 pid = 16; // Caption: Process ID;
+	string sandbox = 17; // Caption: Sandbox;
+	ocsf.v1_3_0.objects.Session session = 18; // Caption: Session;
+	int64 terminated_time = 19; // Caption: Terminated Time;
+	int32 tid = 20; // Caption: Thread ID;
+	string uid = 21; // Caption: Unique ID;
+	ocsf.v1_3_0.objects.User user = 22; // Caption: User;
+	google.protobuf.Struct xattributes = 23; // Caption: Extended Attributes;
+}
+
+message Product {
+	string cpe_name = 1; // Caption: The product CPE identifier;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 2; // Caption: Data Classification; Profile: data_classification;
+	ocsf.v1_3_0.objects.Feature feature = 3; // Caption: Feature;
+	string lang = 4; // Caption: Language;
+	string name = 5; // Caption: Name;
+	string path = 6; // Caption: Path;
+	string uid = 7; // Caption: Unique ID;
+	string url_string = 8; // Caption: URL String;
+	string vendor_name = 9; // Caption: Vendor Name;
+	string version = 10; // Caption: Version;
+}
+
+message QueryInfo {
+	int64 bytes = 1; // Caption: Total Bytes;
+	google.protobuf.Struct data = 2; // Caption: Data;
+	string name = 3; // Caption: Name;
+	string query_string = 4; // Caption: HTTP Query String;
+	int64 query_time = 5; // Caption: Query Time;
+	string uid = 6; // Caption: Unique ID;
+}
+
+message RegKey {
+	bool is_system = 1; // Caption: System;
+	int64 modified_time = 2; // Caption: Modified Time;
+	string path = 3; // Caption: Path;
+	string security_descriptor = 4; // Caption: Security Descriptor;
+}
+
+message RegValue {
+	google.protobuf.Struct data = 1; // Caption: Data;
+	bool is_default = 2; // Caption: Default Value;
+	bool is_system = 3; // Caption: System;
+	int64 modified_time = 4; // Caption: Modified Time;
+	string name = 5; // Caption: Name;
+	string path = 6; // Caption: Path;
+	string type = 7; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.REG_VALUE_TYPE_ID type_id = 8; // Caption: Type ID;
+}
+
+message RelatedEvent {
+	repeated ocsf.v1_3_0.objects.Attack attacks = 1; // Caption: MITRE ATT&CK® Details;
+	repeated ocsf.v1_3_0.objects.KillChainPhase kill_chain = 2; // Caption: Kill Chain;
+	repeated ocsf.v1_3_0.objects.Observable observables = 3; // Caption: Observables;
+	string product_uid = 4; // Caption: Product Identifier;
+	string type = 5; // Caption: Type;
+	string type_name = 6; // Caption: Type Name;
+	int64 type_uid = 7; // Caption: Type ID;
+	string uid = 8; // Caption: Unique ID;
+}
+
+message Remediation {
+	string desc = 1; // Caption: Description;
+	repeated ocsf.v1_3_0.objects.KbArticle kb_article_list = 2; // Caption: Knowledgebase Articles;
+	repeated string kb_articles = 3; // Caption: Knowledgebase Articles;
+	repeated string references = 4; // Caption: References;
+}
+
+message Reputation {
+	float base_score = 1; // Caption: Base Score;
+	string provider = 2; // Caption: Provider;
+	string score = 3; // Caption: Reputation Score;
+	ocsf.v1_3_0.objects.enums.REPUTATION_SCORE_ID score_id = 4; // Caption: Reputation Score ID;
+}
+
+message Request {
+	repeated ocsf.v1_3_0.objects.Container containers = 1; // Caption: Containers;
+	google.protobuf.Struct data = 2; // Caption: Data;
+	repeated string flags = 3; // Caption: Flags;
+	string uid = 4; // Caption: Unique ID;
+}
+
+message ResourceDetails {
+	repeated ocsf.v1_3_0.objects.Agent agent_list = 1; // Caption: Agent List;
+	string cloud_partition = 2; // Caption: Cloud Partition; Profile: cloud;
+	string criticality = 3; // Caption: Criticality;
+	google.protobuf.Struct data = 4; // Caption: Data;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 5; // Caption: Data Classification; Profile: data_classification;
+	ocsf.v1_3_0.objects.Group group = 6; // Caption: Group;
+	repeated string labels = 7; // Caption: Labels;
+	string name = 8; // Caption: Name;
+	string namespace = 9; // Caption: Namespace;
+	ocsf.v1_3_0.objects.User owner = 10; // Caption: Owner;
+	string region = 11; // Caption: Region; Profile: cloud;
+	string type = 12; // Caption: Type;
+	string uid = 13; // Caption: Unique ID;
+	string version = 14; // Caption: Version;
+}
+
+message Response {
+	int32 code = 1; // Caption: Response Code;
+	repeated ocsf.v1_3_0.objects.Container containers = 2; // Caption: Containers;
+	google.protobuf.Struct data = 3; // Caption: Data;
+	string error = 4; // Caption: Error Code;
+	string error_message = 5; // Caption: Error Message;
+	repeated string flags = 6; // Caption: Flags;
+	string message = 7; // Caption: Message;
+}
+
+message RpcInterface {
+	int32 ack_reason = 1; // Caption: Acknowledgement Reason;
+	int32 ack_result = 2; // Caption: Acknowledgement Result;
+	string uuid = 3; // Caption: UUID;
+	string version = 4; // Caption: Version;
+}
+
+message Rule {
+	string category = 1; // Caption: Category;
+	string desc = 2; // Caption: Description;
+	string name = 3; // Caption: Name;
+	string type = 4; // Caption: Type;
+	string uid = 5; // Caption: Unique ID;
+	string version = 6; // Caption: Version;
+}
+
+message San {
+	string name = 1; // Caption: Name;
+	string type = 2; // Caption: Type;
+}
+
+message Scan {
+	string name = 1; // Caption: Name;
+	string type = 2; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.SCAN_TYPE_ID type_id = 3; // Caption: Type ID;
+	string uid = 4; // Caption: Unique ID;
+}
+
+message SecurityState {
+	string state = 1; // Caption: State;
+	ocsf.v1_3_0.objects.enums.SECURITY_STATE_STATE_ID state_id = 2; // Caption: State ID;
+}
+
+message Service {
+	repeated string labels = 1; // Caption: Labels;
+	string name = 2; // Caption: Name;
+	string uid = 3; // Caption: Unique ID;
+	string version = 4; // Caption: Version;
+}
+
+message Session {
+	int32 count = 1; // Caption: Count;
+	int64 created_time = 2; // Caption: Created Time;
+	string credential_uid = 3; // Caption: User Credential ID;
+	string expiration_reason = 4; // Caption: Expiration Reason;
+	int64 expiration_time = 5; // Caption: Expiration Time;
+	bool is_mfa = 6; // Caption: Multi Factor Authentication;
+	bool is_remote = 7; // Caption: Remote;
+	bool is_vpn = 8; // Caption: VPN Session;
+	string issuer = 9; // Caption: Issuer Details;
+	string terminal = 10; // Caption: Terminal;
+	string uid = 11; // Caption: Unique ID;
+	string uid_alt = 12; // Caption: Alternate ID;
+	string uuid = 13; // Caption: UUID;
+}
+
+message SubTechnique {
+	string name = 1; // Caption: Name;
+	string src_url = 2; // Caption: Source URL;
+	string uid = 3; // Caption: Unique ID;
+}
+
+message Table {
+	int64 created_time = 1; // Caption: Created Time;
+	string desc = 2; // Caption: Description;
+	repeated ocsf.v1_3_0.objects.Group groups = 3; // Caption: Groups;
+	int64 modified_time = 4; // Caption: Modified Time;
+	string name = 5; // Caption: Name;
+	int64 size = 6; // Caption: Size;
+	string uid = 7; // Caption: Unique ID;
+}
+
+message Tactic {
+	string name = 1; // Caption: Name;
+	string src_url = 2; // Caption: Source URL;
+	string uid = 3; // Caption: Unique ID;
+}
+
+message Technique {
+	string name = 1; // Caption: Name;
+	string src_url = 2; // Caption: Source URL;
+	string uid = 3; // Caption: Unique ID;
+}
+
+message Ticket {
+	string src_url = 1; // Caption: Source URL;
+	string title = 2; // Caption: Title;
+	string type = 3; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.TICKET_TYPE_ID type_id = 4; // Caption: Type ID;
+	string uid = 5; // Caption: Unique ID;
+}
+
+message Timespan {
+	int64 duration = 1; // Caption: Duration Milliseconds;
+	int32 duration_days = 2; // Caption: Duration Days;
+	int32 duration_hours = 3; // Caption: Duration Hours;
+	int32 duration_mins = 4; // Caption: Duration Minutes;
+	int32 duration_months = 5; // Caption: Duration Months;
+	int32 duration_secs = 6; // Caption: Duration Seconds;
+	int32 duration_weeks = 7; // Caption: Duration Weeks;
+	int32 duration_years = 8; // Caption: Duration Years;
+	string type = 9; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.TIMESPAN_TYPE_ID type_id = 10; // Caption: Type ID;
+}
+
+message Tls {
+	int32 alert = 1; // Caption: Client TLS Alert;
+	ocsf.v1_3_0.objects.Certificate certificate = 2; // Caption: Certificate;
+	repeated string certificate_chain = 3; // Caption: Certificate Chain;
+	string cipher = 4; // Caption: Cipher Suite;
+	repeated string client_ciphers = 5; // Caption: Client Cipher Suites;
+	repeated ocsf.v1_3_0.objects.TlsExtension extension_list = 6; // Caption: Extension List;
+	int32 handshake_dur = 7; // Caption: Handshake Duration;
+	ocsf.v1_3_0.objects.Fingerprint ja3_hash = 8; // Caption: JA3 Hash;
+	ocsf.v1_3_0.objects.Fingerprint ja3s_hash = 9; // Caption: JA3S Hash;
+	int32 key_length = 10; // Caption: Key Length;
+	repeated ocsf.v1_3_0.objects.San sans = 11; // Caption: Subject Alternative Names;
+	repeated string server_ciphers = 12; // Caption: Server Cipher Suites;
+	string sni = 13; // Caption: Server Name Indication;
+	repeated ocsf.v1_3_0.objects.TlsExtension tls_extension_list = 14; // Caption: TLS Extension List;
+	string version = 15; // Caption: Version;
+}
+
+message TlsExtension {
+	google.protobuf.Struct data = 1; // Caption: Data;
+	string type = 2; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.TLS_EXTENSION_TYPE_ID type_id = 3; // Caption: Type ID;
+}
+
+message Url {
+	repeated string categories = 1; // Caption: Website Categorization;
+	repeated ocsf.v1_3_0.objects.enums.URL_CATEGORY_IDS category_ids = 2; // Caption: Website Categorization IDs;
+	string domain = 3; // Caption: Domain;
+	string hostname = 4; // Caption: Hostname;
+	string path = 5; // Caption: Path;
+	int32 port = 6; // Caption: Port;
+	string query_string = 7; // Caption: HTTP Query String;
+	string resource_type = 8; // Caption: Resource Type;
+	string scheme = 9; // Caption: Scheme;
+	string subdomain = 10; // Caption: Subdomain;
+	string url_string = 11; // Caption: URL String;
+}
+
+message User {
+	ocsf.v1_3_0.objects.Account account = 1; // Caption: Account;
+	string credential_uid = 2; // Caption: User Credential ID;
+	string domain = 3; // Caption: Domain;
+	string email_addr = 4; // Caption: Email Address;
+	string full_name = 5; // Caption: Full Name;
+	repeated ocsf.v1_3_0.objects.Group groups = 6; // Caption: Groups;
+	ocsf.v1_3_0.objects.LdapPerson ldap_person = 7; // Caption: LDAP Person;
+	string name = 8; // Caption: Name;
+	ocsf.v1_3_0.objects.Organization org = 9; // Caption: Organization;
+	string risk_level = 10; // Caption: Risk Level;
+	ocsf.v1_3_0.objects.enums.USER_RISK_LEVEL_ID risk_level_id = 11; // Caption: Risk Level ID;
+	int32 risk_score = 12; // Caption: Risk Score;
+	string type = 13; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.USER_TYPE_ID type_id = 14; // Caption: Type ID;
+	string uid = 15; // Caption: Unique ID;
+	string uid_alt = 16; // Caption: Alternate ID;
+}
+
+message Vulnerability {
+	repeated ocsf.v1_3_0.objects.AffectedCode affected_code = 1; // Caption: Affected Code;
+	repeated ocsf.v1_3_0.objects.AffectedPackage affected_packages = 2; // Caption: Affected Software Packages;
+	ocsf.v1_3_0.objects.Cve cve = 3; // Caption: CVE;
+	ocsf.v1_3_0.objects.Cwe cwe = 4; // Caption: CWE;
+	string desc = 5; // Caption: Description;
+	int64 first_seen_time = 6; // Caption: First Seen;
+	bool fix_available = 7; // Caption: Fix Availability;
+	bool is_exploit_available = 8; // Caption: Exploit Availability;
+	bool is_fix_available = 9; // Caption: Fix Availability;
+	repeated ocsf.v1_3_0.objects.KbArticle kb_article_list = 10; // Caption: Knowledgebase Articles;
+	repeated string kb_articles = 11; // Caption: Knowledgebase Articles;
+	int64 last_seen_time = 12; // Caption: Last Seen;
+	repeated ocsf.v1_3_0.objects.Package packages = 13; // Caption: Software Packages;
+	repeated string references = 14; // Caption: References;
+	repeated string related_vulnerabilities = 15; // Caption: Related Vulnerabilities;
+	ocsf.v1_3_0.objects.Remediation remediation = 16; // Caption: Remediation Guidance;
+	string severity = 17; // Caption: Severity;
+	string title = 18; // Caption: Title;
+	string vendor_name = 19; // Caption: Vendor Name;
+}
+
+message WebResource {
+	google.protobuf.Struct data = 1; // Caption: Data;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 2; // Caption: Data Classification; Profile: data_classification;
+	string desc = 3; // Caption: Description;
+	repeated string labels = 4; // Caption: Labels;
+	string name = 5; // Caption: Name;
+	string type = 6; // Caption: Type;
+	string uid = 7; // Caption: Unique ID;
+	string url_string = 8; // Caption: URL String;
+}
+
+message Whois {
+	ocsf.v1_3_0.objects.AutonomousSystem autonomous_system = 1; // Caption: Autonomous System;
+	int64 created_time = 2; // Caption: Created Time;
+	string dnssec_status = 3; // Caption: DNSSEC Status;
+	ocsf.v1_3_0.objects.enums.WHOIS_DNSSEC_STATUS_ID dnssec_status_id = 4; // Caption: DNSSEC Status ID;
+	string domain = 5; // Caption: Domain;
+	repeated ocsf.v1_3_0.objects.DomainContact domain_contacts = 6; // Caption: Domain Contacts;
+	string email_addr = 7; // Caption: Email Address;
+	int64 last_seen_time = 8; // Caption: Last Seen;
+	repeated string name_servers = 9; // Caption: Name Servers;
+	string phone_number = 10; // Caption: Phone Number;
+	string registrar = 11; // Caption: Domain Registrar;
+	string status = 12; // Caption: Status;
+	repeated string subdomains = 13; // Caption: Subdomains;
+	string subnet = 14; // Caption: Subnet;
+}
+
+message WinResource {
+	google.protobuf.Struct data = 1; // Caption: Data;
+	ocsf.v1_3_0.objects.DataClassification data_classification = 2; // Profile: data_classification; Caption: Data Classification;
+	string details = 3; // Caption: Details;
+	repeated string labels = 4; // Caption: Labels;
+	string name = 5; // Caption: Name;
+	string svc_name = 6; // Caption: Service Name;
+	string type = 7; // Caption: Type;
+	ocsf.v1_3_0.objects.enums.WIN_RESOURCE_TYPE_ID type_id = 8; // Caption: Type ID;
+	string uid = 9; // Caption: Unique ID;
+}
+
+message WinService {
+	string cmd_line = 1; // Caption: Command Line;
+	repeated string labels = 2; // Caption: Labels;
+	string load_order_group = 3; // Caption: Load Order Group;
+	string name = 4; // Caption: Name;
+	string service_category = 5; // Caption: Service Category;
+	ocsf.v1_3_0.objects.enums.WIN_SERVICE_SERVICE_CATEGORY_ID service_category_id = 6; // Caption: Service Category ID;
+	repeated string service_dependencies = 7; // Caption: Service Dependencies;
+	string service_error_control = 8; // Caption: Service Error Control;
+	ocsf.v1_3_0.objects.enums.WIN_SERVICE_SERVICE_ERROR_CONTROL_ID service_error_control_id = 9; // Caption: Service Error Control ID;
+	string service_start_name = 10; // Caption: Service Start Name;
+	string service_start_type = 11; // Caption: Service Start Type;
+	ocsf.v1_3_0.objects.enums.WIN_SERVICE_SERVICE_START_TYPE_ID service_start_type_id = 12; // Caption: Service Start Type ID;
+	string service_type = 13; // Caption: Service Type;
+	ocsf.v1_3_0.objects.enums.WIN_SERVICE_SERVICE_TYPE_ID service_type_id = 14; // Caption: Service Type ID;
+	string uid = 15; // Caption: Unique ID;
+	string version = 16; // Caption: Version;
+}

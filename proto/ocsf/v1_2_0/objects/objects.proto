@@ -187,7 +187,7 @@ message Cve {
 
 message Cvss {
 	float base_score = 1; // Caption: Base Score;
-	string depth = 2; // Caption: CVSS Depth; AllowedValues: Base, Environmental, Temporal;
+	string depth = 2; // Caption: CVSS Depth; AllowedValues: Temporal, Base, Environmental;
 	repeated ocsf.v1_2_0.objects.Metric metrics = 3; // Caption: Metrics;
 	float overall_score = 4; // Caption: Overall Score;
 	string severity = 5; // Caption: Severity;
@@ -225,7 +225,7 @@ message DataSecurity {
 
 message Database {
 	int64 created_time = 1; // Caption: Created Time;
-	ocsf.v1_2_0.objects.DataClassification data_classification = 2; // Caption: Data Classification; Profile: data_classification;
+	ocsf.v1_2_0.objects.DataClassification data_classification = 2; // Profile: data_classification; Caption: Data Classification;
 	string desc = 3; // Caption: Description;
 	repeated ocsf.v1_2_0.objects.Group groups = 4; // Caption: Groups;
 	int64 modified_time = 5; // Caption: Modified Time;
@@ -537,7 +537,7 @@ message HttpHeader {
 message HttpRequest {
 	string args = 1; // Caption: HTTP Arguments;
 	repeated ocsf.v1_2_0.objects.HttpHeader http_headers = 2; // Caption: HTTP Headers;
-	string http_method = 3; // Caption: HTTP Method; AllowedValues: CONNECT, DELETE, GET, HEAD, OPTIONS, POST, PUT, TRACE;
+	string http_method = 3; // Caption: HTTP Method; AllowedValues: TRACE, CONNECT, DELETE, GET, HEAD, OPTIONS, POST, PUT;
 	int32 length = 4; // Caption: Response Length;
 	string referrer = 5; // Caption: HTTP Referrer;
 	string uid = 6; // Caption: Unique ID;
@@ -1009,7 +1009,7 @@ message ResourceDetails {
 	string name = 8; // Caption: Name;
 	string namespace = 9; // Caption: Namespace;
 	ocsf.v1_2_0.objects.User owner = 10; // Caption: Owner;
-	string region = 11; // Caption: Region; Profile: cloud;
+	string region = 11; // Profile: cloud; Caption: Region;
 	string type = 12; // Caption: Type;
 	string uid = 13; // Caption: Unique ID;
 	string version = 14; // Caption: Version;

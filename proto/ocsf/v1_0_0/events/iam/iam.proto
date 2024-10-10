@@ -61,7 +61,7 @@ message Authentication {
 	ocsf.v1_0_0.events.iam.enums.AUTHENTICATION_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor;
-	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_0_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	string auth_protocol = 5; // Caption: Auth Protocol;
 	ocsf.v1_0_0.events.iam.enums.AUTHENTICATION_AUTH_PROTOCOL_ID auth_protocol_id = 6; // Caption: Auth Protocol ID;
 	string category_name = 7; // Caption: Category;
@@ -162,7 +162,7 @@ message EntityManagement {
 	ocsf.v1_0_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	string comment = 10; // Caption: Comment;
 	int32 count = 11; // Caption: Count;
-	ocsf.v1_0_0.objects.Device device = 12; // Profile: host; Caption: Device;
+	ocsf.v1_0_0.objects.Device device = 12; // Caption: Device; Profile: host;
 	int32 duration = 13; // Caption: Duration;
 	int64 end_time = 14; // Caption: End Time;
 	repeated ocsf.v1_0_0.objects.Enrichment enrichments = 15; // Caption: Enrichments;
@@ -193,7 +193,7 @@ message GroupManagement {
 	ocsf.v1_0_0.events.iam.enums.GROUP_MANAGEMENT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_0_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_0_0.events.iam.enums.GROUP_MANAGEMENT_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
@@ -226,21 +226,21 @@ message GroupManagement {
 	ocsf.v1_0_0.objects.User user = 34; // Caption: User;
 }
 
+// Event: iam
 // Event UID: 0
 // URL: https://schema.ocsf.io/1.0.0/classes/iam
-// Event: iam
 message Iam {
 	ocsf.v1_0_0.events.iam.enums.IAM_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_0_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_0_0.events.iam.enums.IAM_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_0_0.events.iam.enums.IAM_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
 	int32 count = 10; // Caption: Count;
-	ocsf.v1_0_0.objects.Device device = 11; // Caption: Device; Profile: host;
+	ocsf.v1_0_0.objects.Device device = 11; // Profile: host; Caption: Device;
 	int32 duration = 12; // Caption: Duration;
 	int64 end_time = 13; // Caption: End Time;
 	repeated ocsf.v1_0_0.objects.Enrichment enrichments = 14; // Caption: Enrichments;
@@ -262,14 +262,14 @@ message Iam {
 	google.protobuf.Struct unmapped = 30; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.0.0/classes/user_access
 // Event: iam
 // Event UID: 5
+// URL: https://schema.ocsf.io/1.0.0/classes/user_access
 message UserAccess {
 	ocsf.v1_0_0.events.iam.enums.USER_ACCESS_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_0_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
-	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
+	ocsf.v1_0_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_0_0.events.iam.enums.USER_ACCESS_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;

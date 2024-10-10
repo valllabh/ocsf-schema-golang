@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package ocsf.v1_3_0.events.other;
+
+option go_package = "/ocsf/v1_3_0/events/other";
+
+option java_package = "com.your.project.generated.ocsf.v1_3_0.events.other";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_3_0/events/other/enums/enums.proto";
+
+import "ocsf/v1_3_0/objects/objects.proto";
+
+import "google/protobuf/struct.proto";
+
+// Event: other
+// Event UID: 0
+// URL: https://schema.ocsf.io/1.3.0/classes/base_event
+message BaseEvent {
+	ocsf.v1_3_0.events.other.enums.BASE_EVENT_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
+	string activity_name = 2; // Caption: Activity;
+	ocsf.v1_3_0.objects.Api api = 3; // Caption: API Details; Profile: cloud;
+	string category_name = 4; // Caption: Category;
+	ocsf.v1_3_0.events.other.enums.BASE_EVENT_CATEGORY_UID category_uid = 5; // Caption: Category ID;
+	string class_name = 6; // Caption: Class;
+	ocsf.v1_3_0.events.other.enums.BASE_EVENT_CLASS_UID class_uid = 7; // Caption: Class ID;
+	ocsf.v1_3_0.objects.Cloud cloud = 8; // Profile: cloud; Caption: Cloud;
+	int32 count = 9; // Caption: Count;
+	int64 duration = 10; // Caption: Duration Milliseconds;
+	int64 end_time = 11; // Caption: End Time;
+	repeated ocsf.v1_3_0.objects.Enrichment enrichments = 12; // Caption: Enrichments;
+	string message = 13; // Caption: Message;
+	ocsf.v1_3_0.objects.Metadata metadata = 14; // Caption: Metadata;
+	repeated ocsf.v1_3_0.objects.Observable observables = 15; // Caption: Observables;
+	repeated ocsf.v1_3_0.objects.Osint osint = 16; // Caption: OSINT; Profile: osint;
+	string raw_data = 17; // Caption: Raw Data;
+	string severity = 18; // Caption: Severity;
+	ocsf.v1_3_0.events.other.enums.BASE_EVENT_SEVERITY_ID severity_id = 19; // Caption: Severity ID;
+	int64 start_time = 20; // Caption: Start Time;
+	string status = 21; // Caption: Status;
+	string status_code = 22; // Caption: Status Code;
+	string status_detail = 23; // Caption: Status Detail;
+	ocsf.v1_3_0.events.other.enums.BASE_EVENT_STATUS_ID status_id = 24; // Caption: Status ID;
+	int64 time = 25; // Caption: Event Time;
+	int32 timezone_offset = 26; // Caption: Timezone Offset;
+	string type_name = 27; // Caption: Type Name;
+	int64 type_uid = 28; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 29; // Caption: Unmapped Data;
+}
