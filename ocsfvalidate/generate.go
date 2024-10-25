@@ -62,7 +62,7 @@ func fetchSchema(className string, version string) error {
 		Host:   "schema.ocsf.io",
 		Path:   path.Join("schema", fullVersion, "classes", className),
 		RawQuery: url.Values{
-			"profiles": []string{},
+			"profiles": []string{""},
 		}.Encode(),
 	}
 
