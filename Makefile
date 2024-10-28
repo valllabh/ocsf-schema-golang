@@ -19,4 +19,7 @@ generate-go: protocontainer
 	$(PROTOC_IMAGE):$(PROTOC_VERSION) \
 	generate-go.sh
 
-generate: generate-proto generate-go
+generate-validator:
+	go generate ./ocsfvalidate/...
+
+generate: generate-proto generate-go generate-validator
