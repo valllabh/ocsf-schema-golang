@@ -1,0 +1,97 @@
+{
+  "application": [
+    "api_activity",
+    "application",
+    "application_lifecycle",
+    "datastore_activity",
+    "file_hosting",
+    "scan_activity",
+    "web_resource_access_activity",
+    "web_resources_activity"
+  ],
+  "discovery": [
+    "admin_group_query",
+    "config_state",
+    "device_config_state_change",
+    "discovery",
+    "discovery_result",
+    "file_query",
+    "folder_query",
+    "inventory_info",
+    "job_query",
+    "kernel_object_query",
+    "module_query",
+    "network_connection_query",
+    "networks_query",
+    "patch_state",
+    "peripheral_device_query",
+    "prefetch_query",
+    "process_query",
+    "registry_key_query",
+    "registry_value_query",
+    "service_query",
+    "session_query",
+    "software_info",
+    "user_inventory",
+    "user_query"
+  ],
+  "findings": [
+    "compliance_finding",
+    "data_security_finding",
+    "detection_finding",
+    "finding",
+    "incident_finding",
+    "security_finding",
+    "vulnerability_finding"
+  ],
+  "iam": [
+    "account_change",
+    "authentication",
+    "authorize_session",
+    "entity_management",
+    "group_management",
+    "iam",
+    "user_access"
+  ],
+  "network": [
+    "dhcp_activity",
+    "dns_activity",
+    "email_activity",
+    "email_file_activity",
+    "email_url_activity",
+    "ftp_activity",
+    "http_activity",
+    "network",
+    "network_activity",
+    "network_file_activity",
+    "ntp_activity",
+    "rdp_activity",
+    "smb_activity",
+    "ssh_activity",
+    "tunnel_activity"
+  ],
+  "other": [
+    "base_event"
+  ],
+  "remediation": [
+    "file_remediation_activity",
+    "network_remediation_activity",
+    "process_remediation_activity",
+    "remediation_activity"
+  ],
+  "system": [
+    "event_log",
+    "file_activity",
+    "kernel_activity",
+    "kernel_extension",
+    "memory_activity",
+    "module_activity",
+    "process_activity",
+    "registry_key_activity",
+    "registry_value_activity",
+    "resource_activity",
+    "scheduled_job_activity",
+    "system",
+    "win_service_activity"
+  ]
+}

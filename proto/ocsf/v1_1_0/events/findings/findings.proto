@@ -14,9 +14,9 @@ import "ocsf/v1_1_0/objects/objects.proto";
 
 import "google/protobuf/struct.proto";
 
-// URL: https://schema.ocsf.io/1.1.0/classes/compliance_finding
 // Event: findings
 // Event UID: 3
+// URL: https://schema.ocsf.io/1.1.0/classes/compliance_finding
 message ComplianceFinding {
 	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -33,7 +33,7 @@ message ComplianceFinding {
 	ocsf.v1_1_0.events.findings.enums.COMPLIANCE_FINDING_CONFIDENCE_ID confidence_id = 13; // Caption: Confidence Id;
 	int32 confidence_score = 14; // Caption: Confidence Score;
 	int32 count = 15; // Caption: Count;
-	ocsf.v1_1_0.objects.Device device = 16; // Caption: Device; Profile: host;
+	ocsf.v1_1_0.objects.Device device = 16; // Profile: host; Caption: Device;
 	int32 duration = 17; // Caption: Duration;
 	int64 end_time = 18; // Caption: End Time;
 	repeated ocsf.v1_1_0.objects.Enrichment enrichments = 19; // Caption: Enrichments;
@@ -63,7 +63,7 @@ message ComplianceFinding {
 // URL: https://schema.ocsf.io/1.1.0/classes/detection_finding
 message DetectionFinding {
 	string action = 1; // Caption: Action; Profile: security_control;
-	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_ACTION_ID action_id = 2; // Profile: security_control; Caption: Action ID;
 	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
@@ -74,7 +74,7 @@ message DetectionFinding {
 	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_CATEGORY_UID category_uid = 10; // Caption: Category ID;
 	string class_name = 11; // Caption: Class;
 	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_CLASS_UID class_uid = 12; // Caption: Class ID;
-	ocsf.v1_1_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_1_0.objects.Cloud cloud = 13; // Profile: cloud; Caption: Cloud;
 	string comment = 14; // Caption: Comment;
 	string confidence = 15; // Caption: Confidence;
 	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_CONFIDENCE_ID confidence_id = 16; // Caption: Confidence Id;
@@ -92,7 +92,7 @@ message DetectionFinding {
 	string impact = 28; // Caption: Impact;
 	ocsf.v1_1_0.events.findings.enums.DETECTION_FINDING_IMPACT_ID impact_id = 29; // Caption: Impact ID;
 	int32 impact_score = 30; // Caption: Impact;
-	repeated ocsf.v1_1_0.objects.Malware malware = 31; // Profile: security_control; Caption: Malware;
+	repeated ocsf.v1_1_0.objects.Malware malware = 31; // Caption: Malware; Profile: security_control;
 	string message = 32; // Caption: Message;
 	ocsf.v1_1_0.objects.Metadata metadata = 33; // Caption: Metadata;
 	repeated ocsf.v1_1_0.objects.Observable observables = 34; // Caption: Observables;
@@ -117,14 +117,14 @@ message DetectionFinding {
 	repeated ocsf.v1_1_0.objects.Vulnerability vulnerabilities = 53; // Caption: Vulnerabilities;
 }
 
+// URL: https://schema.ocsf.io/1.1.0/classes/finding
 // Event: findings
 // Event UID: 0
-// URL: https://schema.ocsf.io/1.1.0/classes/finding
 message Finding {
 	ocsf.v1_1_0.events.findings.enums.FINDING_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_1_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_1_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_1_0.events.findings.enums.FINDING_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
@@ -158,9 +158,9 @@ message Finding {
 	google.protobuf.Struct unmapped = 35; // Caption: Unmapped Data;
 }
 
+// Event: findings
 // Event UID: 5
 // URL: https://schema.ocsf.io/1.1.0/classes/incident_finding
-// Event: findings
 message IncidentFinding {
 	ocsf.v1_1_0.events.findings.enums.INCIDENT_FINDING_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -274,7 +274,7 @@ message SecurityFinding {
 message VulnerabilityFinding {
 	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_1_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
+	ocsf.v1_1_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
 	ocsf.v1_1_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_1_0.events.findings.enums.VULNERABILITY_FINDING_CATEGORY_UID category_uid = 6; // Caption: Category ID;

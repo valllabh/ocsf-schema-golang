@@ -64,7 +64,7 @@ message DnsActivity {
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
 	repeated ocsf.v1_0_0.objects.DnsAnswer answers = 4; // Caption: DNS Answer;
-	ocsf.v1_0_0.objects.Api api = 5; // Caption: API Details; Profile: cloud;
+	ocsf.v1_0_0.objects.Api api = 5; // Profile: cloud; Caption: API Details;
 	string app_name = 6; // Caption: Application Name;
 	repeated ocsf.v1_0_0.objects.Attack attacks = 7; // Caption: Attacks; Profile: security_control;
 	string category_name = 8; // Caption: Category;
@@ -75,13 +75,13 @@ message DnsActivity {
 	ocsf.v1_0_0.objects.NetworkConnectionInfo connection_info = 13; // Caption: Connection Info;
 	int32 count = 14; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 15; // Caption: Device; Profile: host;
-	string disposition = 16; // Profile: security_control; Caption: Disposition;
-	ocsf.v1_0_0.events.network.enums.DNS_ACTIVITY_DISPOSITION_ID disposition_id = 17; // Caption: Disposition ID; Profile: security_control;
+	string disposition = 16; // Caption: Disposition; Profile: security_control;
+	ocsf.v1_0_0.events.network.enums.DNS_ACTIVITY_DISPOSITION_ID disposition_id = 17; // Profile: security_control; Caption: Disposition ID;
 	ocsf.v1_0_0.objects.NetworkEndpoint dst_endpoint = 18; // Caption: Destination Endpoint;
 	int32 duration = 19; // Caption: Duration;
 	int64 end_time = 20; // Caption: End Time;
 	repeated ocsf.v1_0_0.objects.Enrichment enrichments = 21; // Caption: Enrichments;
-	repeated ocsf.v1_0_0.objects.Malware malware = 22; // Profile: security_control; Caption: Malware;
+	repeated ocsf.v1_0_0.objects.Malware malware = 22; // Caption: Malware; Profile: security_control;
 	string message = 23; // Caption: Message;
 	ocsf.v1_0_0.objects.Metadata metadata = 24; // Caption: Metadata;
 	repeated ocsf.v1_0_0.objects.Observable observables = 25; // Caption: Observables;
@@ -109,9 +109,9 @@ message DnsActivity {
 	google.protobuf.Struct unmapped = 47; // Caption: Unmapped Data;
 }
 
-// Event: network
 // Event UID: 9
 // URL: https://schema.ocsf.io/1.0.0/classes/email_activity
+// Event: network
 message EmailActivity {
 	ocsf.v1_0_0.events.network.enums.EMAIL_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -126,7 +126,7 @@ message EmailActivity {
 	ocsf.v1_0_0.events.network.enums.EMAIL_ACTIVITY_CLASS_UID class_uid = 11; // Caption: Class ID;
 	ocsf.v1_0_0.objects.Cloud cloud = 12; // Caption: Cloud; Profile: cloud;
 	int32 count = 13; // Caption: Count;
-	ocsf.v1_0_0.objects.Device device = 14; // Caption: Device; Profile: host;
+	ocsf.v1_0_0.objects.Device device = 14; // Profile: host; Caption: Device;
 	string direction = 15; // Caption: Direction;
 	ocsf.v1_0_0.events.network.enums.EMAIL_ACTIVITY_DIRECTION_ID direction_id = 16; // Caption: Direction ID;
 	string disposition = 17; // Caption: Disposition; Profile: security_control;
@@ -165,17 +165,17 @@ message EmailFileActivity {
 	ocsf.v1_0_0.events.network.enums.EMAIL_FILE_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
-	ocsf.v1_0_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	repeated ocsf.v1_0_0.objects.Attack attacks = 5; // Caption: Attacks; Profile: security_control;
 	string category_name = 6; // Caption: Category;
 	ocsf.v1_0_0.events.network.enums.EMAIL_FILE_ACTIVITY_CATEGORY_UID category_uid = 7; // Caption: Category ID;
 	string class_name = 8; // Caption: Class;
 	ocsf.v1_0_0.events.network.enums.EMAIL_FILE_ACTIVITY_CLASS_UID class_uid = 9; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 10; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 10; // Profile: cloud; Caption: Cloud;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 12; // Caption: Device; Profile: host;
 	string disposition = 13; // Caption: Disposition; Profile: security_control;
-	ocsf.v1_0_0.events.network.enums.EMAIL_FILE_ACTIVITY_DISPOSITION_ID disposition_id = 14; // Caption: Disposition ID; Profile: security_control;
+	ocsf.v1_0_0.events.network.enums.EMAIL_FILE_ACTIVITY_DISPOSITION_ID disposition_id = 14; // Profile: security_control; Caption: Disposition ID;
 	int32 duration = 15; // Caption: Duration;
 	string email_uid = 16; // Caption: Email UID;
 	int64 end_time = 17; // Caption: End Time;
@@ -242,9 +242,9 @@ message EmailUrlActivity {
 	ocsf.v1_0_0.objects.Url url = 36; // Caption: URL;
 }
 
-// Event UID: 8
 // URL: https://schema.ocsf.io/1.0.0/classes/ftp_activity
 // Event: network
+// Event UID: 8
 message FtpActivity {
 	ocsf.v1_0_0.events.network.enums.FTP_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -256,14 +256,14 @@ message FtpActivity {
 	ocsf.v1_0_0.events.network.enums.FTP_ACTIVITY_CATEGORY_UID category_uid = 8; // Caption: Category ID;
 	string class_name = 9; // Caption: Class;
 	ocsf.v1_0_0.events.network.enums.FTP_ACTIVITY_CLASS_UID class_uid = 10; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 11; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 11; // Caption: Cloud; Profile: cloud;
 	repeated int32 codes = 12; // Caption: Response Codes;
 	string command = 13; // Caption: Command;
 	repeated string command_responses = 14; // Caption: Command Responses;
 	ocsf.v1_0_0.objects.NetworkConnectionInfo connection_info = 15; // Caption: Connection Info;
 	int32 count = 16; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 17; // Caption: Device; Profile: host;
-	string disposition = 18; // Caption: Disposition; Profile: security_control;
+	string disposition = 18; // Profile: security_control; Caption: Disposition;
 	ocsf.v1_0_0.events.network.enums.FTP_ACTIVITY_DISPOSITION_ID disposition_id = 19; // Caption: Disposition ID; Profile: security_control;
 	ocsf.v1_0_0.objects.NetworkEndpoint dst_endpoint = 20; // Caption: Destination Endpoint;
 	int32 duration = 21; // Caption: Duration;
@@ -313,7 +313,7 @@ message HttpActivity {
 	ocsf.v1_0_0.objects.NetworkConnectionInfo connection_info = 12; // Caption: Connection Info;
 	int32 count = 13; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 14; // Caption: Device; Profile: host;
-	string disposition = 15; // Caption: Disposition; Profile: security_control;
+	string disposition = 15; // Profile: security_control; Caption: Disposition;
 	ocsf.v1_0_0.events.network.enums.HTTP_ACTIVITY_DISPOSITION_ID disposition_id = 16; // Caption: Disposition ID; Profile: security_control;
 	ocsf.v1_0_0.objects.NetworkEndpoint dst_endpoint = 17; // Caption: Destination Endpoint;
 	int32 duration = 18; // Caption: Duration;
@@ -345,9 +345,9 @@ message HttpActivity {
 	google.protobuf.Struct unmapped = 44; // Caption: Unmapped Data;
 }
 
+// Event: network
 // Event UID: 1
 // URL: https://schema.ocsf.io/1.0.0/classes/network_activity
-// Event: network
 message NetworkActivity {
 	ocsf.v1_0_0.events.network.enums.NETWORK_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -362,7 +362,7 @@ message NetworkActivity {
 	ocsf.v1_0_0.objects.Cloud cloud = 11; // Caption: Cloud; Profile: cloud;
 	ocsf.v1_0_0.objects.NetworkConnectionInfo connection_info = 12; // Caption: Connection Info;
 	int32 count = 13; // Caption: Count;
-	ocsf.v1_0_0.objects.Device device = 14; // Caption: Device; Profile: host;
+	ocsf.v1_0_0.objects.Device device = 14; // Profile: host; Caption: Device;
 	string disposition = 15; // Caption: Disposition; Profile: security_control;
 	ocsf.v1_0_0.events.network.enums.NETWORK_ACTIVITY_DISPOSITION_ID disposition_id = 16; // Caption: Disposition ID; Profile: security_control;
 	ocsf.v1_0_0.objects.NetworkEndpoint dst_endpoint = 17; // Caption: Destination Endpoint;
@@ -404,7 +404,7 @@ message NetworkFileActivity {
 	ocsf.v1_0_0.events.network.enums.NETWORK_FILE_ACTIVITY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
 	string class_name = 7; // Caption: Class;
 	ocsf.v1_0_0.events.network.enums.NETWORK_FILE_ACTIVITY_CLASS_UID class_uid = 8; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 9; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	int32 count = 10; // Caption: Count;
 	int32 duration = 11; // Caption: Duration;
 	int64 end_time = 12; // Caption: End Time;
@@ -430,9 +430,9 @@ message NetworkFileActivity {
 	google.protobuf.Struct unmapped = 32; // Caption: Unmapped Data;
 }
 
+// URL: https://schema.ocsf.io/1.0.0/classes/rdp_activity
 // Event: network
 // Event UID: 5
-// URL: https://schema.ocsf.io/1.0.0/classes/rdp_activity
 message RdpActivity {
 	ocsf.v1_0_0.events.network.enums.RDP_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -446,12 +446,12 @@ message RdpActivity {
 	repeated string certificate_chain = 10; // Caption: Certificate Chain;
 	string class_name = 11; // Caption: Class;
 	ocsf.v1_0_0.events.network.enums.RDP_ACTIVITY_CLASS_UID class_uid = 12; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 13; // Profile: cloud; Caption: Cloud;
 	ocsf.v1_0_0.objects.NetworkConnectionInfo connection_info = 14; // Caption: Connection Info;
 	int32 count = 15; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 16; // Caption: Device;
 	string disposition = 17; // Caption: Disposition; Profile: security_control;
-	ocsf.v1_0_0.events.network.enums.RDP_ACTIVITY_DISPOSITION_ID disposition_id = 18; // Caption: Disposition ID; Profile: security_control;
+	ocsf.v1_0_0.events.network.enums.RDP_ACTIVITY_DISPOSITION_ID disposition_id = 18; // Profile: security_control; Caption: Disposition ID;
 	ocsf.v1_0_0.objects.NetworkEndpoint dst_endpoint = 19; // Caption: Destination Endpoint;
 	int32 duration = 20; // Caption: Duration;
 	int64 end_time = 21; // Caption: End Time;
@@ -493,7 +493,7 @@ message SmbActivity {
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
 	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string app_name = 5; // Caption: Application Name;
-	repeated ocsf.v1_0_0.objects.Attack attacks = 6; // Caption: Attacks; Profile: security_control;
+	repeated ocsf.v1_0_0.objects.Attack attacks = 6; // Profile: security_control; Caption: Attacks;
 	string category_name = 7; // Caption: Category;
 	ocsf.v1_0_0.events.network.enums.SMB_ACTIVITY_CATEGORY_UID category_uid = 8; // Caption: Category ID;
 	string class_name = 9; // Caption: Class;
@@ -507,7 +507,7 @@ message SmbActivity {
 	ocsf.v1_0_0.objects.Device device = 17; // Caption: Device; Profile: host;
 	string dialect = 18; // Caption: Dialect;
 	string disposition = 19; // Caption: Disposition; Profile: security_control;
-	ocsf.v1_0_0.events.network.enums.SMB_ACTIVITY_DISPOSITION_ID disposition_id = 20; // Profile: security_control; Caption: Disposition ID;
+	ocsf.v1_0_0.events.network.enums.SMB_ACTIVITY_DISPOSITION_ID disposition_id = 20; // Caption: Disposition ID; Profile: security_control;
 	ocsf.v1_0_0.objects.NetworkEndpoint dst_endpoint = 21; // Caption: Destination Endpoint;
 	int32 duration = 22; // Caption: Duration;
 	int64 end_time = 23; // Caption: End Time;
@@ -542,9 +542,9 @@ message SmbActivity {
 	google.protobuf.Struct unmapped = 52; // Caption: Unmapped Data;
 }
 
-// Event: network
 // Event UID: 7
 // URL: https://schema.ocsf.io/1.0.0/classes/ssh_activity
+// Event: network
 message SshActivity {
 	ocsf.v1_0_0.events.network.enums.SSH_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -557,7 +557,7 @@ message SshActivity {
 	string class_name = 9; // Caption: Class;
 	ocsf.v1_0_0.events.network.enums.SSH_ACTIVITY_CLASS_UID class_uid = 10; // Caption: Class ID;
 	ocsf.v1_0_0.objects.Hassh client_hassh = 11; // Caption: Client HASSH;
-	ocsf.v1_0_0.objects.Cloud cloud = 12; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 12; // Caption: Cloud; Profile: cloud;
 	ocsf.v1_0_0.objects.NetworkConnectionInfo connection_info = 13; // Caption: Connection Info;
 	int32 count = 14; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 15; // Caption: Device; Profile: host;

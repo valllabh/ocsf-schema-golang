@@ -11,7 +11,6 @@ type BaseEvent interface {
 	GetCategoryName() string
 	GetClassName() string
 	GetCount() int32
-	GetDuration() int32
 	GetTime() int64
 	GetMessage() string
 	GetSeverity() string

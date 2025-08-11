@@ -1,0 +1,258 @@
+syntax = "proto3";
+
+package ocsf.v1_5_0.events.remediation;
+
+option go_package = "/ocsf/v1_5_0/events/remediation";
+
+option java_package = "com.your.project.generated.ocsf.v1_5_0.events.remediation";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_5_0/events/remediation/enums/enums.proto";
+
+import "ocsf/v1_5_0/objects/objects.proto";
+
+import "google/protobuf/struct.proto";
+
+// Event UID: 2
+// URL: https://schema.ocsf.io/1.5.0/classes/file_remediation_activity
+// Event: remediation
+message FileRemediationActivity {
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
+	string activity_name = 4; // Caption: Activity;
+	ocsf.v1_5_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_5_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_5_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® and ATLAS™ Details; Profile: security_control;
+	repeated ocsf.v1_5_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
+	string category_name = 9; // Caption: Category;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
+	string class_name = 11; // Caption: Class;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_CLASS_UID class_uid = 12; // Caption: Class ID;
+	ocsf.v1_5_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	string command_uid = 14; // Caption: Command UID;
+	string confidence = 15; // Caption: Confidence; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_CONFIDENCE_ID confidence_id = 16; // Profile: security_control; Caption: Confidence ID;
+	int32 confidence_score = 17; // Caption: Confidence Score; Profile: security_control;
+	int32 count = 18; // Caption: Count;
+	repeated ocsf.v1_5_0.objects.D3Fend countermeasures = 19; // Caption: Countermeasures;
+	ocsf.v1_5_0.objects.Device device = 20; // Caption: Device; Profile: host;
+	string disposition = 21; // Caption: Disposition; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_DISPOSITION_ID disposition_id = 22; // Caption: Disposition ID; Profile: security_control;
+	int64 duration = 23; // Caption: Duration Milliseconds;
+	int64 end_time = 24; // Caption: End Time;
+	repeated ocsf.v1_5_0.objects.Enrichment enrichments = 25; // Caption: Enrichments;
+	ocsf.v1_5_0.objects.File file = 26; // Caption: File;
+	ocsf.v1_5_0.objects.FirewallRule firewall_rule = 27; // Caption: Firewall Rule; Profile: security_control;
+	bool is_alert = 28; // Caption: Alert; Profile: security_control;
+	repeated ocsf.v1_5_0.objects.Malware malware = 29; // Caption: Malware; Profile: security_control;
+	ocsf.v1_5_0.objects.MalwareScanInfo malware_scan_info = 30; // Caption: Malware Scan Info; Profile: security_control;
+	string message = 31; // Caption: Message;
+	ocsf.v1_5_0.objects.Metadata metadata = 32; // Caption: Metadata;
+	repeated ocsf.v1_5_0.objects.Observable observables = 33; // Caption: Observables;
+	repeated ocsf.v1_5_0.objects.Osint osint = 34; // Caption: OSINT; Profile: osint;
+	ocsf.v1_5_0.objects.Policy policy = 35; // Caption: Policy; Profile: security_control;
+	string raw_data = 36; // Caption: Raw Data;
+	int64 raw_data_size = 37; // Caption: Raw Data Size;
+	ocsf.v1_5_0.objects.Remediation remediation = 38; // Caption: Remediation Guidance;
+	string risk_details = 39; // Caption: Risk Details; Profile: security_control;
+	string risk_level = 40; // Caption: Risk Level; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_RISK_LEVEL_ID risk_level_id = 41; // Profile: security_control; Caption: Risk Level ID;
+	int32 risk_score = 42; // Caption: Risk Score; Profile: security_control;
+	ocsf.v1_5_0.objects.Scan scan = 43; // Caption: Scan;
+	string severity = 44; // Caption: Severity;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_SEVERITY_ID severity_id = 45; // Caption: Severity ID;
+	int64 start_time = 46; // Caption: Start Time;
+	string status = 47; // Caption: Status;
+	string status_code = 48; // Caption: Status Code;
+	string status_detail = 49; // Caption: Status Detail;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_STATUS_ID status_id = 50; // Caption: Status ID;
+	int64 time = 51; // Caption: Event Time;
+	int32 timezone_offset = 52; // Caption: Timezone Offset;
+	string type_name = 53; // Caption: Type Name;
+	ocsf.v1_5_0.events.remediation.enums.FILE_REMEDIATION_ACTIVITY_TYPE_UID type_uid = 54; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 55; // Caption: Unmapped Data;
+}
+
+// Event: remediation
+// Event UID: 4
+// URL: https://schema.ocsf.io/1.5.0/classes/network_remediation_activity
+message NetworkRemediationActivity {
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
+	string activity_name = 4; // Caption: Activity;
+	ocsf.v1_5_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_5_0.objects.Api api = 6; // Profile: cloud; Caption: API Details;
+	repeated ocsf.v1_5_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® and ATLAS™ Details; Profile: security_control;
+	repeated ocsf.v1_5_0.objects.Authorization authorizations = 8; // Profile: security_control; Caption: Authorization Information;
+	string category_name = 9; // Caption: Category;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
+	string class_name = 11; // Caption: Class;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_CLASS_UID class_uid = 12; // Caption: Class ID;
+	ocsf.v1_5_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	string command_uid = 14; // Caption: Command UID;
+	string confidence = 15; // Profile: security_control; Caption: Confidence;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_CONFIDENCE_ID confidence_id = 16; // Caption: Confidence ID; Profile: security_control;
+	int32 confidence_score = 17; // Caption: Confidence Score; Profile: security_control;
+	ocsf.v1_5_0.objects.NetworkConnectionInfo connection_info = 18; // Caption: Connection Info;
+	int32 count = 19; // Caption: Count;
+	repeated ocsf.v1_5_0.objects.D3Fend countermeasures = 20; // Caption: Countermeasures;
+	ocsf.v1_5_0.objects.Device device = 21; // Caption: Device; Profile: host;
+	string disposition = 22; // Profile: security_control; Caption: Disposition;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_DISPOSITION_ID disposition_id = 23; // Caption: Disposition ID; Profile: security_control;
+	int64 duration = 24; // Caption: Duration Milliseconds;
+	int64 end_time = 25; // Caption: End Time;
+	repeated ocsf.v1_5_0.objects.Enrichment enrichments = 26; // Caption: Enrichments;
+	ocsf.v1_5_0.objects.FirewallRule firewall_rule = 27; // Caption: Firewall Rule; Profile: security_control;
+	bool is_alert = 28; // Caption: Alert; Profile: security_control;
+	repeated ocsf.v1_5_0.objects.Malware malware = 29; // Profile: security_control; Caption: Malware;
+	ocsf.v1_5_0.objects.MalwareScanInfo malware_scan_info = 30; // Caption: Malware Scan Info; Profile: security_control;
+	string message = 31; // Caption: Message;
+	ocsf.v1_5_0.objects.Metadata metadata = 32; // Caption: Metadata;
+	repeated ocsf.v1_5_0.objects.Observable observables = 33; // Caption: Observables;
+	repeated ocsf.v1_5_0.objects.Osint osint = 34; // Caption: OSINT; Profile: osint;
+	ocsf.v1_5_0.objects.Policy policy = 35; // Profile: security_control; Caption: Policy;
+	string raw_data = 36; // Caption: Raw Data;
+	int64 raw_data_size = 37; // Caption: Raw Data Size;
+	ocsf.v1_5_0.objects.Remediation remediation = 38; // Caption: Remediation Guidance;
+	string risk_details = 39; // Caption: Risk Details; Profile: security_control;
+	string risk_level = 40; // Caption: Risk Level; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_RISK_LEVEL_ID risk_level_id = 41; // Caption: Risk Level ID; Profile: security_control;
+	int32 risk_score = 42; // Caption: Risk Score; Profile: security_control;
+	ocsf.v1_5_0.objects.Scan scan = 43; // Caption: Scan;
+	string severity = 44; // Caption: Severity;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_SEVERITY_ID severity_id = 45; // Caption: Severity ID;
+	int64 start_time = 46; // Caption: Start Time;
+	string status = 47; // Caption: Status;
+	string status_code = 48; // Caption: Status Code;
+	string status_detail = 49; // Caption: Status Detail;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_STATUS_ID status_id = 50; // Caption: Status ID;
+	int64 time = 51; // Caption: Event Time;
+	int32 timezone_offset = 52; // Caption: Timezone Offset;
+	string type_name = 53; // Caption: Type Name;
+	ocsf.v1_5_0.events.remediation.enums.NETWORK_REMEDIATION_ACTIVITY_TYPE_UID type_uid = 54; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 55; // Caption: Unmapped Data;
+}
+
+// Event: remediation
+// Event UID: 3
+// URL: https://schema.ocsf.io/1.5.0/classes/process_remediation_activity
+message ProcessRemediationActivity {
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_ACTION_ID action_id = 2; // Profile: security_control; Caption: Action ID;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
+	string activity_name = 4; // Caption: Activity;
+	ocsf.v1_5_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_5_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_5_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® and ATLAS™ Details; Profile: security_control;
+	repeated ocsf.v1_5_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
+	string category_name = 9; // Caption: Category;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
+	string class_name = 11; // Caption: Class;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_CLASS_UID class_uid = 12; // Caption: Class ID;
+	ocsf.v1_5_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	string command_uid = 14; // Caption: Command UID;
+	string confidence = 15; // Caption: Confidence; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_CONFIDENCE_ID confidence_id = 16; // Caption: Confidence ID; Profile: security_control;
+	int32 confidence_score = 17; // Caption: Confidence Score; Profile: security_control;
+	int32 count = 18; // Caption: Count;
+	repeated ocsf.v1_5_0.objects.D3Fend countermeasures = 19; // Caption: Countermeasures;
+	ocsf.v1_5_0.objects.Device device = 20; // Caption: Device; Profile: host;
+	string disposition = 21; // Caption: Disposition; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_DISPOSITION_ID disposition_id = 22; // Caption: Disposition ID; Profile: security_control;
+	int64 duration = 23; // Caption: Duration Milliseconds;
+	int64 end_time = 24; // Caption: End Time;
+	repeated ocsf.v1_5_0.objects.Enrichment enrichments = 25; // Caption: Enrichments;
+	ocsf.v1_5_0.objects.FirewallRule firewall_rule = 26; // Caption: Firewall Rule; Profile: security_control;
+	bool is_alert = 27; // Caption: Alert; Profile: security_control;
+	repeated ocsf.v1_5_0.objects.Malware malware = 28; // Caption: Malware; Profile: security_control;
+	ocsf.v1_5_0.objects.MalwareScanInfo malware_scan_info = 29; // Caption: Malware Scan Info; Profile: security_control;
+	string message = 30; // Caption: Message;
+	ocsf.v1_5_0.objects.Metadata metadata = 31; // Caption: Metadata;
+	repeated ocsf.v1_5_0.objects.Observable observables = 32; // Caption: Observables;
+	repeated ocsf.v1_5_0.objects.Osint osint = 33; // Caption: OSINT; Profile: osint;
+	ocsf.v1_5_0.objects.Policy policy = 34; // Caption: Policy; Profile: security_control;
+	ocsf.v1_5_0.objects.Process process = 35; // Caption: Process;
+	string raw_data = 36; // Caption: Raw Data;
+	int64 raw_data_size = 37; // Caption: Raw Data Size;
+	ocsf.v1_5_0.objects.Remediation remediation = 38; // Caption: Remediation Guidance;
+	string risk_details = 39; // Caption: Risk Details; Profile: security_control;
+	string risk_level = 40; // Caption: Risk Level; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_RISK_LEVEL_ID risk_level_id = 41; // Caption: Risk Level ID; Profile: security_control;
+	int32 risk_score = 42; // Profile: security_control; Caption: Risk Score;
+	ocsf.v1_5_0.objects.Scan scan = 43; // Caption: Scan;
+	string severity = 44; // Caption: Severity;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_SEVERITY_ID severity_id = 45; // Caption: Severity ID;
+	int64 start_time = 46; // Caption: Start Time;
+	string status = 47; // Caption: Status;
+	string status_code = 48; // Caption: Status Code;
+	string status_detail = 49; // Caption: Status Detail;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_STATUS_ID status_id = 50; // Caption: Status ID;
+	int64 time = 51; // Caption: Event Time;
+	int32 timezone_offset = 52; // Caption: Timezone Offset;
+	string type_name = 53; // Caption: Type Name;
+	ocsf.v1_5_0.events.remediation.enums.PROCESS_REMEDIATION_ACTIVITY_TYPE_UID type_uid = 54; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 55; // Caption: Unmapped Data;
+}
+
+// Event: remediation
+// Event UID: 1
+// URL: https://schema.ocsf.io/1.5.0/classes/remediation_activity
+message RemediationActivity {
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
+	string activity_name = 4; // Caption: Activity;
+	ocsf.v1_5_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_5_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_5_0.objects.Attack attacks = 7; // Profile: security_control; Caption: MITRE ATT&CK® and ATLAS™ Details;
+	repeated ocsf.v1_5_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
+	string category_name = 9; // Caption: Category;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
+	string class_name = 11; // Caption: Class;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_CLASS_UID class_uid = 12; // Caption: Class ID;
+	ocsf.v1_5_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	string command_uid = 14; // Caption: Command UID;
+	string confidence = 15; // Caption: Confidence; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_CONFIDENCE_ID confidence_id = 16; // Caption: Confidence ID; Profile: security_control;
+	int32 confidence_score = 17; // Caption: Confidence Score; Profile: security_control;
+	int32 count = 18; // Caption: Count;
+	repeated ocsf.v1_5_0.objects.D3Fend countermeasures = 19; // Caption: Countermeasures;
+	ocsf.v1_5_0.objects.Device device = 20; // Caption: Device; Profile: host;
+	string disposition = 21; // Caption: Disposition; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_DISPOSITION_ID disposition_id = 22; // Caption: Disposition ID; Profile: security_control;
+	int64 duration = 23; // Caption: Duration Milliseconds;
+	int64 end_time = 24; // Caption: End Time;
+	repeated ocsf.v1_5_0.objects.Enrichment enrichments = 25; // Caption: Enrichments;
+	ocsf.v1_5_0.objects.FirewallRule firewall_rule = 26; // Caption: Firewall Rule; Profile: security_control;
+	bool is_alert = 27; // Caption: Alert; Profile: security_control;
+	repeated ocsf.v1_5_0.objects.Malware malware = 28; // Caption: Malware; Profile: security_control;
+	ocsf.v1_5_0.objects.MalwareScanInfo malware_scan_info = 29; // Caption: Malware Scan Info; Profile: security_control;
+	string message = 30; // Caption: Message;
+	ocsf.v1_5_0.objects.Metadata metadata = 31; // Caption: Metadata;
+	repeated ocsf.v1_5_0.objects.Observable observables = 32; // Caption: Observables;
+	repeated ocsf.v1_5_0.objects.Osint osint = 33; // Caption: OSINT; Profile: osint;
+	ocsf.v1_5_0.objects.Policy policy = 34; // Caption: Policy; Profile: security_control;
+	string raw_data = 35; // Caption: Raw Data;
+	int64 raw_data_size = 36; // Caption: Raw Data Size;
+	ocsf.v1_5_0.objects.Remediation remediation = 37; // Caption: Remediation Guidance;
+	string risk_details = 38; // Caption: Risk Details; Profile: security_control;
+	string risk_level = 39; // Caption: Risk Level; Profile: security_control;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_RISK_LEVEL_ID risk_level_id = 40; // Profile: security_control; Caption: Risk Level ID;
+	int32 risk_score = 41; // Caption: Risk Score; Profile: security_control;
+	ocsf.v1_5_0.objects.Scan scan = 42; // Caption: Scan;
+	string severity = 43; // Caption: Severity;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_SEVERITY_ID severity_id = 44; // Caption: Severity ID;
+	int64 start_time = 45; // Caption: Start Time;
+	string status = 46; // Caption: Status;
+	string status_code = 47; // Caption: Status Code;
+	string status_detail = 48; // Caption: Status Detail;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_STATUS_ID status_id = 49; // Caption: Status ID;
+	int64 time = 50; // Caption: Event Time;
+	int32 timezone_offset = 51; // Caption: Timezone Offset;
+	string type_name = 52; // Caption: Type Name;
+	ocsf.v1_5_0.events.remediation.enums.REMEDIATION_ACTIVITY_TYPE_UID type_uid = 53; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 54; // Caption: Unmapped Data;
+}

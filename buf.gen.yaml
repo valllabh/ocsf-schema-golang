@@ -6,4 +6,6 @@ managed:
 plugins:
   - plugin: buf.build/protocolbuffers/go
     out: ./
-    opt: paths=source_relative
+    opt:
+      - paths=source_relative
+      - default_api_level=API_HYBRID

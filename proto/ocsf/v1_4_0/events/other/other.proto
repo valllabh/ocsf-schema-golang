@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package ocsf.v1_4_0.events.other;
+
+option go_package = "/ocsf/v1_4_0/events/other";
+
+option java_package = "com.your.project.generated.ocsf.v1_4_0.events.other";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_4_0/events/other/enums/enums.proto";
+
+import "ocsf/v1_4_0/objects/objects.proto";
+
+import "google/protobuf/struct.proto";
+
+// Event UID: 0
+// URL: https://schema.ocsf.io/1.4.0/classes/base_event
+// Event: other
+message BaseEvent {
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_ACTION_ID action_id = 2; // Profile: security_control; Caption: Action ID;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
+	string activity_name = 4; // Caption: Activity;
+	ocsf.v1_4_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_4_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_4_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_4_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
+	string category_name = 9; // Caption: Category;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_CATEGORY_UID category_uid = 10; // Caption: Category ID;
+	string class_name = 11; // Caption: Class;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_CLASS_UID class_uid = 12; // Caption: Class ID;
+	ocsf.v1_4_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	string confidence = 14; // Caption: Confidence; Profile: security_control;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_CONFIDENCE_ID confidence_id = 15; // Caption: Confidence ID; Profile: security_control;
+	int32 confidence_score = 16; // Caption: Confidence Score; Profile: security_control;
+	int32 count = 17; // Caption: Count;
+	ocsf.v1_4_0.objects.Device device = 18; // Caption: Device; Profile: host;
+	string disposition = 19; // Profile: security_control; Caption: Disposition;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_DISPOSITION_ID disposition_id = 20; // Caption: Disposition ID; Profile: security_control;
+	int64 duration = 21; // Caption: Duration Milliseconds;
+	int64 end_time = 22; // Caption: End Time;
+	repeated ocsf.v1_4_0.objects.Enrichment enrichments = 23; // Caption: Enrichments;
+	ocsf.v1_4_0.objects.FirewallRule firewall_rule = 24; // Caption: Firewall Rule; Profile: security_control;
+	bool is_alert = 25; // Caption: Alert; Profile: security_control;
+	repeated ocsf.v1_4_0.objects.Malware malware = 26; // Caption: Malware; Profile: security_control;
+	string message = 27; // Caption: Message;
+	ocsf.v1_4_0.objects.Metadata metadata = 28; // Caption: Metadata;
+	repeated ocsf.v1_4_0.objects.Observable observables = 29; // Caption: Observables;
+	repeated ocsf.v1_4_0.objects.Osint osint = 30; // Caption: OSINT; Profile: osint;
+	ocsf.v1_4_0.objects.Policy policy = 31; // Caption: Policy; Profile: security_control;
+	string raw_data = 32; // Caption: Raw Data;
+	string risk_details = 33; // Caption: Risk Details; Profile: security_control;
+	string risk_level = 34; // Caption: Risk Level; Profile: security_control;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_RISK_LEVEL_ID risk_level_id = 35; // Caption: Risk Level ID; Profile: security_control;
+	int32 risk_score = 36; // Caption: Risk Score; Profile: security_control;
+	string severity = 37; // Caption: Severity;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_SEVERITY_ID severity_id = 38; // Caption: Severity ID;
+	int64 start_time = 39; // Caption: Start Time;
+	string status = 40; // Caption: Status;
+	string status_code = 41; // Caption: Status Code;
+	string status_detail = 42; // Caption: Status Detail;
+	ocsf.v1_4_0.events.other.enums.BASE_EVENT_STATUS_ID status_id = 43; // Caption: Status ID;
+	int64 time = 44; // Caption: Event Time;
+	int32 timezone_offset = 45; // Caption: Timezone Offset;
+	string type_name = 46; // Caption: Type Name;
+	int64 type_uid = 47; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 48; // Caption: Unmapped Data;
+}

@@ -13,13 +13,15 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"strings"
+	"time"
 
 	"github.com/klauspost/compress/zstd"
 	"github.com/santhosh-tekuri/jsonschema/v5"
 )
 
 func main() {
-	versions := []string{"1.0", "1.1", "1.2"}
+	versions := []string{"1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"}
 
 	for _, version := range versions {
 		classlist := fmt.Sprintf(
@@ -43,7 +45,6 @@ func main() {
 			vv := v.([]interface{})
 			for _, vvx := range vv {
 				className := vvx.(string)
-				log.Printf("fetching %s/%s", className, version)
 				err = fetchSchema(className, version)
 				if err != nil {
 					log.Fatalf("failed fetching %s: %w", className, err)
@@ -62,9 +63,25 @@ func fetchSchema(className string, version string) error {
 		Host:   "schema.ocsf.io",
 		Path:   path.Join("schema", fullVersion, "classes", className),
 		RawQuery: url.Values{
-			"profiles": []string{},
+			"profiles": []string{
+				strings.Join([]string{
+					"cloud",
+					"container",
+					"data_classification",
+					"datetime",
+					"host",
+					"incident",
+					"load_balancer",
+					"network_proxy",
+					// osint -- skipped since it marks osint field as required.
+					"security_control",
+					"trace",
+				}, ","),
+			},
 		}.Encode(),
 	}
+
+	log.Printf("fetching %s/%s from %s", className, version, ux.String())
 
 	// 	https://schema.ocsf.io/schema/1.2.0/classes/web_resources_activity?profiles=
 	diskPath := filepath.Join(version, "jsonschema", "classes_"+className+".json.zst")
@@ -72,6 +89,12 @@ func fetchSchema(className string, version string) error {
 	if err != nil {
 		return fmt.Errorf("fetchSchema: filepath.Abs failed: %w", err)
 	}
+
+	if _, err := os.Stat(diskPath); err == nil {
+		log.Printf("skipping %s", diskPath)
+		return nil
+	}
+
 	diskURL := url.URL{
 		Scheme: "file",
 		Path:   filepath.ToSlash(dpAbs),
@@ -81,6 +104,7 @@ func fetchSchema(className string, version string) error {
 	if err != nil {
 		return fmt.Errorf("fetchSchema: http.NewRequest failed: %w", err)
 	}
+	startTime := time.Now()
 	req.Header.Set("User-Agent", "ocsf-schema-golang/fetch-schema")
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
@@ -94,17 +118,23 @@ func fetchSchema(className string, version string) error {
 	if err != nil {
 		return fmt.Errorf("fetchSchema: http read all failed: %w", err)
 	}
+	elapsed := time.Since(startTime)
+	log.Printf("fetchSchema: http fetch took %s", elapsed)
 	buf := &bytes.Buffer{}
 	err = json.Indent(buf, data, "", "  ")
 	if err != nil {
 		return fmt.Errorf("fetchSchema: json Ident failed: %w", err)
 	}
 
+	startTime = time.Now()
 	_, err = jsonschema.CompileString(diskURL.String(), buf.String())
 	if err != nil {
 		return fmt.Errorf("fetchSchema: jsonschema.CompileString failed: %w", err)
 	}
+	elapsed = time.Since(startTime)
+	log.Printf("fetchSchema: jsonschema compile took %s", elapsed)
 
+	startTime = time.Now()
 	out := &bytes.Buffer{}
 	enc, err := zstd.NewWriter(out)
 	if err != nil {

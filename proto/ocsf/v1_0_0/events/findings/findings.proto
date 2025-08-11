@@ -48,14 +48,14 @@ message Findings {
 	google.protobuf.Struct unmapped = 28; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.0.0/classes/security_finding
 // Event: findings
 // Event UID: 1
+// URL: https://schema.ocsf.io/1.0.0/classes/security_finding
 message SecurityFinding {
 	ocsf.v1_0_0.events.findings.enums.SECURITY_FINDING_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Analytic analytic = 3; // Caption: Analytic;
-	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_0_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	repeated ocsf.v1_0_0.objects.Attack attacks = 5; // Caption: Attacks;
 	string category_name = 6; // Caption: Category;
 	ocsf.v1_0_0.events.findings.enums.SECURITY_FINDING_CATEGORY_UID category_uid = 7; // Caption: Category ID;

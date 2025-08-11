@@ -27,7 +27,7 @@ message ConfigState {
 	ocsf.v1_0_0.objects.CisBenchmarkResult cis_benchmark_result = 7; // Caption: CIS Benchmark Result;
 	string class_name = 8; // Caption: Class;
 	ocsf.v1_0_0.events.discovery.enums.CONFIG_STATE_CLASS_UID class_uid = 9; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 10; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 10; // Profile: cloud; Caption: Cloud;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 12; // Caption: Device;
 	int32 duration = 13; // Caption: Duration;
@@ -85,9 +85,9 @@ message Discovery {
 	google.protobuf.Struct unmapped = 28; // Caption: Unmapped Data;
 }
 
-// URL: https://schema.ocsf.io/1.0.0/classes/inventory_info
 // Event: discovery
 // Event UID: 1
+// URL: https://schema.ocsf.io/1.0.0/classes/inventory_info
 message InventoryInfo {
 	ocsf.v1_0_0.events.discovery.enums.INVENTORY_INFO_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;

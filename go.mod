@@ -3,10 +3,10 @@ module github.com/valllabh/ocsf-schema-golang
 go 1.22
 
 require (
-	github.com/klauspost/compress v1.17.8
+	github.com/klauspost/compress v1.18.0
 	github.com/santhosh-tekuri/jsonschema/v5 v5.3.1
 	github.com/stretchr/testify v1.9.0
-	google.golang.org/protobuf v1.34.1
+	google.golang.org/protobuf v1.36.7
 )
 
 require (

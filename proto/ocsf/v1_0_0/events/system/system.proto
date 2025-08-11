@@ -23,12 +23,12 @@ message FileActivity {
 	string activity_name = 3; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 4; // Caption: Actor;
 	ocsf.v1_0_0.objects.Api api = 5; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_0_0.objects.Attack attacks = 6; // Profile: security_control; Caption: Attacks;
+	repeated ocsf.v1_0_0.objects.Attack attacks = 6; // Caption: Attacks; Profile: security_control;
 	string category_name = 7; // Caption: Category;
 	ocsf.v1_0_0.events.system.enums.FILE_ACTIVITY_CATEGORY_UID category_uid = 8; // Caption: Category ID;
 	string class_name = 9; // Caption: Class;
 	ocsf.v1_0_0.events.system.enums.FILE_ACTIVITY_CLASS_UID class_uid = 10; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 11; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 11; // Profile: cloud; Caption: Cloud;
 	string component = 12; // Caption: Component;
 	string connection_uid = 13; // Caption: Connection Identifier;
 	int32 count = 14; // Caption: Count;
@@ -61,20 +61,20 @@ message FileActivity {
 	google.protobuf.Struct unmapped = 41; // Caption: Unmapped Data;
 }
 
+// Event: system
 // Event UID: 3
 // URL: https://schema.ocsf.io/1.0.0/classes/kernel_activity
-// Event: system
 message KernelActivity {
 	ocsf.v1_0_0.events.system.enums.KERNEL_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor;
 	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_0_0.objects.Attack attacks = 5; // Profile: security_control; Caption: Attacks;
+	repeated ocsf.v1_0_0.objects.Attack attacks = 5; // Caption: Attacks; Profile: security_control;
 	string category_name = 6; // Caption: Category;
 	ocsf.v1_0_0.events.system.enums.KERNEL_ACTIVITY_CATEGORY_UID category_uid = 7; // Caption: Category ID;
 	string class_name = 8; // Caption: Class;
 	ocsf.v1_0_0.events.system.enums.KERNEL_ACTIVITY_CLASS_UID class_uid = 9; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 10; // Profile: cloud; Caption: Cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 10; // Caption: Cloud; Profile: cloud;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 12; // Caption: Device;
 	string disposition = 13; // Caption: Disposition; Profile: security_control;
@@ -188,9 +188,9 @@ message MemoryActivity {
 	google.protobuf.Struct unmapped = 39; // Caption: Unmapped Data;
 }
 
-// Event: system
 // Event UID: 5
 // URL: https://schema.ocsf.io/1.0.0/classes/module_activity
+// Event: system
 message ModuleActivity {
 	ocsf.v1_0_0.events.system.enums.MODULE_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -201,7 +201,7 @@ message ModuleActivity {
 	ocsf.v1_0_0.events.system.enums.MODULE_ACTIVITY_CATEGORY_UID category_uid = 7; // Caption: Category ID;
 	string class_name = 8; // Caption: Class;
 	ocsf.v1_0_0.events.system.enums.MODULE_ACTIVITY_CLASS_UID class_uid = 9; // Caption: Class ID;
-	ocsf.v1_0_0.objects.Cloud cloud = 10; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_0_0.objects.Cloud cloud = 10; // Profile: cloud; Caption: Cloud;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 12; // Caption: Device;
 	string disposition = 13; // Caption: Disposition; Profile: security_control;
@@ -229,16 +229,16 @@ message ModuleActivity {
 	google.protobuf.Struct unmapped = 35; // Caption: Unmapped Data;
 }
 
-// Event: system
 // Event UID: 7
 // URL: https://schema.ocsf.io/1.0.0/classes/process_activity
+// Event: system
 message ProcessActivity {
 	ocsf.v1_0_0.events.system.enums.PROCESS_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor;
 	int32 actual_permissions = 4; // Caption: Actual Permissions;
 	ocsf.v1_0_0.objects.Api api = 5; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_0_0.objects.Attack attacks = 6; // Profile: security_control; Caption: Attacks;
+	repeated ocsf.v1_0_0.objects.Attack attacks = 6; // Caption: Attacks; Profile: security_control;
 	string category_name = 7; // Caption: Category;
 	ocsf.v1_0_0.events.system.enums.PROCESS_ACTIVITY_CATEGORY_UID category_uid = 8; // Caption: Category ID;
 	string class_name = 9; // Caption: Class;
@@ -337,7 +337,7 @@ message RegistryValueActivity {
 	ocsf.v1_0_0.objects.Cloud cloud = 10; // Caption: Cloud; Profile: cloud;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 12; // Caption: Device;
-	string disposition = 13; // Caption: Disposition; Profile: security_control;
+	string disposition = 13; // Profile: security_control; Caption: Disposition;
 	ocsf.v1_0_0.events.system.enums.REGISTRY_VALUE_ACTIVITY_DISPOSITION_ID disposition_id = 14; // Caption: Disposition ID; Profile: security_control;
 	int32 duration = 15; // Caption: Duration;
 	int64 end_time = 16; // Caption: End Time;
@@ -370,7 +370,7 @@ message ResourceActivity {
 	ocsf.v1_0_0.events.system.enums.RESOURCE_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor;
-	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
+	ocsf.v1_0_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
 	repeated ocsf.v1_0_0.objects.Attack attacks = 5; // Caption: Attacks; Profile: security_control;
 	string category_name = 6; // Caption: Category;
 	ocsf.v1_0_0.events.system.enums.RESOURCE_ACTIVITY_CATEGORY_UID category_uid = 7; // Caption: Category ID;
@@ -384,7 +384,7 @@ message ResourceActivity {
 	int32 duration = 15; // Caption: Duration;
 	int64 end_time = 16; // Caption: End Time;
 	repeated ocsf.v1_0_0.objects.Enrichment enrichments = 17; // Caption: Enrichments;
-	repeated ocsf.v1_0_0.objects.Malware malware = 18; // Caption: Malware; Profile: security_control;
+	repeated ocsf.v1_0_0.objects.Malware malware = 18; // Profile: security_control; Caption: Malware;
 	string message = 19; // Caption: Message;
 	ocsf.v1_0_0.objects.Metadata metadata = 20; // Caption: Metadata;
 	repeated ocsf.v1_0_0.objects.Observable observables = 21; // Caption: Observables;
@@ -411,7 +411,7 @@ message ScheduledJobActivity {
 	ocsf.v1_0_0.events.system.enums.SCHEDULED_JOB_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor;
-	ocsf.v1_0_0.objects.Api api = 4; // Profile: cloud; Caption: API Details;
+	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	repeated ocsf.v1_0_0.objects.Attack attacks = 5; // Caption: Attacks; Profile: security_control;
 	string category_name = 6; // Caption: Category;
 	ocsf.v1_0_0.events.system.enums.SCHEDULED_JOB_ACTIVITY_CATEGORY_UID category_uid = 7; // Caption: Category ID;
@@ -420,7 +420,7 @@ message ScheduledJobActivity {
 	ocsf.v1_0_0.objects.Cloud cloud = 10; // Caption: Cloud; Profile: cloud;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_0_0.objects.Device device = 12; // Caption: Device;
-	string disposition = 13; // Caption: Disposition; Profile: security_control;
+	string disposition = 13; // Profile: security_control; Caption: Disposition;
 	ocsf.v1_0_0.events.system.enums.SCHEDULED_JOB_ACTIVITY_DISPOSITION_ID disposition_id = 14; // Caption: Disposition ID; Profile: security_control;
 	int32 duration = 15; // Caption: Duration;
 	int64 end_time = 16; // Caption: End Time;
@@ -453,7 +453,7 @@ message System {
 	string activity_name = 2; // Caption: Activity;
 	ocsf.v1_0_0.objects.Actor actor = 3; // Caption: Actor;
 	ocsf.v1_0_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_0_0.objects.Attack attacks = 5; // Caption: Attacks; Profile: security_control;
+	repeated ocsf.v1_0_0.objects.Attack attacks = 5; // Profile: security_control; Caption: Attacks;
 	string category_name = 6; // Caption: Category;
 	ocsf.v1_0_0.events.system.enums.SYSTEM_CATEGORY_UID category_uid = 7; // Caption: Category ID;
 	string class_name = 8; // Caption: Class;

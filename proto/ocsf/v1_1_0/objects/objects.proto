@@ -156,7 +156,7 @@ message Cve {
 
 message Cvss {
 	float base_score = 1; // Caption: Base Score;
-	string depth = 2; // Caption: CVSS Depth; AllowedValues: Base, Environmental, Temporal;
+	string depth = 2; // AllowedValues: Base, Environmental, Temporal; Caption: CVSS Depth;
 	repeated ocsf.v1_1_0.objects.Metric metrics = 3; // Caption: Metrics;
 	float overall_score = 4; // Caption: Overall Score;
 	string severity = 5; // Caption: Severity;
@@ -475,7 +475,7 @@ message HttpHeader {
 message HttpRequest {
 	string args = 1; // Caption: HTTP Arguments;
 	repeated ocsf.v1_1_0.objects.HttpHeader http_headers = 2; // Caption: HTTP Headers;
-	string http_method = 3; // Caption: HTTP Method; AllowedValues: CONNECT, DELETE, GET, HEAD, OPTIONS, POST, PUT, TRACE;
+	string http_method = 3; // Caption: HTTP Method; AllowedValues: DELETE, GET, HEAD, OPTIONS, POST, PUT, TRACE, CONNECT;
 	int32 length = 4; // Caption: Response Length;
 	string referrer = 5; // Caption: HTTP Referrer;
 	string uid = 6; // Caption: Unique ID;
@@ -705,7 +705,7 @@ message NetworkEndpoint {
 	ocsf.v1_1_0.objects.Location location = 10; // Caption: Geo Location;
 	string mac = 11; // Caption: MAC Address;
 	string name = 12; // Caption: Name;
-	int32 namespace_pid = 13; // Profile: container; Caption: Namespace PID;
+	int32 namespace_pid = 13; // Caption: Namespace PID; Profile: container;
 	ocsf.v1_1_0.objects.Os os = 14; // Caption: OS;
 	int32 port = 15; // Caption: Port;
 	ocsf.v1_1_0.objects.NetworkProxy proxy_endpoint = 16; // Caption: Proxy Endpoint;

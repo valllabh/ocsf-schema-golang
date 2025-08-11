@@ -100,7 +100,7 @@ message ApplicationLifecycle {
 	ocsf.v1_2_0.events.application.enums.APPLICATION_LIFECYCLE_CATEGORY_UID category_uid = 7; // Caption: Category ID;
 	string class_name = 8; // Caption: Class;
 	ocsf.v1_2_0.events.application.enums.APPLICATION_LIFECYCLE_CLASS_UID class_uid = 9; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 10; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 10; // Profile: cloud; Caption: Cloud;
 	int32 count = 11; // Caption: Count;
 	ocsf.v1_2_0.objects.Device device = 12; // Caption: Device; Profile: host;
 	int32 duration = 13; // Caption: Duration;
@@ -129,18 +129,18 @@ message ApplicationLifecycle {
 // URL: https://schema.ocsf.io/1.2.0/classes/datastore_activity
 message DatastoreActivity {
 	string action = 1; // Caption: Action; Profile: security_control;
-	ocsf.v1_2_0.events.application.enums.DATASTORE_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_2_0.events.application.enums.DATASTORE_ACTIVITY_ACTION_ID action_id = 2; // Profile: security_control; Caption: Action ID;
 	ocsf.v1_2_0.events.application.enums.DATASTORE_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
 	string activity_name = 4; // Caption: Activity;
 	ocsf.v1_2_0.objects.Actor actor = 5; // Caption: Actor;
 	ocsf.v1_2_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
-	repeated ocsf.v1_2_0.objects.Attack attacks = 7; // Profile: security_control; Caption: MITRE ATT&CK® Details;
-	repeated ocsf.v1_2_0.objects.Authorization authorizations = 8; // Profile: security_control; Caption: Authorization Information;
+	repeated ocsf.v1_2_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® Details; Profile: security_control;
+	repeated ocsf.v1_2_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
 	string category_name = 9; // Caption: Category;
 	ocsf.v1_2_0.events.application.enums.DATASTORE_ACTIVITY_CATEGORY_UID category_uid = 10; // Caption: Category ID;
 	string class_name = 11; // Caption: Class;
 	ocsf.v1_2_0.events.application.enums.DATASTORE_ACTIVITY_CLASS_UID class_uid = 12; // Caption: Class ID;
-	ocsf.v1_2_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	ocsf.v1_2_0.objects.Cloud cloud = 13; // Profile: cloud; Caption: Cloud;
 	int32 count = 14; // Caption: Count;
 	ocsf.v1_2_0.objects.Database database = 15; // Caption: Database;
 	ocsf.v1_2_0.objects.Databucket databucket = 16; // Caption: Databucket;
@@ -216,9 +216,9 @@ message FileHosting {
 	google.protobuf.Struct unmapped = 34; // Caption: Unmapped Data;
 }
 
+// Event UID: 7
 // URL: https://schema.ocsf.io/1.2.0/classes/scan_activity
 // Event: application
-// Event UID: 7
 message ScanActivity {
 	ocsf.v1_2_0.events.application.enums.SCAN_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
@@ -231,7 +231,7 @@ message ScanActivity {
 	ocsf.v1_2_0.objects.Cloud cloud = 9; // Caption: Cloud; Profile: cloud;
 	string command_uid = 10; // Caption: Command UID;
 	int32 count = 11; // Caption: Count;
-	ocsf.v1_2_0.objects.Device device = 12; // Profile: host; Caption: Device;
+	ocsf.v1_2_0.objects.Device device = 12; // Caption: Device; Profile: host;
 	int32 duration = 13; // Caption: Duration;
 	int64 end_time = 14; // Caption: End Time;
 	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 15; // Caption: Enrichments;
@@ -272,7 +272,7 @@ message ScanActivity {
 message WebResourceAccessActivity {
 	ocsf.v1_2_0.events.application.enums.WEB_RESOURCE_ACCESS_ACTIVITY_ACTIVITY_ID activity_id = 1; // Caption: Activity ID;
 	string activity_name = 2; // Caption: Activity;
-	ocsf.v1_2_0.objects.Actor actor = 3; // Profile: host; Caption: Actor;
+	ocsf.v1_2_0.objects.Actor actor = 3; // Caption: Actor; Profile: host;
 	ocsf.v1_2_0.objects.Api api = 4; // Caption: API Details; Profile: cloud;
 	string category_name = 5; // Caption: Category;
 	ocsf.v1_2_0.events.application.enums.WEB_RESOURCE_ACCESS_ACTIVITY_CATEGORY_UID category_uid = 6; // Caption: Category ID;
@@ -339,16 +339,16 @@ message WebResourcesActivity {
 	int32 duration = 19; // Caption: Duration;
 	int64 end_time = 20; // Caption: End Time;
 	repeated ocsf.v1_2_0.objects.Enrichment enrichments = 21; // Caption: Enrichments;
-	ocsf.v1_2_0.objects.FirewallRule firewall_rule = 22; // Profile: security_control; Caption: Firewall Rule;
+	ocsf.v1_2_0.objects.FirewallRule firewall_rule = 22; // Caption: Firewall Rule; Profile: security_control;
 	ocsf.v1_2_0.objects.HttpRequest http_request = 23; // Caption: HTTP Request;
 	ocsf.v1_2_0.objects.HttpResponse http_response = 24; // Caption: HTTP Response;
-	repeated ocsf.v1_2_0.objects.Malware malware = 25; // Profile: security_control; Caption: Malware;
+	repeated ocsf.v1_2_0.objects.Malware malware = 25; // Caption: Malware; Profile: security_control;
 	string message = 26; // Caption: Message;
 	ocsf.v1_2_0.objects.Metadata metadata = 27; // Caption: Metadata;
 	repeated ocsf.v1_2_0.objects.Observable observables = 28; // Caption: Observables;
 	ocsf.v1_2_0.objects.NetworkConnectionInfo proxy_connection_info = 29; // Caption: Proxy Connection Info; Profile: network_proxy;
 	ocsf.v1_2_0.objects.NetworkProxy proxy_endpoint = 30; // Profile: network_proxy; Caption: Proxy Endpoint;
-	ocsf.v1_2_0.objects.HttpRequest proxy_http_request = 31; // Profile: network_proxy; Caption: Proxy HTTP Request;
+	ocsf.v1_2_0.objects.HttpRequest proxy_http_request = 31; // Caption: Proxy HTTP Request; Profile: network_proxy;
 	ocsf.v1_2_0.objects.HttpResponse proxy_http_response = 32; // Caption: Proxy HTTP Response; Profile: network_proxy;
 	ocsf.v1_2_0.objects.Tls proxy_tls = 33; // Caption: Proxy TLS; Profile: network_proxy;
 	ocsf.v1_2_0.objects.NetworkTraffic proxy_traffic = 34; // Caption: Proxy Traffic; Profile: network_proxy;

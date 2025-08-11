@@ -1,0 +1,218 @@
+syntax = "proto3";
+
+package ocsf.v1_6_0.events.unmanned_systems;
+
+option go_package = "/ocsf/v1_6_0/events/unmanned_systems";
+
+option java_package = "com.your.project.generated.ocsf.v1_6_0.events.unmanned_systems";
+
+option java_multiple_files = true;
+
+import "ocsf/v1_6_0/events/unmanned_systems/enums/enums.proto";
+
+import "ocsf/v1_6_0/objects/objects.proto";
+
+import "google/protobuf/struct.proto";
+
+// Event: unmanned_systems
+// Event UID: 2
+// URL: https://schema.ocsf.io/1.6.0/classes/airborne_broadcast_activity
+message AirborneBroadcastActivity {
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
+	string activity_name = 4; // Caption: Activity;
+	ocsf.v1_6_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_6_0.objects.Aircraft aircraft = 6; // Caption: Aircraft;
+	ocsf.v1_6_0.objects.Api api = 7; // Profile: cloud; Caption: API Details;
+	repeated ocsf.v1_6_0.objects.Attack attacks = 8; // Caption: MITRE ATT&CK® and ATLAS™ Details; Profile: security_control;
+	repeated ocsf.v1_6_0.objects.Authorization authorizations = 9; // Profile: security_control; Caption: Authorization Information;
+	string category_name = 10; // Caption: Category;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_CATEGORY_UID category_uid = 11; // Caption: Category ID;
+	string class_name = 12; // Caption: Class;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_CLASS_UID class_uid = 13; // Caption: Class ID;
+	ocsf.v1_6_0.objects.Cloud cloud = 14; // Caption: Cloud; Profile: cloud;
+	string confidence = 15; // Caption: Confidence; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_CONFIDENCE_ID confidence_id = 16; // Caption: Confidence ID; Profile: security_control;
+	int32 confidence_score = 17; // Caption: Confidence Score; Profile: security_control;
+	ocsf.v1_6_0.objects.NetworkConnectionInfo connection_info = 18; // Caption: Connection Info;
+	int32 count = 19; // Caption: Count;
+	ocsf.v1_6_0.objects.Device device = 20; // Caption: Device; Profile: host;
+	string disposition = 21; // Caption: Disposition; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_DISPOSITION_ID disposition_id = 22; // Caption: Disposition ID; Profile: security_control;
+	ocsf.v1_6_0.objects.NetworkEndpoint dst_endpoint = 23; // Caption: Destination Endpoint;
+	int64 duration = 24; // Caption: Duration Milliseconds;
+	int64 end_time = 25; // Caption: End Time;
+	repeated ocsf.v1_6_0.objects.Enrichment enrichments = 26; // Caption: Enrichments;
+	ocsf.v1_6_0.objects.FirewallRule firewall_rule = 27; // Caption: Firewall Rule; Profile: security_control;
+	bool is_alert = 28; // Profile: security_control; Caption: Alert;
+	repeated ocsf.v1_6_0.objects.Malware malware = 29; // Caption: Malware; Profile: security_control;
+	ocsf.v1_6_0.objects.MalwareScanInfo malware_scan_info = 30; // Caption: Malware Scan Info; Profile: security_control;
+	string message = 31; // Caption: Message;
+	ocsf.v1_6_0.objects.Metadata metadata = 32; // Caption: Metadata;
+	repeated ocsf.v1_6_0.objects.Observable observables = 33; // Caption: Observables;
+	repeated ocsf.v1_6_0.objects.Osint osint = 34; // Caption: OSINT; Profile: osint;
+	ocsf.v1_6_0.objects.Policy policy = 35; // Caption: Policy; Profile: security_control;
+	string protocol_name = 36; // Caption: Protocol Name;
+	ocsf.v1_6_0.objects.NetworkProxy proxy_endpoint = 37; // Caption: Proxy Endpoint;
+	string raw_data = 38; // Caption: Raw Data;
+	ocsf.v1_6_0.objects.Fingerprint raw_data_hash = 39; // Caption: Raw Data Hash;
+	int64 raw_data_size = 40; // Caption: Raw Data Size;
+	string risk_details = 41; // Caption: Risk Details; Profile: security_control;
+	string risk_level = 42; // Caption: Risk Level; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_RISK_LEVEL_ID risk_level_id = 43; // Caption: Risk Level ID; Profile: security_control;
+	int32 risk_score = 44; // Caption: Risk Score; Profile: security_control;
+	int32 rssi = 45; // Caption: RSSI;
+	string severity = 46; // Caption: Severity;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_SEVERITY_ID severity_id = 47; // Caption: Severity ID;
+	ocsf.v1_6_0.objects.NetworkEndpoint src_endpoint = 48; // Caption: Source Endpoint;
+	int64 start_time = 49; // Caption: Start Time;
+	string status = 50; // Caption: Status;
+	string status_code = 51; // Caption: Status Code;
+	string status_detail = 52; // Caption: Status Detail;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_STATUS_ID status_id = 53; // Caption: Status ID;
+	int64 time = 54; // Caption: Event Time;
+	int32 timezone_offset = 55; // Caption: Timezone Offset;
+	ocsf.v1_6_0.objects.Tls tls = 56; // Caption: TLS;
+	ocsf.v1_6_0.objects.NetworkTraffic traffic = 57; // Caption: Traffic;
+	string type_name = 58; // Caption: Type Name;
+	ocsf.v1_6_0.events.unmanned_systems.enums.AIRBORNE_BROADCAST_ACTIVITY_TYPE_UID type_uid = 59; // Caption: Type ID;
+	ocsf.v1_6_0.objects.UnmannedAerialSystem unmanned_aerial_system = 60; // Caption: Unmanned Aerial System;
+	ocsf.v1_6_0.objects.UnmannedSystemOperatingArea unmanned_system_operating_area = 61; // Caption: UAS Operating Area;
+	ocsf.v1_6_0.objects.User unmanned_system_operator = 62; // Caption: Unmanned Systems Operator;
+	google.protobuf.Struct unmapped = 63; // Caption: Unmapped Data;
+}
+
+// Event UID: 1
+// URL: https://schema.ocsf.io/1.6.0/classes/drone_flights_activity
+// Event: unmanned_systems
+message DroneFlightsActivity {
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
+	string activity_name = 4; // Caption: Activity;
+	ocsf.v1_6_0.objects.Actor actor = 5; // Caption: Actor; Profile: host;
+	ocsf.v1_6_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_6_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® and ATLAS™ Details; Profile: security_control;
+	string auth_protocol = 8; // Caption: Auth Protocol;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_AUTH_PROTOCOL_ID auth_protocol_id = 9; // Caption: Auth Protocol ID;
+	repeated ocsf.v1_6_0.objects.Authorization authorizations = 10; // Caption: Authorization Information; Profile: security_control;
+	string category_name = 11; // Caption: Category;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_CATEGORY_UID category_uid = 12; // Caption: Category ID;
+	string class_name = 13; // Caption: Class;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_CLASS_UID class_uid = 14; // Caption: Class ID;
+	string classification = 15; // Caption: Classification;
+	ocsf.v1_6_0.objects.Cloud cloud = 16; // Caption: Cloud; Profile: cloud;
+	string comment = 17; // Caption: Comment;
+	string confidence = 18; // Profile: security_control; Caption: Confidence;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_CONFIDENCE_ID confidence_id = 19; // Caption: Confidence ID; Profile: security_control;
+	int32 confidence_score = 20; // Caption: Confidence Score; Profile: security_control;
+	ocsf.v1_6_0.objects.NetworkConnectionInfo connection_info = 21; // Caption: Connection Info;
+	int32 count = 22; // Caption: Count;
+	ocsf.v1_6_0.objects.Device device = 23; // Caption: Device; Profile: host;
+	string disposition = 24; // Caption: Disposition; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_DISPOSITION_ID disposition_id = 25; // Caption: Disposition ID; Profile: security_control;
+	ocsf.v1_6_0.objects.NetworkEndpoint dst_endpoint = 26; // Caption: Destination Endpoint;
+	int64 duration = 27; // Caption: Duration Milliseconds;
+	int64 end_time = 28; // Caption: End Time;
+	repeated ocsf.v1_6_0.objects.Enrichment enrichments = 29; // Caption: Enrichments;
+	ocsf.v1_6_0.objects.FirewallRule firewall_rule = 30; // Caption: Firewall Rule; Profile: security_control;
+	bool is_alert = 31; // Caption: Alert; Profile: security_control;
+	repeated ocsf.v1_6_0.objects.Malware malware = 32; // Caption: Malware; Profile: security_control;
+	ocsf.v1_6_0.objects.MalwareScanInfo malware_scan_info = 33; // Caption: Malware Scan Info; Profile: security_control;
+	string message = 34; // Caption: Message;
+	ocsf.v1_6_0.objects.Metadata metadata = 35; // Caption: Metadata;
+	repeated ocsf.v1_6_0.objects.Observable observables = 36; // Caption: Observables;
+	repeated ocsf.v1_6_0.objects.Osint osint = 37; // Caption: OSINT; Profile: osint;
+	ocsf.v1_6_0.objects.Policy policy = 38; // Profile: security_control; Caption: Policy;
+	string protocol_name = 39; // Caption: Protocol Name;
+	ocsf.v1_6_0.objects.NetworkProxy proxy_endpoint = 40; // Caption: Proxy Endpoint;
+	string raw_data = 41; // Caption: Raw Data;
+	ocsf.v1_6_0.objects.Fingerprint raw_data_hash = 42; // Caption: Raw Data Hash;
+	int64 raw_data_size = 43; // Caption: Raw Data Size;
+	string risk_details = 44; // Caption: Risk Details; Profile: security_control;
+	string risk_level = 45; // Caption: Risk Level; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_RISK_LEVEL_ID risk_level_id = 46; // Caption: Risk Level ID; Profile: security_control;
+	int32 risk_score = 47; // Caption: Risk Score; Profile: security_control;
+	string severity = 48; // Caption: Severity;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_SEVERITY_ID severity_id = 49; // Caption: Severity ID;
+	ocsf.v1_6_0.objects.NetworkEndpoint src_endpoint = 50; // Caption: Source Endpoint;
+	int64 start_time = 51; // Caption: Start Time;
+	string status = 52; // Caption: Status;
+	string status_code = 53; // Caption: Status Code;
+	string status_detail = 54; // Caption: Status Detail;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_STATUS_ID status_id = 55; // Caption: Status ID;
+	int64 time = 56; // Caption: Event Time;
+	int32 timezone_offset = 57; // Caption: Timezone Offset;
+	ocsf.v1_6_0.objects.Tls tls = 58; // Caption: TLS;
+	ocsf.v1_6_0.objects.NetworkTraffic traffic = 59; // Caption: Traffic;
+	string type_name = 60; // Caption: Type Name;
+	ocsf.v1_6_0.events.unmanned_systems.enums.DRONE_FLIGHTS_ACTIVITY_TYPE_UID type_uid = 61; // Caption: Type ID;
+	ocsf.v1_6_0.objects.UnmannedAerialSystem unmanned_aerial_system = 62; // Caption: Unmanned Aerial System;
+	ocsf.v1_6_0.objects.UnmannedSystemOperatingArea unmanned_system_operating_area = 63; // Caption: UAS Operating Area;
+	ocsf.v1_6_0.objects.User unmanned_system_operator = 64; // Caption: Unmanned Systems Operator;
+	google.protobuf.Struct unmapped = 65; // Caption: Unmapped Data;
+}
+
+// Event: unmanned_systems
+// Event UID: 0
+// URL: https://schema.ocsf.io/1.6.0/classes/unmanned_systems
+message UnmannedSystems {
+	string action = 1; // Caption: Action; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_ACTION_ID action_id = 2; // Caption: Action ID; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_ACTIVITY_ID activity_id = 3; // Caption: Activity ID;
+	string activity_name = 4; // Caption: Activity;
+	ocsf.v1_6_0.objects.Actor actor = 5; // Profile: host; Caption: Actor;
+	ocsf.v1_6_0.objects.Api api = 6; // Caption: API Details; Profile: cloud;
+	repeated ocsf.v1_6_0.objects.Attack attacks = 7; // Caption: MITRE ATT&CK® and ATLAS™ Details; Profile: security_control;
+	repeated ocsf.v1_6_0.objects.Authorization authorizations = 8; // Caption: Authorization Information; Profile: security_control;
+	string category_name = 9; // Caption: Category;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_CATEGORY_UID category_uid = 10; // Caption: Category ID;
+	string class_name = 11; // Caption: Class;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_CLASS_UID class_uid = 12; // Caption: Class ID;
+	ocsf.v1_6_0.objects.Cloud cloud = 13; // Caption: Cloud; Profile: cloud;
+	string confidence = 14; // Caption: Confidence; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_CONFIDENCE_ID confidence_id = 15; // Caption: Confidence ID; Profile: security_control;
+	int32 confidence_score = 16; // Caption: Confidence Score; Profile: security_control;
+	ocsf.v1_6_0.objects.NetworkConnectionInfo connection_info = 17; // Caption: Connection Info;
+	int32 count = 18; // Caption: Count;
+	ocsf.v1_6_0.objects.Device device = 19; // Caption: Device; Profile: host;
+	string disposition = 20; // Caption: Disposition; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_DISPOSITION_ID disposition_id = 21; // Caption: Disposition ID; Profile: security_control;
+	ocsf.v1_6_0.objects.NetworkEndpoint dst_endpoint = 22; // Caption: Destination Endpoint;
+	int64 duration = 23; // Caption: Duration Milliseconds;
+	int64 end_time = 24; // Caption: End Time;
+	repeated ocsf.v1_6_0.objects.Enrichment enrichments = 25; // Caption: Enrichments;
+	ocsf.v1_6_0.objects.FirewallRule firewall_rule = 26; // Caption: Firewall Rule; Profile: security_control;
+	bool is_alert = 27; // Caption: Alert; Profile: security_control;
+	repeated ocsf.v1_6_0.objects.Malware malware = 28; // Caption: Malware; Profile: security_control;
+	ocsf.v1_6_0.objects.MalwareScanInfo malware_scan_info = 29; // Caption: Malware Scan Info; Profile: security_control;
+	string message = 30; // Caption: Message;
+	ocsf.v1_6_0.objects.Metadata metadata = 31; // Caption: Metadata;
+	repeated ocsf.v1_6_0.objects.Observable observables = 32; // Caption: Observables;
+	repeated ocsf.v1_6_0.objects.Osint osint = 33; // Caption: OSINT; Profile: osint;
+	ocsf.v1_6_0.objects.Policy policy = 34; // Caption: Policy; Profile: security_control;
+	ocsf.v1_6_0.objects.NetworkProxy proxy_endpoint = 35; // Caption: Proxy Endpoint;
+	string raw_data = 36; // Caption: Raw Data;
+	ocsf.v1_6_0.objects.Fingerprint raw_data_hash = 37; // Caption: Raw Data Hash;
+	int64 raw_data_size = 38; // Caption: Raw Data Size;
+	string risk_details = 39; // Caption: Risk Details; Profile: security_control;
+	string risk_level = 40; // Caption: Risk Level; Profile: security_control;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_RISK_LEVEL_ID risk_level_id = 41; // Caption: Risk Level ID; Profile: security_control;
+	int32 risk_score = 42; // Caption: Risk Score; Profile: security_control;
+	string severity = 43; // Caption: Severity;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_SEVERITY_ID severity_id = 44; // Caption: Severity ID;
+	ocsf.v1_6_0.objects.NetworkEndpoint src_endpoint = 45; // Caption: Source Endpoint;
+	int64 start_time = 46; // Caption: Start Time;
+	string status = 47; // Caption: Status;
+	string status_code = 48; // Caption: Status Code;
+	string status_detail = 49; // Caption: Status Detail;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_STATUS_ID status_id = 50; // Caption: Status ID;
+	int64 time = 51; // Caption: Event Time;
+	int32 timezone_offset = 52; // Caption: Timezone Offset;
+	ocsf.v1_6_0.objects.Tls tls = 53; // Caption: TLS;
+	ocsf.v1_6_0.objects.NetworkTraffic traffic = 54; // Caption: Traffic;
+	string type_name = 55; // Caption: Type Name;
+	ocsf.v1_6_0.events.unmanned_systems.enums.UNMANNED_SYSTEMS_TYPE_UID type_uid = 56; // Caption: Type ID;
+	google.protobuf.Struct unmapped = 57; // Caption: Unmapped Data;
+}

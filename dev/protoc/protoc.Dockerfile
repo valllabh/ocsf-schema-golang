@@ -2,8 +2,8 @@ FROM golang:1.22-bookworm as build
 
 FROM build as build-go
 # https://github.com/protocolbuffers/protobuf-go/releases
-ARG PROTOC_GEN_GO_VERSION=1.34.1
-ARG PROTOC_GEN_GO_HASH="8aff9ec0c28a926daeedb1ce1f87a284e22fc5a892e9e5f7c850881137c85000"
+ARG PROTOC_GEN_GO_VERSION=1.36.7
+ARG PROTOC_GEN_GO_HASH="f3be1721420f0524ed036e16b5b53f13d10052741a7061db9b13f0a4a469d817"
 
 
 RUN mkdir /xsrc && cd /xsrc && \
@@ -17,8 +17,8 @@ RUN mkdir /xsrc && cd /xsrc && \
 
 FROM build as build-ocsf-tool
 
-ARG OCSF_TOOL_REPO=https://github.com/pquerna/ocsf-tool.git
-ARG OCSF_TOOL_COMMIT=84dcdbe0f963aa4ef4c192a521f26f731c280d98
+ARG OCSF_TOOL_REPO=https://github.com/pquerna/ocsf-tool
+ARG OCSF_TOOL_COMMIT=f8ed1da78a8c36def4584cc0fc7819ab9fd276f6
 
 RUN mkdir /xsrc && cd /xsrc && \
     git clone ${OCSF_TOOL_REPO} && \
@@ -29,7 +29,7 @@ RUN mkdir /xsrc && cd /xsrc && \
     rm -rf "/xsrc"
 
 # https://github.com/bufbuild/buf/releases
-FROM bufbuild/buf:1.31.0 as buf
+FROM bufbuild/buf:1.56.0 as buf
 
 FROM debian:bookworm as final
 

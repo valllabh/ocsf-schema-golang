@@ -121,7 +121,7 @@ message Cve {
 
 message Cvss {
 	float base_score = 1; // Caption: Base Score;
-	string depth = 2; // Caption: CVSS Depth; AllowedValues: Environmental, Temporal, Base;
+	string depth = 2; // AllowedValues: Base, Environmental, Temporal; Caption: CVSS Depth;
 	repeated ocsf.v1_0_0.objects.Metric metrics = 3; // Caption: Metrics;
 	float overall_score = 4; // Caption: Overall Score;
 	string severity = 5; // Caption: Severity;
@@ -683,7 +683,7 @@ message Request {
 }
 
 message ResourceDetails {
-	string cloud_partition = 1; // Profile: cloud; Caption: Cloud Partition;
+	string cloud_partition = 1; // Caption: Cloud Partition; Profile: cloud;
 	string criticality = 2; // Caption: Criticality;
 	google.protobuf.Struct data = 3; // Caption: Data;
 	ocsf.v1_0_0.objects.Group group = 4; // Caption: Group;
